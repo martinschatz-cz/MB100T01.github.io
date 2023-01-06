@@ -1,0 +1,1253 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Statistic overview &#8212; MB100T01 Advanced Image Analysis Course</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Showing statistical significance on seaborn plots with Statannotations" href="06_Statannotations-Tutorial-1.html" />
+    <link rel="prev" title="Statistics examples" href="readme.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">MB100T01 Advanced Image Analysis Course</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to MB100T01 Course
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Introduction/readme.html">
+   Intro to Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Python_Introduction/overview.html">
+     Overview of functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Python_Introduction/01_Python_Basics.html">
+     Introduction to Python in Jupyter Notebook/Google Colab
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Pandas_Introduction/readme.html">
+   Introduction to Pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Pandas_Introduction/02_intro_to_pandas.html">
+     Introduction to Pandas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ploting_Introduction/readme.html">
+   Intro to plotting in Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ploting_Introduction/03_seaborn_introduction.html">
+     An introduction to seaborn
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ploting_Introduction/04_seaborn_distributions.html">
+     Visualizing distributions of data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ploting_Introduction/05_seaborn_categorical.html">
+     Visualizing categorical data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ploting_Introduction/02_BONUS_plotting_with_matplotlib.html">
+     Charting in Colaboratory
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="readme.html">
+   Statistics examples
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Statistic overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06_Statannotations-Tutorial-1.html">
+     Showing statistical significance on seaborn plots with Statannotations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07_big_data_statistics.html">
+     Exercise
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07_big_data_statistics_SOLUTION.html">
+     Big Data definition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07_seaborn_big_data_statistics_SOLUTION.html">
+     Big Data seaborn Solution
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Statistics/06_statistics.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FStatistics/06_statistics.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/Statistics/06_statistics.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Statistic overview</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="statistic-overview">
+<h1>Statistic overview<a class="headerlink" href="#statistic-overview" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>-q<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number1</span> <span class="o">=</span> <span class="mi">319</span> <span class="c1">#@param {type:&quot;slider&quot;, min:3, max:1000, step:1}</span>
+<span class="n">number2</span> <span class="o">=</span> <span class="mi">321</span> <span class="c1">#@param {type:&quot;slider&quot;, min:3, max:1000, step:1}</span>
+<span class="c1">#@markdown ---</span>
+<span class="n">mu1</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#@param {type:&quot;slider&quot;, min:-10, max:10, step:0.01}</span>
+<span class="n">mu2</span> <span class="o">=</span> <span class="mf">0.14</span> <span class="c1">#@param {type:&quot;slider&quot;, min:-10, max:10, step:0.01}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="c1"># standard deviation</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">mu1</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">number1</span><span class="p">)</span>
+<span class="n">d1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">])</span>
+<span class="n">d1</span><span class="p">[</span><span class="s1">&#39;Label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;1&#39;</span>
+<span class="n">d1</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Area</th>
+      <th>Label</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.036129</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-0.064217</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-0.085285</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-0.100871</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.078571</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">mu2</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">number2</span><span class="p">)</span>
+<span class="n">d2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">s2</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">])</span>
+<span class="n">d2</span><span class="p">[</span><span class="s1">&#39;Label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;2&#39;</span>
+<span class="n">d2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Area</th>
+      <th>Label</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.272011</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.077220</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-0.007429</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.097255</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.124592</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">])</span>
+<span class="n">result</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Area</th>
+      <th>Label</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.036129</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-0.064217</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-0.085285</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-0.100871</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.078571</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">bokeh.plotting</span>
+<span class="kn">import</span> <span class="nn">bokeh.io</span>
+
+<span class="c1">#!pip install --upgrade bokeh-catplot</span>
+<span class="kn">import</span> <span class="nn">bokeh_catplot</span>
+
+<span class="n">bokeh</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">output_notebook</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\schatzm\Anaconda3\envs\julab\lib\site-packages\bokeh_catplot\__init__.py:13: DeprecationWarning: bokeh-catplot is deprecated. Use iqplot instead.
+  warnings.warn(&quot;bokeh-catplot is deprecated. Use iqplot instead.&quot;, DeprecationWarning)
+</pre></div>
+</div>
+<div class="output text_html"><style>
+        .bk-notebook-logo {
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAOkSURBVDiNjZRtaJVlGMd/1/08zzln5zjP1LWcU9N0NkN8m2CYjpgQYQXqSs0I84OLIC0hkEKoPtiH3gmKoiJDU7QpLgoLjLIQCpEsNJ1vqUOdO7ppbuec5+V+rj4ctwzd8IIbbi6u+8f1539dt3A78eXC7QizUF7gyV1fD1Yqg4JWz84yffhm0qkFqBogB9rM8tZdtwVsPUhWhGcFJngGeWrPzHm5oaMmkfEg1usvLFyc8jLRqDOMru7AyC8saQr7GG7f5fvDeH7Ej8CM66nIF+8yngt6HWaKh7k49Soy9nXurCi1o3qUbS3zWfrYeQDTB/Qj6kX6Ybhw4B+bOYoLKCC9H3Nu/leUTZ1JdRWkkn2ldcCamzrcf47KKXdAJllSlxAOkRgyHsGC/zRday5Qld9DyoM4/q/rUoy/CXh3jzOu3bHUVZeU+DEn8FInkPBFlu3+nW3Nw0mk6vCDiWg8CeJaxEwuHS3+z5RgY+YBR6V1Z1nxSOfoaPa4LASWxxdNp+VWTk7+4vzaou8v8PN+xo+KY2xsw6une2frhw05CTYOmQvsEhjhWjn0bmXPjpE1+kplmmkP3suftwTubK9Vq22qKmrBhpY4jvd5afdRA3wGjFAgcnTK2s4hY0/GPNIb0nErGMCRxWOOX64Z8RAC4oCXdklmEvcL8o0BfkNK4lUg9HTl+oPlQxdNo3Mg4Nv175e/1LDGzZen30MEjRUtmXSfiTVu1kK8W4txyV6BMKlbgk3lMwYCiusNy9fVfvvwMxv8Ynl6vxoByANLTWplvuj/nF9m2+PDtt1eiHPBr1oIfhCChQMBw6Aw0UulqTKZdfVvfG7VcfIqLG9bcldL/+pdWTLxLUy8Qq38heUIjh4XlzZxzQm19lLFlr8vdQ97rjZVOLf8nclzckbcD4wxXMidpX30sFd37Fv/GtwwhzhxGVAprjbg0gCAEeIgwCZyTV2Z1REEW8O4py0wsjeloKoMr6iCY6dP92H6Vw/oTyICIthibxjm/DfN9lVz8IqtqKYLUXfoKVMVQVVJOElGjrnnUt9T9wbgp8AyYKaGlqingHZU/uG2NTZSVqwHQTWkx9hxjkpWDaCg6Ckj5qebgBVbT3V3NNXMSiWSDdGV3hrtzla7J+duwPOToIg42ChPQOQjspnSlp1V+Gjdged7+8UN5CRAV7a5EdFNwCjEaBR27b3W890TE7g24NAP/mMDXRWrGoFPQI9ls/MWO2dWFAar/xcOIImbbpA3zgAAAABJRU5ErkJggg==);
+        }
+    </style>
+    <div>
+        <a href="https://bokeh.org" target="_blank" class="bk-notebook-logo"></a>
+        <span id="p1001">Loading BokehJS ...</span>
+    </div>
+</div><script type="application/javascript">(function(root) {
+  function now() {
+    return new Date();
+  }
+
+  const force = true;
+
+  if (typeof root._bokeh_onload_callbacks === "undefined" || force === true) {
+    root._bokeh_onload_callbacks = [];
+    root._bokeh_is_loading = undefined;
+  }
+
+const JS_MIME_TYPE = 'application/javascript';
+  const HTML_MIME_TYPE = 'text/html';
+  const EXEC_MIME_TYPE = 'application/vnd.bokehjs_exec.v0+json';
+  const CLASS_NAME = 'output_bokeh rendered_html';
+
+  /**
+   * Render data to the DOM node
+   */
+  function render(props, node) {
+    const script = document.createElement("script");
+    node.appendChild(script);
+  }
+
+  /**
+   * Handle when an output is cleared or removed
+   */
+  function handleClearOutput(event, handle) {
+    const cell = handle.cell;
+
+    const id = cell.output_area._bokeh_element_id;
+    const server_id = cell.output_area._bokeh_server_id;
+    // Clean up Bokeh references
+    if (id != null && id in Bokeh.index) {
+      Bokeh.index[id].model.document.clear();
+      delete Bokeh.index[id];
+    }
+
+    if (server_id !== undefined) {
+      // Clean up Bokeh references
+      const cmd_clean = "from bokeh.io.state import curstate; print(curstate().uuid_to_server['" + server_id + "'].get_sessions()[0].document.roots[0]._id)";
+      cell.notebook.kernel.execute(cmd_clean, {
+        iopub: {
+          output: function(msg) {
+            const id = msg.content.text.trim();
+            if (id in Bokeh.index) {
+              Bokeh.index[id].model.document.clear();
+              delete Bokeh.index[id];
+            }
+          }
+        }
+      });
+      // Destroy server and session
+      const cmd_destroy = "import bokeh.io.notebook as ion; ion.destroy_server('" + server_id + "')";
+      cell.notebook.kernel.execute(cmd_destroy);
+    }
+  }
+
+  /**
+   * Handle when a new output is added
+   */
+  function handleAddOutput(event, handle) {
+    const output_area = handle.output_area;
+    const output = handle.output;
+
+    // limit handleAddOutput to display_data with EXEC_MIME_TYPE content only
+    if ((output.output_type != "display_data") || (!Object.prototype.hasOwnProperty.call(output.data, EXEC_MIME_TYPE))) {
+      return
+    }
+
+    const toinsert = output_area.element.find("." + CLASS_NAME.split(' ')[0]);
+
+    if (output.metadata[EXEC_MIME_TYPE]["id"] !== undefined) {
+      toinsert[toinsert.length - 1].firstChild.textContent = output.data[JS_MIME_TYPE];
+      // store reference to embed id on output_area
+      output_area._bokeh_element_id = output.metadata[EXEC_MIME_TYPE]["id"];
+    }
+    if (output.metadata[EXEC_MIME_TYPE]["server_id"] !== undefined) {
+      const bk_div = document.createElement("div");
+      bk_div.innerHTML = output.data[HTML_MIME_TYPE];
+      const script_attrs = bk_div.children[0].attributes;
+      for (let i = 0; i < script_attrs.length; i++) {
+        toinsert[toinsert.length - 1].firstChild.setAttribute(script_attrs[i].name, script_attrs[i].value);
+        toinsert[toinsert.length - 1].firstChild.textContent = bk_div.children[0].textContent
+      }
+      // store reference to server id on output_area
+      output_area._bokeh_server_id = output.metadata[EXEC_MIME_TYPE]["server_id"];
+    }
+  }
+
+  function register_renderer(events, OutputArea) {
+
+    function append_mime(data, metadata, element) {
+      // create a DOM node to render to
+      const toinsert = this.create_output_subarea(
+        metadata,
+        CLASS_NAME,
+        EXEC_MIME_TYPE
+      );
+      this.keyboard_manager.register_events(toinsert);
+      // Render to node
+      const props = {data: data, metadata: metadata[EXEC_MIME_TYPE]};
+      render(props, toinsert[toinsert.length - 1]);
+      element.append(toinsert);
+      return toinsert
+    }
+
+    /* Handle when an output is cleared or removed */
+    events.on('clear_output.CodeCell', handleClearOutput);
+    events.on('delete.Cell', handleClearOutput);
+
+    /* Handle when a new output is added */
+    events.on('output_added.OutputArea', handleAddOutput);
+
+    /**
+     * Register the mime type and append_mime function with output_area
+     */
+    OutputArea.prototype.register_mime_type(EXEC_MIME_TYPE, append_mime, {
+      /* Is output safe? */
+      safe: true,
+      /* Index of renderer in `output_area.display_order` */
+      index: 0
+    });
+  }
+
+  // register the mime type if in Jupyter Notebook environment and previously unregistered
+  if (root.Jupyter !== undefined) {
+    const events = require('base/js/events');
+    const OutputArea = require('notebook/js/outputarea').OutputArea;
+
+    if (OutputArea.prototype.mime_types().indexOf(EXEC_MIME_TYPE) == -1) {
+      register_renderer(events, OutputArea);
+    }
+  }
+  if (typeof (root._bokeh_timeout) === "undefined" || force === true) {
+    root._bokeh_timeout = Date.now() + 5000;
+    root._bokeh_failed_load = false;
+  }
+
+  const NB_LOAD_WARNING = {'data': {'text/html':
+     "<div style='background-color: #fdd'>\n"+
+     "<p>\n"+
+     "BokehJS does not appear to have successfully loaded. If loading BokehJS from CDN, this \n"+
+     "may be due to a slow or bad network connection. Possible fixes:\n"+
+     "</p>\n"+
+     "<ul>\n"+
+     "<li>re-rerun `output_notebook()` to attempt to load from CDN again, or</li>\n"+
+     "<li>use INLINE resources instead, as so:</li>\n"+
+     "</ul>\n"+
+     "<code>\n"+
+     "from bokeh.resources import INLINE\n"+
+     "output_notebook(resources=INLINE)\n"+
+     "</code>\n"+
+     "</div>"}};
+
+  function display_loaded() {
+    const el = document.getElementById("p1001");
+    if (el != null) {
+      el.textContent = "BokehJS is loading...";
+    }
+    if (root.Bokeh !== undefined) {
+      if (el != null) {
+        el.textContent = "BokehJS " + root.Bokeh.version + " successfully loaded.";
+      }
+    } else if (Date.now() < root._bokeh_timeout) {
+      setTimeout(display_loaded, 100)
+    }
+  }
+
+  function run_callbacks() {
+    try {
+      root._bokeh_onload_callbacks.forEach(function(callback) {
+        if (callback != null)
+          callback();
+      });
+    } finally {
+      delete root._bokeh_onload_callbacks
+    }
+    console.debug("Bokeh: all callbacks have finished");
+  }
+
+  function load_libs(css_urls, js_urls, callback) {
+    if (css_urls == null) css_urls = [];
+    if (js_urls == null) js_urls = [];
+
+    root._bokeh_onload_callbacks.push(callback);
+    if (root._bokeh_is_loading > 0) {
+      console.debug("Bokeh: BokehJS is being loaded, scheduling callback at", now());
+      return null;
+    }
+    if (js_urls == null || js_urls.length === 0) {
+      run_callbacks();
+      return null;
+    }
+    console.debug("Bokeh: BokehJS not loaded, scheduling load and callback at", now());
+    root._bokeh_is_loading = css_urls.length + js_urls.length;
+
+    function on_load() {
+      root._bokeh_is_loading--;
+      if (root._bokeh_is_loading === 0) {
+        console.debug("Bokeh: all BokehJS libraries/stylesheets loaded");
+        run_callbacks()
+      }
+    }
+
+    function on_error(url) {
+      console.error("failed to load " + url);
+    }
+
+    for (let i = 0; i < css_urls.length; i++) {
+      const url = css_urls[i];
+      const element = document.createElement("link");
+      element.onload = on_load;
+      element.onerror = on_error.bind(null, url);
+      element.rel = "stylesheet";
+      element.type = "text/css";
+      element.href = url;
+      console.debug("Bokeh: injecting link tag for BokehJS stylesheet: ", url);
+      document.body.appendChild(element);
+    }
+
+    for (let i = 0; i < js_urls.length; i++) {
+      const url = js_urls[i];
+      const element = document.createElement('script');
+      element.onload = on_load;
+      element.onerror = on_error.bind(null, url);
+      element.async = false;
+      element.src = url;
+      console.debug("Bokeh: injecting script tag for BokehJS library: ", url);
+      document.head.appendChild(element);
+    }
+  };
+
+  function inject_raw_css(css) {
+    const element = document.createElement("style");
+    element.appendChild(document.createTextNode(css));
+    document.body.appendChild(element);
+  }
+
+  const js_urls = ["https://cdn.bokeh.org/bokeh/release/bokeh-3.0.3.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-gl-3.0.3.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.0.3.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-tables-3.0.3.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-3.0.3.min.js"];
+  const css_urls = [];
+
+  const inline_js = [    function(Bokeh) {
+      Bokeh.set_log_level("info");
+    },
+function(Bokeh) {
+    }
+  ];
+
+  function run_inline_js() {
+    if (root.Bokeh !== undefined || force === true) {
+          for (let i = 0; i < inline_js.length; i++) {
+      inline_js[i].call(root, root.Bokeh);
+    }
+if (force === true) {
+        display_loaded();
+      }} else if (Date.now() < root._bokeh_timeout) {
+      setTimeout(run_inline_js, 100);
+    } else if (!root._bokeh_failed_load) {
+      console.log("Bokeh: BokehJS failed to load within specified timeout.");
+      root._bokeh_failed_load = true;
+    } else if (force !== true) {
+      const cell = $(document.getElementById("p1001")).parents('.cell').data().cell;
+      cell.output_area.append_execute_result(NB_LOAD_WARNING)
+    }
+  }
+
+  if (root._bokeh_is_loading === 0) {
+    console.debug("Bokeh: BokehJS loaded, going straight to plotting");
+    run_inline_js();
+  } else {
+    load_libs(css_urls, js_urls, function() {
+      console.debug("Bokeh: BokehJS plotting callback run at", now());
+      run_inline_js();
+    });
+  }
+}(window));</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">bokeh_catplot</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">result</span><span class="p">,</span>
+    <span class="n">cats</span><span class="o">=</span><span class="s1">&#39;Label&#39;</span><span class="p">,</span>
+    <span class="n">val</span><span class="o">=</span><span class="s1">&#39;Area&#39;</span>
+<span class="p">)</span>
+
+<span class="n">bokeh</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="a91464d4-1701-4951-a671-1c1d08137910" data-root-id="p1003" style="display: contents;"></div>
+</div><script type="application/javascript">(function(root) {
+  function embed_document(root) {
+  const docs_json = {"ab05ac35-7acb-4d85-a440-1de9bc6ab9e1":{"version":"3.0.3","title":"Bokeh Application","defs":[],"roots":[{"type":"object","name":"Figure","id":"p1003","attributes":{"width":400,"height":300,"x_range":{"type":"object","name":"DataRange1d","id":"p1005"},"y_range":{"type":"object","name":"DataRange1d","id":"p1002","attributes":{"start":0}},"x_scale":{"type":"object","name":"LinearScale","id":"p1015"},"y_scale":{"type":"object","name":"LinearScale","id":"p1017"},"title":{"type":"object","name":"Title","id":"p1009"},"renderers":[{"type":"object","name":"GlyphRenderer","id":"p1054","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1048","attributes":{"selected":{"type":"object","name":"Selection","id":"p1049","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1050"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"k4cNCrJ00b+Thw0KsnTRv23wnt7xuM2/bfCe3vG4zb+00SKpf4jIv7TRIql/iMi/+rKmcw1Yw7/6sqZzDVjDv4IoVXw2T7y/gihVfDZPvL8Q61wRUu6xvxDrXBFS7rG/cLaSmbY1nr9wtpKZtjWev6B+nCS2m4Y/oH6cJLabhj+QmhdftmiqP5CaF1+2aKo/vAqEmj+Vtz+8CoSaP5W3PxYkvgIS+8A/FiS+AhL7wD/QQjo4hCvGP9BCOjiEK8Y/imG2bfZbyz+KYbZt9lvLPyFAmVE0RtA/IUCZUTRG0D99T1dsbd7SP31PV2xt3tI/"},"shape":[30],"dtype":"float64","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"AAAAAAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAAAAAEEAAAAAAAAAQQAAAAAAAACJAAAAAAAAAIkAAAAAAAAA0QAAAAAAAADRAAAAAAACASEAAAAAAAIBIQAAAAAAAAERAAAAAAAAAREAAAAAAAABKQAAAAAAAAEpAAAAAAACAR0AAAAAAAIBHQAAAAAAAgEJAAAAAAACAQkAAAAAAAAA7QAAAAAAAADtAAAAAAAAALkAAAAAAAAAuQAAAAAAAACxAAAAAAAAALEAAAAAAAADwPwAAAAAAAPA/AAAAAAAAAEAAAAAAAAAAQAAAAAAAAAAA"},"shape":[30],"dtype":"float64","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1055","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1056"}}},"glyph":{"type":"object","name":"Line","id":"p1051","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#1f77b3","line_width":2}},"nonselection_glyph":{"type":"object","name":"Line","id":"p1052","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#1f77b3","line_alpha":0.1,"line_width":2}},"muted_glyph":{"type":"object","name":"Line","id":"p1053","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#1f77b3","line_alpha":0.2,"line_width":2}}}},{"type":"object","name":"GlyphRenderer","id":"p1079","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1073","attributes":{"selected":{"type":"object","name":"Selection","id":"p1074","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1075"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"k4cNCrJ00b+Thw0KsnTRv23wnt7xuM2/bfCe3vG4zb+00SKpf4jIv7TRIql/iMi/+rKmcw1Yw7/6sqZzDVjDv4IoVXw2T7y/gihVfDZPvL8Q61wRUu6xvxDrXBFS7rG/cLaSmbY1nr9wtpKZtjWev6B+nCS2m4Y/oH6cJLabhj+QmhdftmiqP5CaF1+2aKo/vAqEmj+Vtz+8CoSaP5W3PxYkvgIS+8A/FiS+AhL7wD/QQjo4hCvGP9BCOjiEK8Y/imG2bfZbyz+KYbZt9lvLPyFAmVE0RtA/IUCZUTRG0D99T1dsbd7SP31PV2xt3tI/fU9XbG3e0j+Thw0KsnTRvw=="},"shape":[32],"dtype":"float64","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"AAAAAAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAAAAAEEAAAAAAAAAQQAAAAAAAACJAAAAAAAAAIkAAAAAAAAA0QAAAAAAAADRAAAAAAACASEAAAAAAAIBIQAAAAAAAAERAAAAAAAAAREAAAAAAAABKQAAAAAAAAEpAAAAAAACAR0AAAAAAAIBHQAAAAAAAgEJAAAAAAACAQkAAAAAAAAA7QAAAAAAAADtAAAAAAAAALkAAAAAAAAAuQAAAAAAAACxAAAAAAAAALEAAAAAAAADwPwAAAAAAAPA/AAAAAAAAAEAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="},"shape":[32],"dtype":"float64","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1080","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1081"}}},"glyph":{"type":"object","name":"Patch","id":"p1076","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#1f77b3","line_alpha":0,"fill_color":"#1f77b3","fill_alpha":0.3,"hatch_color":"#1f77b3"}},"nonselection_glyph":{"type":"object","name":"Patch","id":"p1077","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#1f77b3","line_alpha":0.1,"fill_color":"#1f77b3","fill_alpha":0.1,"hatch_color":"#1f77b3","hatch_alpha":0.1}},"muted_glyph":{"type":"object","name":"Patch","id":"p1078","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#1f77b3","line_alpha":0.2,"fill_color":"#1f77b3","fill_alpha":0.2,"hatch_color":"#1f77b3","hatch_alpha":0.2}}}},{"type":"object","name":"GlyphRenderer","id":"p1107","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1101","attributes":{"selected":{"type":"object","name":"Selection","id":"p1102","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1103"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"kEO+PlU2x7+QQ74+VTbHv937ZRKYcMK/3ftlEphwwr9UaBvMtVW7v1RoG8y1Vbu/7thqczvKsb/u2GpzO8qxvxCTdDWCfaC/EJN0NYJ9oL/gXWTfk8t0P+BdZN+Ty3Q/iKpNLWewpT+Iqk0tZ7ClP6hkV++tY7Q/qGRX761jtD8Q9AdIKO+9PxD0B0go770/vEFcUFG9wz+8QVxQUb3DP26JtHwOg8g/bom0fA6DyD8g0Qypy0jNPyDRDKnLSM0/aoyyakQH0T9qjLJqRAfRP0Sw3gAjatM/RLDeACNq0z8c1AqXAc3VPxzUCpcBzdU/9vc2LeAv2D/29zYt4C/YP9EbY8O+kto/0Rtjw76S2j8="},"shape":[34],"dtype":"float64","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"AAAAAAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABRAAAAAAAAAFEAAAAAAAAAiQAAAAAAAACJAAAAAAAAAKEAAAAAAAAAoQAAAAAAAADFAAAAAAAAAMUAAAAAAAIBBQAAAAAAAgEFAAAAAAACAR0AAAAAAAIBHQAAAAAAAgEZAAAAAAACARkAAAAAAAABJQAAAAAAAAElAAAAAAAAARUAAAAAAAABFQAAAAAAAADtAAAAAAAAAO0AAAAAAAAAoQAAAAAAAAChAAAAAAAAAJkAAAAAAAAAmQAAAAAAAAAhAAAAAAAAACEAAAAAAAAAQQAAAAAAAABBAAAAAAAAAAAA="},"shape":[34],"dtype":"float64","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1108","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1109"}}},"glyph":{"type":"object","name":"Line","id":"p1104","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#ff7e0e","line_width":2}},"nonselection_glyph":{"type":"object","name":"Line","id":"p1105","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#ff7e0e","line_alpha":0.1,"line_width":2}},"muted_glyph":{"type":"object","name":"Line","id":"p1106","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#ff7e0e","line_alpha":0.2,"line_width":2}}}},{"type":"object","name":"GlyphRenderer","id":"p1141","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1135","attributes":{"selected":{"type":"object","name":"Selection","id":"p1136","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1137"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"kEO+PlU2x7+QQ74+VTbHv937ZRKYcMK/3ftlEphwwr9UaBvMtVW7v1RoG8y1Vbu/7thqczvKsb/u2GpzO8qxvxCTdDWCfaC/EJN0NYJ9oL/gXWTfk8t0P+BdZN+Ty3Q/iKpNLWewpT+Iqk0tZ7ClP6hkV++tY7Q/qGRX761jtD8Q9AdIKO+9PxD0B0go770/vEFcUFG9wz+8QVxQUb3DP26JtHwOg8g/bom0fA6DyD8g0Qypy0jNPyDRDKnLSM0/aoyyakQH0T9qjLJqRAfRP0Sw3gAjatM/RLDeACNq0z8c1AqXAc3VPxzUCpcBzdU/9vc2LeAv2D/29zYt4C/YP9EbY8O+kto/0Rtjw76S2j/RG2PDvpLaP5BDvj5VNse/"},"shape":[36],"dtype":"float64","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"AAAAAAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABRAAAAAAAAAFEAAAAAAAAAiQAAAAAAAACJAAAAAAAAAKEAAAAAAAAAoQAAAAAAAADFAAAAAAAAAMUAAAAAAAIBBQAAAAAAAgEFAAAAAAACAR0AAAAAAAIBHQAAAAAAAgEZAAAAAAACARkAAAAAAAABJQAAAAAAAAElAAAAAAAAARUAAAAAAAABFQAAAAAAAADtAAAAAAAAAO0AAAAAAAAAoQAAAAAAAAChAAAAAAAAAJkAAAAAAAAAmQAAAAAAAAAhAAAAAAAAACEAAAAAAAAAQQAAAAAAAABBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"},"shape":[36],"dtype":"float64","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1142","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1143"}}},"glyph":{"type":"object","name":"Patch","id":"p1138","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#ff7e0e","line_alpha":0,"fill_color":"#ff7e0e","fill_alpha":0.3,"hatch_color":"#ff7e0e"}},"nonselection_glyph":{"type":"object","name":"Patch","id":"p1139","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#ff7e0e","line_alpha":0.1,"fill_color":"#ff7e0e","fill_alpha":0.1,"hatch_color":"#ff7e0e","hatch_alpha":0.1}},"muted_glyph":{"type":"object","name":"Patch","id":"p1140","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#ff7e0e","line_alpha":0.2,"fill_color":"#ff7e0e","fill_alpha":0.2,"hatch_color":"#ff7e0e","hatch_alpha":0.2}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p1007","attributes":{"tools":[{"type":"object","name":"PanTool","id":"p1033"},{"type":"object","name":"WheelZoomTool","id":"p1034"},{"type":"object","name":"BoxZoomTool","id":"p1035","attributes":{"overlay":{"type":"object","name":"BoxAnnotation","id":"p1036","attributes":{"syncable":false,"level":"overlay","visible":false,"left_units":"canvas","right_units":"canvas","bottom_units":"canvas","top_units":"canvas","line_color":"black","line_alpha":1.0,"line_width":2,"line_dash":[4,4],"fill_color":"lightgrey","fill_alpha":0.5}}}},{"type":"object","name":"SaveTool","id":"p1037"},{"type":"object","name":"ResetTool","id":"p1038"},{"type":"object","name":"HelpTool","id":"p1039"}]}},"left":[{"type":"object","name":"LinearAxis","id":"p1026","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1029","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1027"},"axis_label":"count","major_label_policy":{"type":"object","name":"AllLabels","id":"p1028"}}}],"below":[{"type":"object","name":"LinearAxis","id":"p1019","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1022","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1020"},"axis_label":"Area","major_label_policy":{"type":"object","name":"AllLabels","id":"p1021"}}}],"center":[{"type":"object","name":"Grid","id":"p1025","attributes":{"axis":{"id":"p1019"}}},{"type":"object","name":"Grid","id":"p1032","attributes":{"dimension":1,"axis":{"id":"p1026"}}},{"type":"object","name":"Legend","id":"p1071","attributes":{"click_policy":"hide","items":[{"type":"object","name":"LegendItem","id":"p1072","attributes":{"label":{"type":"value","value":"1"},"renderers":[{"id":"p1054"},{"id":"p1079"}]}},{"type":"object","name":"LegendItem","id":"p1134","attributes":{"label":{"type":"value","value":"2"},"renderers":[{"id":"p1107"},{"id":"p1141"}]}}]}}]}}]}};
+  const render_items = [{"docid":"ab05ac35-7acb-4d85-a440-1de9bc6ab9e1","roots":{"p1003":"a91464d4-1701-4951-a671-1c1d08137910"},"root_ids":["p1003"]}];
+  root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined) {
+    embed_document(root);
+  } else {
+    let attempts = 0;
+    const timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else {
+        attempts++;
+        if (attempts > 100) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 10, root)
+  }
+})(window);</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">bokeh_catplot</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">result</span><span class="p">,</span>
+    <span class="n">cats</span><span class="o">=</span><span class="s1">&#39;Label&#39;</span><span class="p">,</span>
+    <span class="n">val</span><span class="o">=</span><span class="s1">&#39;Area&#39;</span><span class="p">,</span>
+    <span class="n">horizontal</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">jitter</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span>
+    <span class="n">marker_kwargs</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">),</span>
+<span class="p">)</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">bokeh_catplot</span><span class="o">.</span><span class="n">box</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">result</span><span class="p">,</span>
+    <span class="n">cats</span><span class="o">=</span><span class="s1">&#39;Label&#39;</span><span class="p">,</span>
+    <span class="n">val</span><span class="o">=</span><span class="s1">&#39;Area&#39;</span><span class="p">,</span>
+    <span class="n">horizontal</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">whisker_caps</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">display_points</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">outlier_marker</span><span class="o">=</span><span class="s1">&#39;diamond&#39;</span><span class="p">,</span>
+    <span class="n">box_kwargs</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">fill_color</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">),</span>
+    <span class="n">median_kwargs</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+    <span class="n">whisker_kwargs</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+    <span class="n">p</span><span class="o">=</span><span class="n">p</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">bokeh</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="f93a39b0-4818-4621-aeb6-9451c738da5d" data-root-id="p1368" style="display: contents;"></div>
+</div><script type="application/javascript">(function(root) {
+  function embed_document(root) {
+  const docs_json = {"26450b70-0e99-485b-904a-9d56dcec8abd":{"version":"3.0.3","title":"Bokeh Application","defs":[],"roots":[{"type":"object","name":"Figure","id":"p1368","attributes":{"width":400,"height":250,"x_range":{"type":"object","name":"DataRange1d","id":"p1370"},"y_range":{"type":"object","name":"FactorRange","id":"p1367","attributes":{"factors":["2","1"]}},"x_scale":{"type":"object","name":"LinearScale","id":"p1380"},"y_scale":{"type":"object","name":"CategoricalScale","id":"p1382"},"title":{"type":"object","name":"Title","id":"p1374"},"renderers":[{"type":"object","name":"GlyphRenderer","id":"p1423","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1413","attributes":{"selected":{"type":"object","name":"Selection","id":"p1414","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1415"},"data":{"type":"map","entries":[["Label",["1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2"]],["Area",[0.036128609168007274,-0.06421692368726355,-0.0852852969098842,-0.10087074971201455,0.07857149738417038,-0.22241180983200862,-0.11364168978045669,0.05748480873714878,0.10024403277034873,0.07262123212734449,0.04722076356546227,-0.0062458808082446835,0.09160412308846834,-0.0020569752646095248,0.00516482354343951,0.07681636261266449,0.2948258932130939,0.01798363579258277,0.019903675769744694,0.007532180258889465,0.008616528159282821,-0.01305921033044828,0.037207697724400406,0.2004511179456775,-0.05226499926075572,-0.024629994739391307,0.030363937420328075,-0.09454638867424929,0.05038526302814037,0.026032674309491008,0.04455795680028712,0.06071695769305412,-0.0801434246205893,-0.02659009251847913,-0.05342436231689797,0.00809830288902459,0.14232838087146243,0.06967233072509751,-0.19160263100115468,-0.08998124210172505,-0.0939598257032977,-0.045448263659893,0.19872943526794135,0.14782020861214826,0.1888356821885039,-0.09397680529891847,0.09574397476307783,-0.02594405712067463,0.1293183983220398,0.09431537381055821,-0.1000192445175766,0.018974535506854694,0.16417641664387136,0.04299043099541061,0.07043773029788224,0.07917670007071033,-0.09318915942682782,0.063178741743708,0.03181054131531385,-0.06494950739246762,-0.11588098888052639,-0.07836253514591696,-0.07238143822961234,0.01798321935454481,-0.1622596777653222,-0.04205847910534499,0.11152586841247954,-0.02165034206577044,0.015481392035255313,0.018739227938247987,0.039789649530154944,-0.05285716682110658,0.05948688746876612,-0.0752119369778841,-0.03560949766307781,-0.07840597533927657,-0.1481235276336811,-0.03116808154881876,0.03835181836771312,0.0033162541860548658,0.06742171756027708,0.07571427156223215,-0.07166171413188291,0.024477333032072328,0.17798759698911593,-0.04217845246596275,-0.028585850078539768,0.030947443389225584,-0.1123359826328181,0.16501784249516221,-0.1097953584304608,-0.07385959697568185,-0.08527699026131419,-0.08685081764688657,-0.054229451891095265,-0.07439807488320238,0.015745989818728285,0.03235562337144293,-0.06640880786236208,-0.12884245378678877,-0.05770783794674311,0.16104839602024262,0.0533352436237442,-0.05165520483591493,-0.04292866870451161,0.0679368493975779,0.06177358651830729,-0.0218182690669799,-0.05777356211316055,0.05591685213580227,-0.030121051120506188,0.005050402551657309,0.004772167710660632,-0.19930981274734275,-0.09850927488048074,-0.012894261446686109,0.05806564616885164,-0.10164274109870004,-0.06642165449562766,-0.10896692157200503,0.1258255838121228,0.16804485608459777,-0.012692989130334934,-0.09203074079462036,0.1004690297548177,0.17622964039736114,-0.0017971004794020901,0.09990852650232598,0.13129818765046025,0.041756138736162254,-0.08677924558601191,0.07653426053056746,-0.10778466030625743,-0.1296323863430468,-0.17486499903029198,-0.0008515296265588298,0.1977187218433679,-0.15270806140260745,0.10561643489500708,-0.011824028957988592,-0.06983859975381228,-0.07848472612344032,-0.07453935757144155,0.09498801090022518,0.008413701964099077,-0.03267972920609316,-0.05831794920387329,-0.1470972905929963,0.11964623465539304,0.1092695368805816,0.19900840030599845,-0.1079246289323219,-0.06988128998062794,-0.09741074079196928,-0.19935558517128446,0.001887657959883668,-0.1403470516924445,0.04125273875203604,-0.05079752659874437,0.049802697231382025,0.0034115800400213755,0.1670783836901244,0.0834699489323552,0.07557528434667127,-0.02736788668138458,0.15635001902399476,0.11888794310531732,-0.07832186798727525,-0.14458073512789094,-0.24807808180192567,-0.14174734691670188,-0.10993303135487859,-0.09267326136046977,0.18727819347632432,0.17266071266307448,0.012148063705745166,0.0014403987996878724,0.20375554308204508,-0.08133308780587928,0.20341709455003706,-0.11980979612227867,0.1227213972895535,-0.012802700599778517,0.013588576380551132,0.16499390876437853,-0.0620988806747193,0.07776331348156723,-0.0006801004361928167,-0.10205243829689888,0.0172765322183784,0.034469980162736204,0.006961160184064419,-0.06454672017534477,0.11306120199889023,-0.0965445304524627,-0.055850679159444,0.035321596960850805,0.08748629926870852,0.03382786772873822,-0.04097566364713781,-0.007927813188956865,-0.05341610419427141,-0.12021399771131942,0.014288691514296292,0.10565507139667484,0.022380464579756554,0.04858035639061517,-0.10390104661313754,0.008679594116845865,0.07402670514645344,0.11582395733359088,0.16754955315645403,-0.08881404480465871,0.05485051619611218,-0.019261615603546115,0.07557936115743884,-0.11732017984673451,-0.04546526326224602,-0.2175504075863806,0.00021966462818288971,0.013897372206821915,-0.006895025743387094,-0.02992516192513488,-0.1347685469159044,-0.14900841063256107,-0.03673247484482812,-0.1629642541559486,0.06627014948455054,0.09726926399717561,-0.004196236642012574,-0.027287395991682634,-0.09662144300107198,0.1914563133856704,-0.004478958378937922,0.13250203967307558,-0.05196838122838439,-0.1175310813503462,-0.06334433642916014,0.14339296526290088,0.07573254476229441,0.0003354295662427586,0.10387071346104451,-0.12901929939921516,-0.08652442876282466,0.06955558285273336,0.23754595205560325,0.20936838585860473,0.064311130420403,-1.6729996966507375e-05,-0.15081914715457684,-0.04933912614210051,-0.03881789781533403,-0.0792450637831107,-0.1082448079225129,-0.0019967546738647196,0.00523366943399535,-0.07592754101346116,0.201037732050356,0.08069014041770972,-0.11599577790717935,-0.014447780751427056,-0.15714026668374814,0.0341349390195576,-0.15457538070425272,-0.03717023151099159,-0.07859718602425622,-0.2727475259945262,0.11142989722110504,-0.027594146756626598,0.12405258893930715,0.007561536088054612,-0.014580313863261841,0.054917011889590764,-0.09720796907875238,0.04526899436143324,0.028979866096698795,0.15921769986033263,0.1755287487879259,-0.16059368167130134,0.27605544122720355,0.11049949169742004,-0.04875707890719637,0.038339163906733496,-0.058705451460348945,-0.09114891042066975,0.09759277511952938,-0.10008093557471039,0.030893604885313813,0.026398069369846934,0.009380245731880961,-0.07029552202507805,-0.15931114589032053,-0.10742502570320032,0.16251287555913127,-0.014475890568444989,0.0834189773004541,0.06430466614642534,0.04221674233398667,-0.0005964972123601866,-0.06488214780412248,0.02425373401325694,-0.015103831972398275,0.09700784894222508,-0.007137561737724083,0.08327797797365372,0.058764230145154875,-0.010641682354869873,0.019888533663094884,0.04598216857725952,0.03399716291030038,-0.12353429781285163,0.005997195199188087,0.06667469904108363,0.09664502382215467,0.012901885083151675,-0.056541951366338265,0.16437818135363672,-0.07575872132780598,0.0419170708847413,0.27201149209061903,0.07722029144648887,-0.007429232122221241,0.0972552593491431,0.124591868127744,0.11917197394573636,0.11661859228160475,0.15973960985890673,0.07138708963890802,-0.07683194848659411,0.005507402061739247,0.20362803976508678,0.2143383145380725,0.17432869451654676,0.07355002206089085,0.14815057795566072,0.25652325284892863,0.16533329701014765,0.07055782430301684,0.2761202089796207,0.1291466395559623,0.10231924794137934,0.0942871938608578,0.2300246394200573,0.03072455755776239,0.14808579623703513,-0.02246564495167555,0.17233672465628283,0.11821665612069687,0.06244860547731035,0.04105314956117481,0.020290963895415223,0.09240751248204185,0.34637128732657574,0.19554656943543716,0.03421247171860703,0.22094499390192224,0.15724990543153813,0.33726636444352276,0.12916775929248087,0.2010520753435101,0.1721185581138433,-0.0025095276724128035,0.11749768826478245,0.010092100224826511,0.19369419321783185,0.16427356321529324,0.178634295290787,0.10385108691870473,0.20034479313432466,0.07968958696040333,0.12843853262501495,0.21915347272181743,0.0683374753449492,0.13834911595950267,0.22034242475870008,0.04950213711792413,-0.09937741202978592,0.1575266994377155,0.12917043082393478,0.279574173199984,0.041766339248530696,0.14847801814512673,0.10508508114330403,0.21398094727436792,0.14625489291109,0.151907646645247,0.1149337740185685,0.11897641370744476,0.096772736784692,0.04299244351069685,0.1217181368605845,0.12522703505863714,0.15209586315730753,0.1835542211349512,0.2318588408802698,0.09867252459706038,0.11094625540048068,0.10773175526909123,0.020001885370483363,0.1149363110912038,0.319256471262246,0.0939537489170737,0.14429074663961478,0.08620279407153969,0.1656739691775414,0.07298486170653398,0.18544179503035996,-0.03258756761631823,0.19739550136106698,0.22391618337222124,0.1743891471117698,0.3924067184537982,0.16385018090334014,0.12174893464124784,0.262443959765998,0.07789508553608238,0.04314081515275198,0.219435723043996,0.027356202932918627,0.08267112963606307,0.1515406009362896,-0.009157606893690468,0.1711997207413417,0.1054118183066576,0.050663829572773614,0.27685674142909017,0.29894186753243485,0.09420271893531859,0.2393942348122004,0.1543405201937283,0.18257176992697957,0.2974128492048209,0.18131757069965515,0.12153216889370791,0.00081549809851586,-0.027775454086030327,0.1709224030373702,0.27956927075016363,0.16873493138073736,0.20037773937737519,0.08097321723141912,0.3103343723240666,0.17624926274462563,0.2274764406069063,0.23376943631112418,0.10592945653325159,0.08057037892674923,0.12769635994827727,0.18036673917759882,0.3796453396948484,0.18638608661309639,0.34808525633604703,0.15023446508548008,0.21115196151925747,0.20916058602299523,0.10172288462234844,0.15451868053147622,0.1498464440875903,0.2220234265191524,0.06929972411268889,0.2630753008725947,0.20823619080216285,0.05683477731311906,0.0038512185766089446,0.1998345937842413,0.17778115135606937,0.16011154452343995,0.24988940507901786,0.1885808735048349,0.13275108896212148,0.30005740372671674,0.41520661431098654,0.11466644007174567,0.265196834138931,0.0438622029980449,0.06831976344339469,0.043351217757958777,0.21397271788513786,0.3112026144792439,0.0783788705816574,0.22695439188242067,0.08403615247007228,0.15703652406297328,0.2121458940977525,0.31359653639900376,0.1299299314400073,0.0345022555243301,0.14612146765794445,0.13021906726842553,0.07471851485403337,0.04894131206937581,-0.02770216582265478,0.08482379500177947,0.17015114463504996,0.2308908085128974,0.1464443795851911,0.10736112146408516,0.14169264480692098,0.0923284070261827,0.04737507003626182,0.17408335450978085,0.3366717319661042,-0.04315974819161306,0.15747515965503076,0.10068041837014777,0.1379304278454016,0.23451758143376836,0.07877230419183684,0.1733821521249981,0.2249868697410239,0.14044089374536015,0.30630978471393977,0.19527330539502202,0.1059817510822727,0.15464955745001055,-0.06729016640096486,0.06618762069248806,-0.15982649527513693,0.2542511967471844,0.11347876384824948,0.11206784704887957,0.19402638258534513,-0.07719390804650852,0.08389045043012572,-0.01461887327677766,0.20991328111591817,0.09199711909730136,0.12053056104459978,0.20742190101491198,0.11317293047956664,0.22721514770350731,0.17148165245178532,0.15230940820869895,0.17706311129554778,0.09279974506903332,0.22016128907283,0.11858583953853209,0.1306807397856582,0.08688434943369981,0.1327694972764689,-0.06975464873593218,0.15640289097630777,0.38373895812368874,0.28879807984320555,0.1296067899464382,0.0012121892065720674,0.2636534649157536,-0.048024528862681715,0.017940606953273944,0.2903916876872131,-0.08686306510251554,0.20436922329230084,0.035329204747999846,0.23645978163429177,0.3261653389964969,0.04674281298935584,0.10207533401296581,0.23774455272614808,0.30067067881112414,0.18919182141389018,-0.036445389842288206,0.028756655296376957,0.24181715590537958,-0.02098691363255309,0.019716044507799527,0.1843124572212224,0.11188584929886687,0.21858846820892458,0.03460294892956117,0.25038631026651686,0.04710280653370352,0.04370724130905734,0.12606620922029013,0.16097541868962634,0.11942465723821519,0.0031131285587102098,0.09471704305459262,0.10579495239360412,0.13857642292940903,-0.0413584950220158,0.2509723423162375,0.15765824941757342,0.24291753722901022,0.2062685583477783,-0.05569839434339363,0.24580119664328537,0.10031922348844743,0.23162618418144437,0.20226842798864042,0.22218570186186865,0.06335303738450593,-0.03626428893197933,-0.06323142157048392,0.07705029479182972,0.09700596356347428,0.06682320764725312,0.15631733051999117,0.14998676003267786,0.01763416752525268,0.051094046655435266,0.07924453534308451,0.16110637413296913,0.2309094213327822,0.20633276329124164,0.3152771346309021,0.22234563105812577,0.15974212965899862,0.09994665670515604,0.22874034667965382,0.3048521513836464,0.16351713709816307,0.2011704456751252,0.09282233669126723,0.3069441839467433,0.23262389873648914,0.0721386523380045,0.055907243757990735,-0.18134561122544968,0.21931696277679597,0.25135829051412384,0.11481286506697404,0.3539002669565865,0.21707233177138402,0.26435507696099614,0.1662182600899309,0.20113991228421269,0.14417406692994986,0.07897517054260264,0.15489073858506153,0.18499030795582255,0.07730671794942004,0.18304778843648642,0.17600185252076872,0.150300567607624,0.022143092684453552,0.2775628888696612,0.1086014006191896,0.26275105232192686,0.2431363523028494,0.17838340855958648]],["cat",["1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2"]],["__label",["1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2"]]]}}},"view":{"type":"object","name":"CDSView","id":"p1424","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1425"}}},"glyph":{"type":"object","name":"Circle","id":"p1420","attributes":{"x":{"type":"field","field":"Area"},"y":{"type":"field","field":"cat","transform":{"type":"object","name":"Jitter","id":"p1416","attributes":{"width":0.1,"distribution":"normal","range":{"id":"p1367"}}}},"line_color":{"type":"field","field":"cat","transform":{"type":"object","name":"CategoricalColorMapper","id":"p1412","attributes":{"palette":["#1f77b3","#ff7e0e","#2ba02b","#d62628","#9367bc","#8c564b","#e277c1","#7e7e7e","#bcbc21","#16bdcf","#3a0182","#004201","#0fffa8","#5d003f","#bcbcff","#d8afa1","#b80080","#004d52","#6b6400","#7c0100","#6026ff","#ffff9a","#564964","#8cb893","#93fbff","#018267","#90ff00","#8200a0","#ac8944","#5b3400","#ffbff2","#ff6e75","#798cff","#dd00ff","#505646","#004489","#ffbf60","#ff018c","#bdc8cf","#af97b5","#b65600","#017000","#cd87ff","#1cd646","#bfebc3","#7997b5","#a56089","#6e8956","#bc7c75","#8a2844","#00acff","#8ed4ff","#4b6d77","#00d4b1","#9300f2","#8a9500","#5d5b9e","#fddfba","#00939e","#ffdb00","#00aa79","#520067","#000091","#0a5d3d","#a5e275","#623b41","#c6c689","#ff9eb5","#cd4f6b","#ff07d6","#8a3a05","#7e3d70","#ff4901","#602ba5","#1c00ff","#e6dfff","#aa3baf","#d89c00","#a3a39e","#3f69ff","#46490c","#7b6985","#6b978c","#ff9a75","#835bff","#7c6b46","#80b654","#bc0049","#fd93ff","#5d0018","#89d1d1","#9c8cd3","#da6d42","#8a5700","#3b5069","#4b6b3b","#edcfd8","#cfedff","#aa1500","#dfff4f","#ff2a56","#d1499e","#707cb8","#598000","#00e4fd","#774b95","#67d48c","#3d3a72","#ac413f","#d6a166","#c169cd","#69595d","#87aced","#a0a569","#d1aae6","#870062","#00fddb","#672818","#b342ff","#0e59c4","#168742","#90d300","#cd7900","#f959ff","#5b7466","#8eaeb3","#9c7c8c","#4600c6","#6b4d2d","#a56d46","#9e8972","#a8afca","#cd8ca7","#00fd64","#917900","#ff62a1","#f4ffd8","#018cf0","#13aca0","#5b2d59","#89859e","#cfccba","#d4afc4","#dbdd6d","#cffff4","#006485","#006962","#a84167","#2d97c4","#a874ff","#26ba5d","#57b600","#caffa7","#a379aa","#ffbc93","#89e2c1","#0fc8ff","#d400c4","#626d89","#69858e","#4b4d52","#aa6067","#79b5d4","#2b5916","#9a0024","#bdd1f2","#896e67","#69a56b","#855467","#aecdba","#87997e","#cadb00","#9a0390","#ebbc1a","#eb9cd1","#70006e","#b1a131","#ca6b93","#4146a3","#e48c89","#d44400","#c68aca","#b69597","#d41f75","#724bcc","#674d00","#672138","#38564f","#6ebaaa","#853a31","#a5d397","#b8af8e","#d8e4df","#aa00df","#cac1db","#ffdf8c","#e2524d","#66696e","#ff001c","#522d72","#4d906b","#a86d11","#ff9e26","#5ea3af","#c88556","#915997","#a3a1ff","#fdbaba","#242a87","#dbe6a8","#97f2a7","#6793d6","#ba5b3f","#3a5d91","#364f2f","#267c95","#89959a","#cfb356","#004664","#5e5d2f","#8e8e41","#ac3f13","#69953b","#a13d85","#bfb6ba","#acc667","#6469cf","#91af00","#2be2da","#016e36","#ff7952","#42807e","#4fe800","#995428","#5d0a00","#a30057","#0c8700","#5982a7","#ffebfb","#4b6901","#8775d4","#e6c6ff","#a5ffda","#d86e77","#df014b","#69675b","#776ba1","#7e8067","#594685","#0000ca","#7c002a","#97ff72","#b5e2e1","#db52c8","#777734","#57bd8e"],"factors":["1","2"]}}},"line_alpha":{"type":"value","value":0.5},"fill_color":{"type":"field","field":"cat","transform":{"id":"p1412"}},"fill_alpha":{"type":"value","value":0.5},"hatch_color":{"type":"field","field":"cat","transform":{"id":"p1412"}},"hatch_alpha":{"type":"value","value":0.5}}},"nonselection_glyph":{"type":"object","name":"Circle","id":"p1421","attributes":{"x":{"type":"field","field":"Area"},"y":{"type":"field","field":"cat","transform":{"id":"p1416"}},"line_color":{"type":"field","field":"cat","transform":{"id":"p1412"}},"line_alpha":{"type":"value","value":0.1},"fill_color":{"type":"field","field":"cat","transform":{"id":"p1412"}},"fill_alpha":{"type":"value","value":0.1},"hatch_color":{"type":"field","field":"cat","transform":{"id":"p1412"}},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"Circle","id":"p1422","attributes":{"x":{"type":"field","field":"Area"},"y":{"type":"field","field":"cat","transform":{"id":"p1416"}},"line_color":{"type":"field","field":"cat","transform":{"id":"p1412"}},"line_alpha":{"type":"value","value":0.2},"fill_color":{"type":"field","field":"cat","transform":{"id":"p1412"}},"fill_alpha":{"type":"value","value":0.2},"hatch_color":{"type":"field","field":"cat","transform":{"id":"p1412"}},"hatch_alpha":{"type":"value","value":0.2}}}}},{"type":"object","name":"GlyphRenderer","id":"p1439","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1427","attributes":{"selected":{"type":"object","name":"Selection","id":"p1428","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1429"},"data":{"type":"map","entries":[["middle",[0.0014403987996878724,0.1464443795851911]],["bottom",[-0.07412883592944211,0.07968958696040333]],["top",[0.06767928347892749,0.20916058602299523]],["top_whisker",[0.27605544122720355,0.3924067184537982]],["bottom_whisker",[-0.2727475259945262,-0.09937741202978592]],["cat",["1","2"]],["__label",["1","2"]]]}}},"view":{"type":"object","name":"CDSView","id":"p1440","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1441"}}},"glyph":{"type":"object","name":"Segment","id":"p1436","attributes":{"x0":{"type":"field","field":"top"},"y0":{"type":"field","field":"cat"},"x1":{"type":"field","field":"top_whisker"},"y1":{"type":"field","field":"cat"},"line_width":{"type":"value","value":2}}},"nonselection_glyph":{"type":"object","name":"Segment","id":"p1437","attributes":{"x0":{"type":"field","field":"top"},"y0":{"type":"field","field":"cat"},"x1":{"type":"field","field":"top_whisker"},"y1":{"type":"field","field":"cat"},"line_alpha":{"type":"value","value":0.1},"line_width":{"type":"value","value":2}}},"muted_glyph":{"type":"object","name":"Segment","id":"p1438","attributes":{"x0":{"type":"field","field":"top"},"y0":{"type":"field","field":"cat"},"x1":{"type":"field","field":"top_whisker"},"y1":{"type":"field","field":"cat"},"line_alpha":{"type":"value","value":0.2},"line_width":{"type":"value","value":2}}}}},{"type":"object","name":"GlyphRenderer","id":"p1448","attributes":{"data_source":{"id":"p1427"},"view":{"type":"object","name":"CDSView","id":"p1449","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1450"}}},"glyph":{"type":"object","name":"Segment","id":"p1445","attributes":{"x0":{"type":"field","field":"bottom"},"y0":{"type":"field","field":"cat"},"x1":{"type":"field","field":"bottom_whisker"},"y1":{"type":"field","field":"cat"},"line_width":{"type":"value","value":2}}},"nonselection_glyph":{"type":"object","name":"Segment","id":"p1446","attributes":{"x0":{"type":"field","field":"bottom"},"y0":{"type":"field","field":"cat"},"x1":{"type":"field","field":"bottom_whisker"},"y1":{"type":"field","field":"cat"},"line_alpha":{"type":"value","value":0.1},"line_width":{"type":"value","value":2}}},"muted_glyph":{"type":"object","name":"Segment","id":"p1447","attributes":{"x0":{"type":"field","field":"bottom"},"y0":{"type":"field","field":"cat"},"x1":{"type":"field","field":"bottom_whisker"},"y1":{"type":"field","field":"cat"},"line_alpha":{"type":"value","value":0.2},"line_width":{"type":"value","value":2}}}}},{"type":"object","name":"GlyphRenderer","id":"p1457","attributes":{"data_source":{"id":"p1427"},"view":{"type":"object","name":"CDSView","id":"p1458","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1459"}}},"glyph":{"type":"object","name":"HBar","id":"p1454","attributes":{"y":{"type":"field","field":"cat"},"height":{"type":"value","value":0.1},"left":{"type":"field","field":"top_whisker"},"right":{"type":"field","field":"top_whisker"},"line_width":{"type":"value","value":2},"fill_color":{"type":"value","value":"#1f77b4"}}},"nonselection_glyph":{"type":"object","name":"HBar","id":"p1455","attributes":{"y":{"type":"field","field":"cat"},"height":{"type":"value","value":0.1},"left":{"type":"field","field":"top_whisker"},"right":{"type":"field","field":"top_whisker"},"line_alpha":{"type":"value","value":0.1},"line_width":{"type":"value","value":2},"fill_color":{"type":"value","value":"#1f77b4"},"fill_alpha":{"type":"value","value":0.1},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"HBar","id":"p1456","attributes":{"y":{"type":"field","field":"cat"},"height":{"type":"value","value":0.1},"left":{"type":"field","field":"top_whisker"},"right":{"type":"field","field":"top_whisker"},"line_alpha":{"type":"value","value":0.2},"line_width":{"type":"value","value":2},"fill_color":{"type":"value","value":"#1f77b4"},"fill_alpha":{"type":"value","value":0.2},"hatch_alpha":{"type":"value","value":0.2}}}}},{"type":"object","name":"GlyphRenderer","id":"p1466","attributes":{"data_source":{"id":"p1427"},"view":{"type":"object","name":"CDSView","id":"p1467","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1468"}}},"glyph":{"type":"object","name":"HBar","id":"p1463","attributes":{"y":{"type":"field","field":"cat"},"height":{"type":"value","value":0.1},"left":{"type":"field","field":"bottom_whisker"},"right":{"type":"field","field":"bottom_whisker"},"line_width":{"type":"value","value":2},"fill_color":{"type":"value","value":"#1f77b4"}}},"nonselection_glyph":{"type":"object","name":"HBar","id":"p1464","attributes":{"y":{"type":"field","field":"cat"},"height":{"type":"value","value":0.1},"left":{"type":"field","field":"bottom_whisker"},"right":{"type":"field","field":"bottom_whisker"},"line_alpha":{"type":"value","value":0.1},"line_width":{"type":"value","value":2},"fill_color":{"type":"value","value":"#1f77b4"},"fill_alpha":{"type":"value","value":0.1},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"HBar","id":"p1465","attributes":{"y":{"type":"field","field":"cat"},"height":{"type":"value","value":0.1},"left":{"type":"field","field":"bottom_whisker"},"right":{"type":"field","field":"bottom_whisker"},"line_alpha":{"type":"value","value":0.2},"line_width":{"type":"value","value":2},"fill_color":{"type":"value","value":"#1f77b4"},"fill_alpha":{"type":"value","value":0.2},"hatch_alpha":{"type":"value","value":0.2}}}}},{"type":"object","name":"GlyphRenderer","id":"p1475","attributes":{"data_source":{"id":"p1427"},"view":{"type":"object","name":"CDSView","id":"p1476","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1477"}}},"glyph":{"type":"object","name":"HBar","id":"p1472","attributes":{"y":{"type":"field","field":"cat"},"height":{"type":"value","value":0.4},"left":{"type":"field","field":"bottom"},"right":{"type":"field","field":"top"},"fill_color":{"type":"value","value":null}}},"nonselection_glyph":{"type":"object","name":"HBar","id":"p1473","attributes":{"y":{"type":"field","field":"cat"},"height":{"type":"value","value":0.4},"left":{"type":"field","field":"bottom"},"right":{"type":"field","field":"top"},"line_alpha":{"type":"value","value":0.1},"fill_color":{"type":"value","value":null},"fill_alpha":{"type":"value","value":0.1},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"HBar","id":"p1474","attributes":{"y":{"type":"field","field":"cat"},"height":{"type":"value","value":0.4},"left":{"type":"field","field":"bottom"},"right":{"type":"field","field":"top"},"line_alpha":{"type":"value","value":0.2},"fill_color":{"type":"value","value":null},"fill_alpha":{"type":"value","value":0.2},"hatch_alpha":{"type":"value","value":0.2}}}}},{"type":"object","name":"GlyphRenderer","id":"p1484","attributes":{"data_source":{"id":"p1427"},"view":{"type":"object","name":"CDSView","id":"p1485","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1486"}}},"glyph":{"type":"object","name":"HBar","id":"p1481","attributes":{"y":{"type":"field","field":"cat"},"height":{"type":"value","value":0.4},"left":{"type":"field","field":"middle"},"right":{"type":"field","field":"middle"},"line_width":{"type":"value","value":2},"fill_color":{"type":"value","value":"#1f77b4"}}},"nonselection_glyph":{"type":"object","name":"HBar","id":"p1482","attributes":{"y":{"type":"field","field":"cat"},"height":{"type":"value","value":0.4},"left":{"type":"field","field":"middle"},"right":{"type":"field","field":"middle"},"line_alpha":{"type":"value","value":0.1},"line_width":{"type":"value","value":2},"fill_color":{"type":"value","value":"#1f77b4"},"fill_alpha":{"type":"value","value":0.1},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"HBar","id":"p1483","attributes":{"y":{"type":"field","field":"cat"},"height":{"type":"value","value":0.4},"left":{"type":"field","field":"middle"},"right":{"type":"field","field":"middle"},"line_alpha":{"type":"value","value":0.2},"line_width":{"type":"value","value":2},"fill_color":{"type":"value","value":"#1f77b4"},"fill_alpha":{"type":"value","value":0.2},"hatch_alpha":{"type":"value","value":0.2}}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p1372","attributes":{"tools":[{"type":"object","name":"PanTool","id":"p1397"},{"type":"object","name":"WheelZoomTool","id":"p1398"},{"type":"object","name":"BoxZoomTool","id":"p1399","attributes":{"overlay":{"type":"object","name":"BoxAnnotation","id":"p1400","attributes":{"syncable":false,"level":"overlay","visible":false,"left_units":"canvas","right_units":"canvas","bottom_units":"canvas","top_units":"canvas","line_color":"black","line_alpha":1.0,"line_width":2,"line_dash":[4,4],"fill_color":"lightgrey","fill_alpha":0.5}}}},{"type":"object","name":"SaveTool","id":"p1401"},{"type":"object","name":"ResetTool","id":"p1402"},{"type":"object","name":"HelpTool","id":"p1403"}]}},"left":[{"type":"object","name":"CategoricalAxis","id":"p1391","attributes":{"ticker":{"type":"object","name":"CategoricalTicker","id":"p1394"},"formatter":{"type":"object","name":"CategoricalTickFormatter","id":"p1392"},"major_label_policy":{"type":"object","name":"AllLabels","id":"p1393"}}}],"below":[{"type":"object","name":"LinearAxis","id":"p1384","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1387","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1385"},"axis_label":"Area","major_label_policy":{"type":"object","name":"AllLabels","id":"p1386"}}}],"center":[{"type":"object","name":"Grid","id":"p1390","attributes":{"axis":{"id":"p1384"}}},{"type":"object","name":"Grid","id":"p1396","attributes":{"dimension":1,"axis":{"id":"p1391"},"grid_line_color":null}}]}}]}};
+  const render_items = [{"docid":"26450b70-0e99-485b-904a-9d56dcec8abd","roots":{"p1368":"f93a39b0-4818-4621-aeb6-9451c738da5d"},"root_ids":["p1368"]}];
+  root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined) {
+    embed_document(root);
+  } else {
+    let attempts = 0;
+    const timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else {
+        attempts++;
+        if (attempts > 100) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 10, root)
+  }
+})(window);</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">normaltest</span>
+
+<span class="n">k2</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">normaltest</span><span class="p">(</span><span class="n">d1</span><span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">])</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">1e-3</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;p = </span><span class="si">{:g}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;null hypothesis: Data1 comes from a normal distribution&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="n">alpha</span><span class="p">:</span>  <span class="c1"># null hypothesis: Data1 comes from a normal distribution</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The null hypothesis can be rejected&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The null hypothesis cannot be rejected&quot;</span><span class="p">)</span>
+
+<span class="n">k2</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">normaltest</span><span class="p">(</span><span class="n">d2</span><span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">])</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">1e-3</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;p = </span><span class="si">{:g}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;null hypothesis: Data2  from a normal distribution&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="n">alpha</span><span class="p">:</span>  <span class="c1"># null hypothesis: Data2 (Aptamil) from a normal distribution</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The null hypothesis can be rejected&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The null hypothesis cannot be rejected&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>p = 0.343844
+null hypothesis: Data1 comes from a normal distribution
+The null hypothesis cannot be rejected
+p = 0.402473
+null hypothesis: Data2  from a normal distribution
+The null hypothesis cannot be rejected
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># t-test</span>
+<span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">seed</span>
+<span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">randn</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">ttest_ind</span>
+<span class="c1"># import random  </span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">sample</span> 
+<span class="n">data1</span><span class="o">=</span><span class="n">d1</span><span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">data2</span><span class="o">=</span><span class="n">d2</span><span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;null hypothesis: data sets are from the same distribution&#39;</span><span class="p">)</span>
+<span class="c1"># compare samples</span>
+<span class="n">stat</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">ttest_ind</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Statistics=</span><span class="si">%.3f</span><span class="s1">, p=</span><span class="si">%.16f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">stat</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
+<span class="c1"># interpret</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="k">if</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="n">alpha</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Same distribution (fail to reject H0)&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Different distribution (reject H0)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>null hypothesis: data sets are from the same distribution
+Statistics=-9.765, p=0.0000000000000000
+Different distribution (reject H0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mann-Whitney U test</span>
+<span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">seed</span>
+<span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">randn</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">mannwhitneyu</span>
+<span class="c1"># import random  </span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">sample</span> 
+<span class="n">data1</span><span class="o">=</span><span class="n">d1</span><span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">data2</span><span class="o">=</span><span class="n">d2</span><span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;null hypothesis: data sets are from the same distribution&#39;</span><span class="p">)</span>
+<span class="c1"># compare samples</span>
+<span class="n">stat</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">mannwhitneyu</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Statistics=</span><span class="si">%.3f</span><span class="s1">, p=</span><span class="si">%.16f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">stat</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
+<span class="c1"># interpret</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="k">if</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="n">alpha</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Same distribution (fail to reject H0)&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Different distribution (reject H0)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>null hypothesis: data sets are from the same distribution
+Statistics=1682.000, p=0.0000000000000005
+Different distribution (reject H0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">watermark</span> <span class="kn">import</span> <span class="n">watermark</span>
+<span class="n">watermark</span><span class="p">(</span><span class="n">iversions</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">globals_</span><span class="o">=</span><span class="nb">globals</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">watermark</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">watermark</span><span class="p">(</span><span class="n">packages</span><span class="o">=</span><span class="s2">&quot;watermark,numpy,scipy,pandas,matplotlib,bokeh,statannotations&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Last updated: 2023-01-05T13:43:49.111960+01:00
+
+Python implementation: CPython
+Python version       : 3.9.15
+IPython version      : 8.8.0
+
+Compiler    : MSC v.1929 64 bit (AMD64)
+OS          : Windows
+Release     : 10
+Machine     : AMD64
+Processor   : Intel64 Family 6 Model 85 Stepping 7, GenuineIntel
+CPU cores   : 40
+Architecture: 64bit
+
+watermark      : 2.3.1
+numpy          : 1.23.5
+scipy          : 1.10.0
+pandas         : 1.5.2
+matplotlib     : 3.6.2
+bokeh          : 3.0.3
+statannotations: 0.5.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Statistics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="readme.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Statistics examples</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="06_Statannotations-Tutorial-1.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Showing statistical significance on seaborn plots with Statannotations</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Martin Schatz<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

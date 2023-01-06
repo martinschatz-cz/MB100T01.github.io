@@ -1,0 +1,83 @@
+Traceback (most recent call last):
+  File "C:\Users\schatzm\Anaconda3\envs\ju-book\Lib\site-packages\jupyter_cache\executors\utils.py", line 51, in single_nb_execution
+    executenb(
+  File "C:\Users\schatzm\Anaconda3\envs\ju-book\Lib\site-packages\nbclient\client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\schatzm\Anaconda3\envs\ju-book\Lib\site-packages\nbclient\util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\schatzm\Anaconda3\envs\ju-book\Lib\site-packages\nbclient\util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\schatzm\Anaconda3\envs\ju-book\Lib\asyncio\base_events.py", line 650, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\schatzm\Anaconda3\envs\ju-book\Lib\contextlib.py", line 222, in __aexit__
+    await self.gen.athrow(typ, value, traceback)
+  File "C:\Users\schatzm\Anaconda3\envs\ju-book\Lib\site-packages\nbclient\client.py", line 608, in async_setup_kernel
+    yield
+  File "C:\Users\schatzm\Anaconda3\envs\ju-book\Lib\site-packages\nbclient\client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\schatzm\Anaconda3\envs\ju-book\Lib\site-packages\nbclient\client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\schatzm\Anaconda3\envs\ju-book\Lib\site-packages\nbclient\client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+#We can plot easily in Python like in matlab, just import the relevant package!
+%matplotlib inline
+import matplotlib.pyplot as plt
+
+x_vals = [-2, -1, 0, 1, 2]
+y_vals = [-4, -2, 0, 2, 4]
+plt.plot(x_vals, y_vals)
+------------------
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [1;32mIn[6], line 2[0m
+[0;32m      1[0m [38;5;66;03m#We can plot easily in Python like in matlab, just import the relevant package![39;00m
+[1;32m----> 2[0m [43mget_ipython[49m[43m([49m[43m)[49m[38;5;241;43m.[39;49m[43mrun_line_magic[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mmatplotlib[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43minline[39;49m[38;5;124;43m'[39;49m[43m)[49m
+[0;32m      3[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m [38;5;28;01mas[39;00m [38;5;21;01mplt[39;00m
+[0;32m      5[0m x_vals [38;5;241m=[39m [[38;5;241m-[39m[38;5;241m2[39m, [38;5;241m-[39m[38;5;241m1[39m, [38;5;241m0[39m, [38;5;241m1[39m, [38;5;241m2[39m]
+
+File [1;32m~\Anaconda3\envs\ju-book\Lib\site-packages\IPython\core\interactiveshell.py:2369[0m, in [0;36mInteractiveShell.run_line_magic[1;34m(self, magic_name, line, _stack_depth)[0m
+[0;32m   2367[0m     kwargs[[38;5;124m'[39m[38;5;124mlocal_ns[39m[38;5;124m'[39m] [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mget_local_scope(stack_depth)
+[0;32m   2368[0m [38;5;28;01mwith[39;00m [38;5;28mself[39m[38;5;241m.[39mbuiltin_trap:
+[1;32m-> 2369[0m     result [38;5;241m=[39m [43mfn[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+[0;32m   2370[0m [38;5;28;01mreturn[39;00m result
+
+File [1;32m~\Anaconda3\envs\ju-book\Lib\site-packages\IPython\core\magics\pylab.py:99[0m, in [0;36mPylabMagics.matplotlib[1;34m(self, line)[0m
+[0;32m     97[0m     [38;5;28mprint[39m([38;5;124m"[39m[38;5;124mAvailable matplotlib backends: [39m[38;5;132;01m%s[39;00m[38;5;124m"[39m [38;5;241m%[39m backends_list)
+[0;32m     98[0m [38;5;28;01melse[39;00m:
+[1;32m---> 99[0m     gui, backend [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mshell[49m[38;5;241;43m.[39;49m[43menable_matplotlib[49m[43m([49m[43margs[49m[38;5;241;43m.[39;49m[43mgui[49m[38;5;241;43m.[39;49m[43mlower[49m[43m([49m[43m)[49m[43m [49m[38;5;28;43;01mif[39;49;00m[43m [49m[38;5;28;43misinstance[39;49m[43m([49m[43margs[49m[38;5;241;43m.[39;49m[43mgui[49m[43m,[49m[43m [49m[38;5;28;43mstr[39;49m[43m)[49m[43m [49m[38;5;28;43;01melse[39;49;00m[43m [49m[43margs[49m[38;5;241;43m.[39;49m[43mgui[49m[43m)[49m
+[0;32m    100[0m     [38;5;28mself[39m[38;5;241m.[39m_show_matplotlib_backend(args[38;5;241m.[39mgui, backend)
+
+File [1;32m~\Anaconda3\envs\ju-book\Lib\site-packages\IPython\core\interactiveshell.py:3522[0m, in [0;36mInteractiveShell.enable_matplotlib[1;34m(self, gui)[0m
+[0;32m   3501[0m [38;5;28;01mdef[39;00m [38;5;21menable_matplotlib[39m([38;5;28mself[39m, gui[38;5;241m=[39m[38;5;28;01mNone[39;00m):
+[0;32m   3502[0m [38;5;250m    [39m[38;5;124;03m"""Enable interactive matplotlib and inline figure support.[39;00m
+[0;32m   3503[0m 
+[0;32m   3504[0m [38;5;124;03m    This takes the following steps:[39;00m
+[1;32m   (...)[0m
+[0;32m   3520[0m [38;5;124;03m        display figures inline.[39;00m
+[0;32m   3521[0m [38;5;124;03m    """[39;00m
+[1;32m-> 3522[0m     [38;5;28;01mfrom[39;00m [38;5;21;01mmatplotlib_inline[39;00m[38;5;21;01m.[39;00m[38;5;21;01mbackend_inline[39;00m [38;5;28;01mimport[39;00m configure_inline_support
+[0;32m   3524[0m     [38;5;28;01mfrom[39;00m [38;5;21;01mIPython[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcore[39;00m [38;5;28;01mimport[39;00m pylabtools [38;5;28;01mas[39;00m pt
+[0;32m   3525[0m     gui, backend [38;5;241m=[39m pt[38;5;241m.[39mfind_gui_and_backend(gui, [38;5;28mself[39m[38;5;241m.[39mpylab_gui_select)
+
+File [1;32m~\Anaconda3\envs\ju-book\Lib\site-packages\matplotlib_inline\__init__.py:1[0m
+[1;32m----> 1[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m [38;5;28;01mimport[39;00m backend_inline, config  [38;5;66;03m# noqa[39;00m
+[0;32m      2[0m __version__ [38;5;241m=[39m [38;5;124m"[39m[38;5;124m0.1.6[39m[38;5;124m"[39m  [38;5;66;03m# noqa[39;00m
+
+File [1;32m~\Anaconda3\envs\ju-book\Lib\site-packages\matplotlib_inline\backend_inline.py:6[0m
+[0;32m      1[0m [38;5;124;03m"""A matplotlib backend for publishing figures via display_data"""[39;00m
+[0;32m      3[0m [38;5;66;03m# Copyright (c) IPython Development Team.[39;00m
+[0;32m      4[0m [38;5;66;03m# Distributed under the terms of the BSD 3-Clause License.[39;00m
+[1;32m----> 6[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m
+[0;32m      7[0m [38;5;28;01mfrom[39;00m [38;5;21;01mmatplotlib[39;00m [38;5;28;01mimport[39;00m colors
+[0;32m      8[0m [38;5;28;01mfrom[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mbackends[39;00m [38;5;28;01mimport[39;00m backend_agg
+
+[1;31mModuleNotFoundError[0m: No module named 'matplotlib'
+ModuleNotFoundError: No module named 'matplotlib'
+

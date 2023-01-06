@@ -1,0 +1,763 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>pMoSS: p-value Model using the Sample Size &#8212; MB100T01 Advanced Image Analysis Course</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">MB100T01 Advanced Image Analysis Course</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    Welcome to MB100T01 Course
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../Introduction/readme.html">
+   MB100T01 Advanced Image Analysis Course
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../Python_Introduction/readme.html">
+     Brief introduction to Python
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../Python_Introduction/01_Python_Basics.html">
+       Introduction to Python in Jupyter Notebook/Google Colab
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../Pandas_Introduction/readme.html">
+   Introduction to Pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../Pandas_Introduction/02_intro_to_pandas.html">
+     Introduction to Pandas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../Ploting_Introduction/readme.html">
+   Intro to plotting in Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../Ploting_Introduction/03_seaborn_introduction.html">
+     An introduction to seaborn
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../Ploting_Introduction/04_seaborn_distributions.html">
+     Visualizing distributions of data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../Ploting_Introduction/05_seaborn_categorical.html">
+     Visualizing categorical data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../Ploting_Introduction/02_BONUS_plotting_with_matplotlib.html">
+     Charting in Colaboratory
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../readme.html">
+   Statistics examples
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../06_statistics.html">
+     Statistic overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../06_Statannotations-Tutorial-1.html">
+     Showing statistical significance on seaborn plots with Statannotations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../07_big_data_statistics.html">
+     Exercise
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../07_big_data_statistics_SOLUTION.html">
+     Big Data definition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../07_seaborn_big_data_statistics_SOLUTION.html">
+     Big Data seaborn Solution
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FStatistics/pMoss/pMoSS-master/README.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/Statistics/pMoss/pMoSS-master/README.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installation">
+   Installation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#local-machine">
+     Local Machine
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#google-colab">
+     Google Colab
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#get-pmoss-ready-in-google-colab">
+       Get pMoSS ready in Google Colab
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#analysis-of-new-data-using-google-colab">
+       Analysis of new data using Google Colab
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#system-requirements">
+   System requirements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#examples">
+   Examples
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#feedback-and-contributions">
+   Feedback and contributions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conditions-of-use">
+   Conditions of use
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>pMoSS: p-value Model using the Sample Size</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installation">
+   Installation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#local-machine">
+     Local Machine
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#google-colab">
+     Google Colab
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#get-pmoss-ready-in-google-colab">
+       Get pMoSS ready in Google Colab
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#analysis-of-new-data-using-google-colab">
+       Analysis of new data using Google Colab
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#system-requirements">
+   System requirements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#examples">
+   Examples
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#feedback-and-contributions">
+   Feedback and contributions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conditions-of-use">
+   Conditions of use
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="pmoss-p-value-model-using-the-sample-size">
+<h1>pMoSS: <em><strong>p</strong>-value</em> <strong>Mo</strong>del using the <strong>S</strong>ample <strong>S</strong>ize<a class="headerlink" href="#pmoss-p-value-model-using-the-sample-size" title="Permalink to this headline">#</a></h1>
+<p><a class="reference external" href="https://www.anaconda.com/distribution/"><img alt="minimal Python version" src="https://img.shields.io/badge/Python%3E%3D-3.6-6666ff.svg" /></a>
+<a class="reference external" href="https://spdx.org/licenses/BSD-3-Clause-Clear.html"><img alt="License" src="https://img.shields.io/badge/License-BSD%203--Clause--Clear-orange.svg" /></a></p>
+<p>pMoSS (<em><strong>p</strong>-value</em> <strong>Mo</strong>del using the <strong>S</strong>ample <strong>S</strong>ize) is a Python code to model the <em>p-value</em> as an n-dependent function using Monte Carlo cross-validation.</p>
+<p>This statistical method uses the relationship between the <em>p-value</em> and the sample size to characterize the data of an experiment and decide, robustly, when the null hypothesis can be rejected.</p>
+<p>The method uses Monte Carlo cross-validation to estimate the distribution of the <em>p-value</em> using samples of different sizes, and fits an exponential curve. When the <em>p-value</em> of a certain statistical hypothesis test is treated as a function of <strong>n</strong>, it is possible to get quantitative indicators of the data, such as the decay of the function or the minimum data size needed to get statistically significant differences (<strong>n<sub>α</sub></strong>).</p>
+<p><img alt="" src="https://github.com/BIIG-UC3M/pMoSS/blob/master/images/pvalue_function.png" /></p>
+<p>The following figure illustrates a common output of the method. Here the cell body roundness is tested when cancer cells are treated with Taxol.</p>
+<p><img alt="" src="https://github.com/BIIG-UC3M/pMoSS/blob/master/images/cell_roundness_taxol.png" /></p>
+<blockquote>
+<div><p>(Leftmost) The cell roundness distribution of control cells and cells treated at 1 nM Taxol have lower values than that of cells treated at 50 nM. (Right) The three groups were compared, the <em>p-values</em> were estimated and <strong>p(n)</strong> was fitted for each pair of compared groups. When Taxol at 50 nM is evaluated (blue and yellow dashed curves), <strong>n<sub>α</sub></strong> is lower and the decay of <strong>p(n)</strong> is higher (<strong>a</strong> and <strong>c</strong> parameters  of the exponential function <img src="https://latex.codecogs.com/svg.latex?\Large&space;ae^{-cn}" title="\Large ae^{-cn}" /> ), i.e. it decreases much faster than the one corresponding comparison of control and Taxol at 1 nM (orange curve).</p>
+</div></blockquote>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
+<p>This package is tested on Python 3.6 and 3.7.
+The code can be used either in a local machine or in <a class="reference external" href="https://colab.research.google.com/notebooks/welcome.ipynb#recent=true">Google Colab</a>.</p>
+<section id="local-machine">
+<h3>Local Machine<a class="headerlink" href="#local-machine" title="Permalink to this headline">#</a></h3>
+<p>You need to have Python installed previously. For non-expert users, it is highly recommended to download the <a class="reference external" href="https://www.continuum.io/downloads">Anaconda distribution</a> of Python to obtain the dependencies easily.</p>
+<p>Create a new virtual environment with Python 3 and avoid any version compatibility issues. There are three different ways to do it:</p>
+<ul>
+<li><p>Create a virtual environment with <a class="reference external" href="https://docs.python.org/3/tutorial/venv.html">Python</a> (advanced users).</p></li>
+<li><p>Open <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">Anaconda Prompt</a> and create a virtual environment called <code class="docutils literal notranslate"><span class="pre">your_virtualenv</span></code> using <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span></code>:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>your_virtualenv<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.6
+</pre></div>
+</div>
+</li>
+<li><p>Open <a class="reference external" href="https://docs.anaconda.com/anaconda/navigator/tutorials/manage-environments/">Anaconda Navigator</a> and create a virtual environment using the GUI.</p></li>
+</ul>
+<p>Download or <a class="reference external" href="https://help.github.com/articles/cloning-a-repository">clone</a> this repository in your local machine.</p>
+<p>Open Anaconda Prompt and activate your virtual environment using <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span></code>:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>your_virtualenv
+</pre></div>
+</div>
+<p>Once <code class="docutils literal notranslate"><span class="pre">your_virtualnv</span></code> is activated, place the working path in the directory where you downloaded/cloned this repository:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>to/the/directory/where/code/and/requirements.txt/are/located/
+</pre></div>
+</div>
+<p>Install all the packages specified in the requirements file with <code class="docutils literal notranslate"><span class="pre">pip</span></code>:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+<p>To run the notebook of the examples, you can install <a class="reference external" href="https://jupyter.readthedocs.io/en/latest/index.html">Jupyter Notebook</a> either using Anaconda Navigator or Anaconda Prompt. Do not forget to do it in your virtual environment. So if necessary, activate <code class="docutils literal notranslate"><span class="pre">your_virtualenv</span></code>using <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span></code> (as it was done in previous lines) and install Jupyter with the following command:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip3<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+pip3<span class="w"> </span>install<span class="w"> </span>jupyter
+jupyter<span class="w"> </span>notebook
+</pre></div>
+</div>
+<p>In Jupyter, you have access to the directories in your local machine. Open the notebook in the examples and run the code written on it.</p>
+</section>
+<section id="google-colab">
+<h3>Google Colab<a class="headerlink" href="#google-colab" title="Permalink to this headline">#</a></h3>
+<p>Open the notebook of the examples in Google Colab (File -&gt; Open notebook… -&gt; GitHub -&gt; URL to the notebook). Note that you need to save a copy of this notebook in your drive to keep any change (File -&gt; Save a copy in Drive)</p>
+<p>Add the following code lines at the beginning of the notebook:</p>
+<ul class="simple">
+<li><p>If the code and data are located in your drive, then you need to mount it so Google Colab can access to your private files. Otherwise, you can skip this step.</p></li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>from<span class="w"> </span>google.colab<span class="w"> </span>import<span class="w"> </span>drive
+drive.mount<span class="o">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="o">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Clone this github repository:</p></li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>!git<span class="w"> </span>clone<span class="w"> </span>https://github.com/BIIG-UC3M/pMoSS.git
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Install the requirements:</p></li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>!pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>/content/pMoSS/requirements.txt
+</pre></div>
+</div>
+<ul>
+<li><p>Modify the first line of the notebook indicating the correct path:</p>
+<ul>
+<li><p>If you cloned the repository:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load the path containing all the functions to use pMoSS</span>
+from<span class="w"> </span>sys<span class="w"> </span>import<span class="w"> </span>path
+path.append<span class="o">(</span><span class="s1">&#39;/content/pMoSS/pMoSS/&#39;</span><span class="o">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>If you have the entire code in your drive:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load the path containing all the functions to use pMoSS</span>
+from<span class="w"> </span>sys<span class="w"> </span>import<span class="w"> </span>path
+path.append<span class="o">(</span><span class="s1">&#39;/content/drive/My Drive/the_path_in_your_drive/pMoSS/pMoSS/&#39;</span><span class="o">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>Update the path to the data indicating the correct path:</p></li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>r<span class="s1">&#39;/content/pMoSS/data/morphology/&#39;</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>r<span class="s1">&#39;/content/drive/My Drive/path_to_the_data_in_your_drive/&#39;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>If necessary, update the name of the data:</p></li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">file_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>r<span class="s1">&#39;new_data.xlsx&#39;</span>
+</pre></div>
+</div>
+<p>You are ready to run the code in the notebook!</p>
+<section id="get-pmoss-ready-in-google-colab">
+<h4>Get pMoSS ready in Google Colab<a class="headerlink" href="#get-pmoss-ready-in-google-colab" title="Permalink to this headline">#</a></h4>
+<p><img alt="Analysis of new data in Google Colab" src="https://github.com/BIIG-UC3M/pMoSS/blob/master/images/data_analysis.png" /></p>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=sT1eHp8ZVUk">https://www.youtube.com/watch?v=sT1eHp8ZVUk</a></p>
+</section>
+<section id="analysis-of-new-data-using-google-colab">
+<h4>Analysis of new data using Google Colab<a class="headerlink" href="#analysis-of-new-data-using-google-colab" title="Permalink to this headline">#</a></h4>
+<p><img alt="Analysis of new data in Google Colab" src="https://github.com/BIIG-UC3M/pMoSS/blob/master/images/new_data_analysis.png" /></p>
+<p><a class="reference external" href="https://youtu.be/2iNj96r0N7U">https://youtu.be/2iNj96r0N7U</a></p>
+</section>
+</section>
+</section>
+<section id="system-requirements">
+<h2>System requirements<a class="headerlink" href="#system-requirements" title="Permalink to this headline">#</a></h2>
+<p>Operating systems.</p>
+<ul class="simple">
+<li><p>Windows</p></li>
+<li><p>Mac OSX</p></li>
+<li><p>Linux</p></li>
+</ul>
+<p>Python version and packages:</p>
+<ul class="simple">
+<li><p>Python 3.6 (or newer)</p></li>
+<li><p>numpy</p></li>
+<li><p>scipy&gt;=1.1.0</p></li>
+<li><p>pandas</p></li>
+<li><p>matplotlib</p></li>
+<li><p>xlrd&gt;=1.0.0</p></li>
+<li><p>seaborn</p></li>
+<li><p>statsmodels&gt;=0.9.0</p></li>
+<li><p>glob2</p></li>
+<li><p>pytest-shutil</p></li>
+</ul>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">#</a></h2>
+<p>You can find examples of data analysis in the example folder. A Google Colab notebook is provided for a quick test.</p>
+<p>Please, note that the software is not implemented for GPU so Monte Carlo cross-validation takes quite a long time. The user can target the process by observing for a certain <strong>n</strong>-value, when a entire cross-validation has finished.</p>
+<p>Get the latest version of the code in the <a class="reference external" href="https://github.com/BIIG-UC3M/pMoSS/releases">Releases</a>. There you will find a data.zip file which contains the estimated <em>p-values</em> of the examples:</p>
+<ul class="simple">
+<li><p><em>p-values</em> for the morphology changes with the increase of cellular age.</p></li>
+<li><p><em>p-values</em> for the morphology changes in cancer cells and their protrusions after being treated with Taxol.</p></li>
+</ul>
+<p>To avoid heavy computations and make a quick test of the code, download the data. Then, place it into the folder of the cloned repository, so the links in the notebooks work properly. Otherwise, change the links in the notebooks.</p>
+</section>
+<section id="feedback-and-contributions">
+<h2>Feedback and contributions<a class="headerlink" href="#feedback-and-contributions" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>All kind of feedback is welcome. Specially if it supports the use of the code and a better understanding on how to work with it.</p></li>
+<li><p>Controbutions are also welcome. Please, create a new pull request on a new development branch to add new features, correct bugs or make changes in the code.</p></li>
+<li><p>Please, if possible, use GitHub <a class="reference external" href="https://github.com/esgomezm/pMoSS/issues">Issues</a> to report any bug or ask questions.</p></li>
+</ul>
+</section>
+<section id="conditions-of-use">
+<h2>Conditions of use<a class="headerlink" href="#conditions-of-use" title="Permalink to this headline">#</a></h2>
+<p>pMoSS is an open-source software (OSS) under the BSD 2-Clause License. All the resources provided here are freely available for non-commercial and research purposes. Their use for any other purpose is generally possible, but solely with the explicit permission of the authors. You are expected to include adequate references whenever you present or publish results that are based on the resources provided.</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<p>E. Gómez-de-Mariscal, A. Sneider, H. Jayatilaka, J. M. Phillip, D. Wirtz and A. Muñoz-Barrutia, “Confronting p-hacking: addressing p-value dependence on sample size.” BiorXiv, 2019.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Statistics\pMoss\pMoSS-master"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Martin Schatz<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

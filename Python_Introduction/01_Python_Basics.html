@@ -1,0 +1,937 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Introduction to Python in Jupyter Notebook/Google Colab &#8212; MB100T01 Advanced Image Analysis Course</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Intro to plotting in Python" href="../Ploting_Introduction/readme.html" />
+    <link rel="prev" title="Overview of functions" href="overview.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">MB100T01 Advanced Image Analysis Course</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to MB100T01 Course
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../Introduction/readme.html">
+   Intro to Python
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="overview.html">
+     Overview of functions
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Introduction to Python in Jupyter Notebook/Google Colab
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ploting_Introduction/readme.html">
+   Intro to plotting in Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ploting_Introduction/notebooks.html">
+     Content with notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ploting_Introduction/markdown-notebooks.html">
+     Notebooks with MyST Markdown
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Python_Introduction/01_Python_Basics.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPython_Introduction/01_Python_Basics.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/Python_Introduction/01_Python_Basics.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Introduction to Python in Jupyter Notebook/Google Colab
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-google-colab">
+   1.1 What is Google Colab
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-basics">
+   1.2 Python Basics
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-i-hope-you-ll-get-out-of-this-tutorial">
+     1.2.1 What I hope you’ll get out of this tutorial
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#why-python">
+       1.2.1.1 Why Python?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#markdown-sidenote">
+       1.2.1.2 Markdown Sidenote
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#latex-sidenote">
+       1.2.1.3 LaTeX Sidenote
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     1.2.2 Python Basics
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#variables">
+       1.2.2.1 Variables
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#more-complicated-data-types">
+       1.2.2.2 More Complicated Data Types
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#using-variables">
+       1.2.2.3 Using Variables
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#importing-in-python-math-and-plotting">
+       1.2.2.4 Importing in Python: Math and plotting
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#loops-in-python">
+       1.2.2.5 Loops in Python
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#additional-resources">
+     1.2.3 Additional Resources
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Introduction to Python in Jupyter Notebook/Google Colab</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Introduction to Python in Jupyter Notebook/Google Colab
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-google-colab">
+   1.1 What is Google Colab
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-basics">
+   1.2 Python Basics
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-i-hope-you-ll-get-out-of-this-tutorial">
+     1.2.1 What I hope you’ll get out of this tutorial
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#why-python">
+       1.2.1.1 Why Python?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#markdown-sidenote">
+       1.2.1.2 Markdown Sidenote
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#latex-sidenote">
+       1.2.1.3 LaTeX Sidenote
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     1.2.2 Python Basics
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#variables">
+       1.2.2.1 Variables
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#more-complicated-data-types">
+       1.2.2.2 More Complicated Data Types
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#using-variables">
+       1.2.2.3 Using Variables
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#importing-in-python-math-and-plotting">
+       1.2.2.4 Importing in Python: Math and plotting
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#loops-in-python">
+       1.2.2.5 Loops in Python
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#additional-resources">
+     1.2.3 Additional Resources
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <!--NOTEBOOK_HEADER-->
+<p><em>This notebook contains material from <a class="reference external" href="https://jckantor.github.io/CBE30338">CBE30338</a>;
+content is available <a class="reference external" href="https://github.com/jckantor/CBE30338.git">on Github</a>.</em></p>
+<!--NAVIGATION-->
+<p>&lt; <a class="reference external" href="https://jckantor.github.io/CBE30338/01.01-Getting-Started-with-Python-and-Jupyter-Notebooks.html">1.1 Getting Started with Python and Jupyter Notebooks</a> | <span class="xref myst">Contents</span> | <span class="xref myst">Tag Index</span> | <a class="reference external" href="https://jckantor.github.io/CBE30338/01.03-Python-Conditionals-and-Libraries.html">1.3 Python Conditionals and Libraries</a><p><a href="https://colab.research.google.com/github/jckantor/CBE30338/blob/master/docs/01.02-Python-Basics.ipynb"> <img align="left" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" title="Open in Google Colaboratory"></a><p><a href="https://jckantor.github.io/CBE30338/01.02-Python-Basics.ipynb"> <img align="left" src="https://img.shields.io/badge/Github-Download-blue.svg" alt="Download" title="Download Notebook"></a></p>
+<section class="tex2jax_ignore mathjax_ignore" id="introduction-to-python-in-jupyter-notebook-google-colab">
+<h1>Introduction to Python in Jupyter Notebook/Google Colab<a class="headerlink" href="#introduction-to-python-in-jupyter-notebook-google-colab" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>-q<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="what-is-google-colab">
+<h1>1.1 What is Google Colab<a class="headerlink" href="#what-is-google-colab" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>Free to use for non-commercial use</p></li>
+<li><p>Easy access to high computational power (CPUs, GPUs)</p></li>
+<li><p>Easy start (no need to install or tune)</p></li>
+<li><p>Connected to Google Drive</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="python-basics">
+<h1>1.2 Python Basics<a class="headerlink" href="#python-basics" title="Permalink to this headline">#</a></h1>
+<p><strong>An edit of Tutorial by Jacob Gerace</strong></p>
+<section id="what-i-hope-you-ll-get-out-of-this-tutorial">
+<h2>1.2.1 What I hope you’ll get out of this tutorial<a class="headerlink" href="#what-i-hope-you-ll-get-out-of-this-tutorial" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>The feeling that you’ll “know where to start” when you see python code.</p></li>
+<li><p>(You won’t be a python expert after one hour)</p></li>
+<li><p>Basics to variables, lists, conditionals, functions, loops, and the numpy package.</p></li>
+<li><p>Resources to look further</p></li>
+</ul>
+<section id="why-python">
+<h3>1.2.1.1 Why Python?<a class="headerlink" href="#why-python" title="Permalink to this headline">#</a></h3>
+<ol class="simple">
+<li><p>Clean syntax</p></li>
+<li><p>The same code can run on all Operating Systems</p></li>
+<li><p><strong>Extensive first and third party libraries (of particular note for our purposes is NumPy)</strong></p></li>
+</ol>
+</section>
+<section id="markdown-sidenote">
+<h3>1.2.1.2 Markdown Sidenote<a class="headerlink" href="#markdown-sidenote" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>This text is written in a Markdown block. Markdown is straightforward way to format writeups in Jupyter, but I won’t cover it here for the sake of brevity.</p></li>
+<li><p>See if you can use Markdown in your next homework, here’s a link that explains the formatting: <a class="reference external" href="https://daringfireball.net/projects/markdown/syntax">https://daringfireball.net/projects/markdown/syntax</a> .</p></li>
+<li><p>You can also look at existing Markdown examples (i.e. this worksheet) and emulate the style. Double click a Markdown box in Jupyter to show the code.</p></li>
+</ul>
+</section>
+<section id="latex-sidenote">
+<h3>1.2.1.3 LaTeX Sidenote<a class="headerlink" href="#latex-sidenote" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>LaTeX (pronounced “La-tech”) is a language itself used widely to write documents with symbolic math</p></li>
+<li><p>When you add a mathematical formula to these markdown blocks, the math is in LaTeX.</p></li>
+<li><p>Ex from class: $<span class="math notranslate nohighlight">\(V \frac{dC}{dt} = u(t) - Q C(t)\)</span>$</p></li>
+<li><p>A good resource: <a class="reference external" href="https://en.wikibooks.org/wiki/LaTeX/Mathematics">https://en.wikibooks.org/wiki/LaTeX/Mathematics</a></p></li>
+</ul>
+</section>
+</section>
+<section id="id1">
+<h2>1.2.2 Python Basics<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<section id="variables">
+<h3>1.2.2.1 Variables<a class="headerlink" href="#variables" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="s1">&#39;1&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#A variable stores a piece of data and gives it a name</span>
+<span class="n">answer</span> <span class="o">=</span> <span class="mi">42</span>
+
+<span class="c1">#answer contained an integer because we gave it an integer!</span>
+
+<span class="n">is_it_thursday</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">is_it_wednesday</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="c1">#these both are &#39;booleans&#39; or true/false values</span>
+
+<span class="n">pi_approx</span> <span class="o">=</span> <span class="mf">3.1415</span>
+
+<span class="c1">#This will be a floating point number, or a number containing digits after the decimal point</span>
+
+<span class="n">my_name</span> <span class="o">=</span> <span class="s2">&quot;Jacob&quot;</span>
+<span class="c1">#This is a string datatype, the name coming from a string of characters</span>
+
+<span class="c1">#Data doesn&#39;t have to be a singular unit</span>
+
+<span class="c1">#p.s., we can print all of these with a print command. For Example:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pi_approx</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
+3.1415
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="more-complicated-data-types">
+<h3>1.2.2.2 More Complicated Data Types<a class="headerlink" href="#more-complicated-data-types" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#What if we want to store many integers? We need a list!</span>
+<span class="n">prices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
+
+<span class="c1">#This is a way to define a list in place. We can also make an empty list and add to it.</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">colors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Green&quot;</span><span class="p">)</span>
+<span class="n">colors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Blue&quot;</span><span class="p">)</span>
+<span class="n">colors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Red&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
+
+<span class="c1">#We can also add unlike data to a list</span>
+<span class="n">prices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Sixty&quot;</span><span class="p">)</span>
+
+<span class="c1">#As an exercise, look up lists in python and find out how to add in the middle of a list!</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
+<span class="c1">#We can access a specific element of a list too:</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">colors</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">colors</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+
+<span class="c1">#Notice here how the first element of the list is index 0, not 1! </span>
+<span class="c1">#Languages like MATLAB are 1 indexed, be careful!</span>
+
+<span class="c1">#In addition to lists, there are tuples</span>
+<span class="c1">#Tuples behave very similarly to lists except that you can&#39;t change them </span>
+<span class="c1"># after you make them</span>
+
+<span class="c1">#An empty Tuple isn&#39;t very useful:</span>
+<span class="n">empty_tuple</span> <span class="o">=</span> <span class="p">()</span>
+
+<span class="c1">#Nor is a tuple with just one value:</span>
+<span class="n">one_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;first&quot;</span><span class="p">,)</span>
+
+<span class="c1">#But tuples with many values are useful:</span>
+<span class="n">rosa_parks_info</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Rosa&quot;</span><span class="p">,</span> <span class="s2">&quot;Parks&quot;</span><span class="p">,</span> <span class="mi">1913</span><span class="p">,</span> <span class="s2">&quot;February&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="c1">#You can access tuples just like lists</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rosa_parks_info</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">rosa_parks_info</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># You cannot modify existing tuples, but you can make new tuples that extend </span>
+<span class="c1"># the information.</span>
+<span class="c1"># I expect Tuples to come up less than lists. So we&#39;ll just leave it at that. </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Green&#39;, &#39;Blue&#39;, &#39;Red&#39;]
+[10, 20, 30, 40, 50, &#39;Sixty&#39;]
+Green
+Red
+Rosa Parks
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="using-variables">
+<h3>1.2.2.3 Using Variables<a class="headerlink" href="#using-variables" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">float1</span> <span class="o">=</span> <span class="mf">5.75</span>
+<span class="n">float2</span> <span class="o">=</span> <span class="mf">2.25</span>
+<span class="c1">#Addition, subtraction, multiplication, division are as you expect</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">float1</span> <span class="o">+</span> <span class="n">float2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">float1</span> <span class="o">-</span> <span class="n">float2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">float1</span> <span class="o">*</span> <span class="n">float2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">float1</span> <span class="o">/</span> <span class="n">float2</span><span class="p">)</span>
+
+<span class="c1">#Here&#39;s an interesting one that showed up in the first homework in 2017. Modulus: </span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.0
+3.5
+12.9375
+2.5555555555555554
+1
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="importing-in-python-math-and-plotting">
+<h3>1.2.2.4 Importing in Python: Math and plotting<a class="headerlink" href="#importing-in-python-math-and-plotting" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Just about every standard math function on a calculator has a python equivalent pre made.</span>
+<span class="c1">#however, they are from the &#39;math&#39; package in python. Let&#39;s add that package!</span>
+<span class="kn">import</span> <span class="nn">math</span> <span class="k">as</span> <span class="nn">m</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">float1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">float2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="c1"># There is a quicker way to write exponents if you want:</span>
+<span class="nb">print</span><span class="p">(</span><span class="mf">2.0</span><span class="o">**</span><span class="mf">5.0</span><span class="p">)</span>
+
+<span class="c1">#Like in MATLAB, you can expand the math to entire lists</span>
+<span class="n">list3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">list3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.749199854809259
+9.487735836358526
+32.0
+32.0
+[1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#We can plot easily in Python like in matlab, just import the relevant package!</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">x_vals</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">y_vals</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_vals</span><span class="p">,</span> <span class="n">y_vals</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x2b1fa2c9cd0&gt;]
+</pre></div>
+</div>
+<img alt="../_images/01_Python_Basics_20_1.png" src="../_images/01_Python_Basics_20_1.png" />
+</div>
+</div>
+</section>
+<section id="loops-in-python">
+<h3>1.2.2.5 Loops in Python<a class="headerlink" href="#loops-in-python" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Repeat code until a conditional statement ends the loop</span>
+
+<span class="c1">#Let&#39;s try printing a list</span>
+<span class="n">fib</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+
+<span class="c1">#While loops are the basic type</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">fib</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">fib</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+    
+<span class="c1">#In matlab, to do the same thing you would have the conditional as: counter &lt; (length(fib) + 1)</span>
+<span class="c1">#This is because matlab starts indexing at 1, and python starts at 0.</span>
+    
+<span class="c1">#The above type of loop is so common that the &#39;for&#39; loop is the way to write it faster.</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Let&#39;s try that again&quot;</span><span class="p">)</span>
+<span class="c1">#This is most similar to for loops in matlab</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">fib</span><span class="p">))</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">fib</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;One more time:&quot;</span><span class="p">)</span>
+<span class="c1">#Or you can do so even neater</span>
+<span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">fib</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+1
+2
+3
+5
+8
+Let&#39;s try that again
+1
+1
+2
+3
+5
+8
+One more time:
+1
+1
+2
+3
+5
+8
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="additional-resources">
+<h2>1.2.3 Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>If you still feel VERY lost: <a class="reference external" href="https://www.codecademy.com/learn/python">Code Academy</a></p></li>
+<li><p>If you want a good reference site: <a class="reference external" href="https://docs.python.org/2/reference/">Official Python Reference</a></p></li>
+<li><p>If you want to learn python robustly: <a class="reference external" href="https://learnpythonthehardway.org/book/">Learn Python the Hard Way</a></p></li>
+<li><p>Feel free to contact me at: <strong>jgerace (at) nd (dot) edu</strong></p></li>
+</ul>
+<!--NAVIGATION-->
+<p>&lt; <a class="reference external" href="https://jckantor.github.io/CBE30338/01.01-Getting-Started-with-Python-and-Jupyter-Notebooks.html">1.1 Getting Started with Python and Jupyter Notebooks</a> | <span class="xref myst">Contents</span> | <span class="xref myst">Tag Index</span> | <a class="reference external" href="https://jckantor.github.io/CBE30338/01.03-Python-Conditionals-and-Libraries.html">1.3 Python Conditionals and Libraries</a><p><a href="https://colab.research.google.com/github/jckantor/CBE30338/blob/master/docs/01.02-Python-Basics.ipynb"> <img align="left" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" title="Open in Google Colaboratory"></a><p><a href="https://jckantor.github.io/CBE30338/01.02-Python-Basics.ipynb"> <img align="left" src="https://img.shields.io/badge/Github-Download-blue.svg" alt="Download" title="Download Notebook"></a></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Python_Introduction"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="overview.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Overview of functions</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../Ploting_Introduction/readme.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Intro to plotting in Python</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Martin Schatz<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

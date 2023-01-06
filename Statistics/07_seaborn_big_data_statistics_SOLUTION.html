@@ -1,0 +1,2190 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Big Data seaborn Solution &#8212; MB100T01 Advanced Image Analysis Course</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Big Data definition" href="07_big_data_statistics_SOLUTION.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">MB100T01 Advanced Image Analysis Course</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to MB100T01 Course
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Introduction/readme.html">
+   Intro to Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Python_Introduction/readme.html">
+     Brief introduction to Python
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Python_Introduction/01_Python_Basics.html">
+       Introduction to Python in Jupyter Notebook/Google Colab
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Pandas_Introduction/readme.html">
+   Introduction to Pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Pandas_Introduction/02_intro_to_pandas.html">
+     Introduction to Pandas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ploting_Introduction/readme.html">
+   Intro to plotting in Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ploting_Introduction/03_seaborn_introduction.html">
+     An introduction to seaborn
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ploting_Introduction/04_seaborn_distributions.html">
+     Visualizing distributions of data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ploting_Introduction/05_seaborn_categorical.html">
+     Visualizing categorical data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ploting_Introduction/02_BONUS_plotting_with_matplotlib.html">
+     Charting in Colaboratory
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="readme.html">
+   Statistics examples
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="06_statistics.html">
+     Statistic overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06_Statannotations-Tutorial-1.html">
+     Showing statistical significance on seaborn plots with Statannotations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07_big_data_statistics.html">
+     Exercise
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07_big_data_statistics_SOLUTION.html">
+     Big Data definition
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Big Data seaborn Solution
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Statistics/07_seaborn_big_data_statistics_SOLUTION.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FStatistics/07_seaborn_big_data_statistics_SOLUTION.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/Statistics/07_seaborn_big_data_statistics_SOLUTION.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Big Data seaborn Solution
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#big-data-definition">
+     Big Data definition
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solution">
+     Solution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practical-example">
+   Practical example
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#microstructure-of-infant-formula-related-to-its-function-in-2d">
+     MICROSTRUCTURE OF INFANT FORMULA  RELATED TO ITS FUNCTION in 2D
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#goal">
+     Goal
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#expected-results-from-3d-measurements">
+     Expected results from 3D measurements
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Big Data seaborn Solution</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Big Data seaborn Solution
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#big-data-definition">
+     Big Data definition
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solution">
+     Solution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practical-example">
+   Practical example
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#microstructure-of-infant-formula-related-to-its-function-in-2d">
+     MICROSTRUCTURE OF INFANT FORMULA  RELATED TO ITS FUNCTION in 2D
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#goal">
+     Goal
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#expected-results-from-3d-measurements">
+     Expected results from 3D measurements
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="big-data-seaborn-solution">
+<h1>Big Data seaborn Solution<a class="headerlink" href="#big-data-seaborn-solution" title="Permalink to this headline">#</a></h1>
+<section id="big-data-definition">
+<h2>Big Data definition<a class="headerlink" href="#big-data-definition" title="Permalink to this headline">#</a></h2>
+<p><strong>Big Data</strong> - files that are complicated to process using conventional computer or software.</p>
+</section>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h2>
+<p>Table with more than 1,048,576 rows would be impossible to process in MS Excel. Python, R and MatLab are limited by RAM and memory.</p>
+</section>
+<section id="solution">
+<h2>Solution<a class="headerlink" href="#solution" title="Permalink to this headline">#</a></h2>
+<p>Use specialized environment as Metacentrum computers, specialized servers (Mazlík) or Google Collab!</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="practical-example">
+<h1>Practical example<a class="headerlink" href="#practical-example" title="Permalink to this headline">#</a></h1>
+<section id="microstructure-of-infant-formula-related-to-its-function-in-2d">
+<h2>MICROSTRUCTURE OF INFANT FORMULA  RELATED TO ITS FUNCTION in 2D<a class="headerlink" href="#microstructure-of-infant-formula-related-to-its-function-in-2d" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Infant formula</p>
+<ul>
+<li><p>pH 7</p></li>
+<li><p>drag5 (Far-Red)</p></li>
+<li><p>processed using starDist</p></li>
+<li><p>660 000 rows. 35 columns of data (350+ MB csv file)</p></li>
+<li><p>Dataset/Results_aptamil.csv</p></li>
+</ul>
+</li>
+<li><p>Human milk (pH 7)</p>
+<ul>
+<li><p>pH 7</p></li>
+<li><p>drag5 (Far-Red)</p></li>
+<li><p>processed using starDist</p></li>
+<li><p>1 650 000 rows. 35 columns of data (150+ MB csv file)</p></li>
+<li><p>Dataset/Results_MM.csv</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="goal">
+<h2>Goal<a class="headerlink" href="#goal" title="Permalink to this headline">#</a></h2>
+<ol class="simple">
+<li><p>Load both data sets</p></li>
+<li><p>Clear NaN values</p></li>
+<li><p>Visualize Area distribution</p></li>
+<li><p>Decide statistical distribution (parametric/nonparametric)</p></li>
+<li><p>Define statistic hypothesis</p></li>
+<li><p>Compare Area distributions</p></li>
+</ol>
+</section>
+<section id="expected-results-from-3d-measurements">
+<h2>Expected results from 3D measurements<a class="headerlink" href="#expected-results-from-3d-measurements" title="Permalink to this headline">#</a></h2>
+<p><img alt="Results" src="../_images/res.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>-q<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data1Path</span> <span class="o">=</span> <span class="s2">&quot;Dataset/Results_MM.csv&quot;</span> <span class="c1">#@param {type:&quot;string&quot;}</span>
+
+<span class="n">data1</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data1Path</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data1</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>Label</th>
+      <th>Area</th>
+      <th>Mean</th>
+      <th>StdDev</th>
+      <th>Mode</th>
+      <th>Min</th>
+      <th>Max</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>...</th>
+      <th>%Area</th>
+      <th>RawIntDen</th>
+      <th>Slice</th>
+      <th>FeretX</th>
+      <th>FeretY</th>
+      <th>FeretAngle</th>
+      <th>MinFeret</th>
+      <th>AR</th>
+      <th>Round</th>
+      <th>Solidity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Data1</td>
+      <td>2541</td>
+      <td>56.0</td>
+      <td>0.0</td>
+      <td>56</td>
+      <td>56</td>
+      <td>56</td>
+      <td>598.54486</td>
+      <td>170.83176</td>
+      <td>...</td>
+      <td>100</td>
+      <td>142296.0</td>
+      <td>1</td>
+      <td>593</td>
+      <td>142</td>
+      <td>98.53077</td>
+      <td>55.75403</td>
+      <td>1.06228</td>
+      <td>0.94137</td>
+      <td>0.97319</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Data1</td>
+      <td>2419</td>
+      <td>96.0</td>
+      <td>0.0</td>
+      <td>96</td>
+      <td>96</td>
+      <td>96</td>
+      <td>2718.95432</td>
+      <td>624.50827</td>
+      <td>...</td>
+      <td>100</td>
+      <td>232224.0</td>
+      <td>1</td>
+      <td>2711</td>
+      <td>653</td>
+      <td>72.47443</td>
+      <td>52.97387</td>
+      <td>1.10986</td>
+      <td>0.90102</td>
+      <td>0.97032</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Data1</td>
+      <td>1855</td>
+      <td>4.0</td>
+      <td>0.0</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>237.42237</td>
+      <td>661.82938</td>
+      <td>...</td>
+      <td>100</td>
+      <td>7420.0</td>
+      <td>1</td>
+      <td>224</td>
+      <td>683</td>
+      <td>56.30993</td>
+      <td>48.00000</td>
+      <td>1.03663</td>
+      <td>0.96466</td>
+      <td>0.96867</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>Data1</td>
+      <td>2596</td>
+      <td>65.0</td>
+      <td>0.0</td>
+      <td>65</td>
+      <td>65</td>
+      <td>65</td>
+      <td>293.91371</td>
+      <td>820.11710</td>
+      <td>...</td>
+      <td>100</td>
+      <td>168740.0</td>
+      <td>1</td>
+      <td>266</td>
+      <td>807</td>
+      <td>163.66396</td>
+      <td>56.02472</td>
+      <td>1.05496</td>
+      <td>0.94790</td>
+      <td>0.97320</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>Data1</td>
+      <td>1409</td>
+      <td>31.0</td>
+      <td>0.0</td>
+      <td>31</td>
+      <td>31</td>
+      <td>31</td>
+      <td>2998.58375</td>
+      <td>1046.93364</td>
+      <td>...</td>
+      <td>100</td>
+      <td>43679.0</td>
+      <td>1</td>
+      <td>2989</td>
+      <td>1068</td>
+      <td>68.42869</td>
+      <td>39.00000</td>
+      <td>1.15185</td>
+      <td>0.86817</td>
+      <td>0.96739</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 36 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data1</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\schatzm\Anaconda3\envs\julab\lib\site-packages\numpy\lib\function_base.py:4527: RuntimeWarning: invalid value encountered in subtract
+  diff_b_a = subtract(b, a)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>Area</th>
+      <th>Mean</th>
+      <th>StdDev</th>
+      <th>Mode</th>
+      <th>Min</th>
+      <th>Max</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>XM</th>
+      <th>...</th>
+      <th>%Area</th>
+      <th>RawIntDen</th>
+      <th>Slice</th>
+      <th>FeretX</th>
+      <th>FeretY</th>
+      <th>FeretAngle</th>
+      <th>MinFeret</th>
+      <th>AR</th>
+      <th>Round</th>
+      <th>Solidity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>1.615323e+06</td>
+      <td>1.615323e+06</td>
+      <td>1.615323e+06</td>
+      <td>1.615323e+06</td>
+      <td>1.615323e+06</td>
+      <td>1.615323e+06</td>
+      <td>1.615323e+06</td>
+      <td>1.615323e+06</td>
+      <td>1.615323e+06</td>
+      <td>1.615323e+06</td>
+      <td>...</td>
+      <td>1615323.0</td>
+      <td>1.615323e+06</td>
+      <td>1615323.0</td>
+      <td>1.615323e+06</td>
+      <td>1.615323e+06</td>
+      <td>1.615323e+06</td>
+      <td>1.615323e+06</td>
+      <td>1.615323e+06</td>
+      <td>1.615323e+06</td>
+      <td>1.615323e+06</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>8.076620e+05</td>
+      <td>1.331084e+02</td>
+      <td>6.671007e+03</td>
+      <td>2.810688e+02</td>
+      <td>6.488793e+03</td>
+      <td>6.444779e+03</td>
+      <td>7.109614e+03</td>
+      <td>1.440901e+03</td>
+      <td>1.394038e+03</td>
+      <td>1.440899e+03</td>
+      <td>...</td>
+      <td>100.0</td>
+      <td>4.633171e+05</td>
+      <td>1.0</td>
+      <td>1.436129e+03</td>
+      <td>1.392875e+03</td>
+      <td>1.049987e+02</td>
+      <td>1.030235e+01</td>
+      <td>1.249056e+00</td>
+      <td>8.442305e-01</td>
+      <td>8.899525e-01</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>4.663037e+05</td>
+      <td>2.516350e+02</td>
+      <td>6.086050e+03</td>
+      <td>1.091096e+03</td>
+      <td>6.101919e+03</td>
+      <td>6.101029e+03</td>
+      <td>6.399855e+03</td>
+      <td>8.383394e+02</td>
+      <td>8.243418e+02</td>
+      <td>8.383402e+02</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>7.302585e+05</td>
+      <td>0.0</td>
+      <td>8.382947e+02</td>
+      <td>8.243501e+02</td>
+      <td>4.822601e+01</td>
+      <td>6.097962e+00</td>
+      <td>3.688458e-01</td>
+      <td>1.536807e-01</td>
+      <td>5.326279e-02</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1.000000e+00</td>
+      <td>1.200000e+01</td>
+      <td>1.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>1.000000e+00</td>
+      <td>1.000000e+00</td>
+      <td>1.000000e+00</td>
+      <td>3.409090e+00</td>
+      <td>3.166670e+00</td>
+      <td>3.409090e+00</td>
+      <td>...</td>
+      <td>100.0</td>
+      <td>7.000000e+01</td>
+      <td>1.0</td>
+      <td>1.000000e+00</td>
+      <td>1.000000e+00</td>
+      <td>1.507440e+00</td>
+      <td>3.000000e+00</td>
+      <td>1.000000e+00</td>
+      <td>1.111700e-01</td>
+      <td>3.585100e-01</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>4.038315e+05</td>
+      <td>3.700000e+01</td>
+      <td>1.956000e+03</td>
+      <td>0.000000e+00</td>
+      <td>1.768000e+03</td>
+      <td>1.723000e+03</td>
+      <td>2.069000e+03</td>
+      <td>7.161416e+02</td>
+      <td>6.896124e+02</td>
+      <td>7.161596e+02</td>
+      <td>...</td>
+      <td>100.0</td>
+      <td>1.616980e+05</td>
+      <td>1.0</td>
+      <td>7.120000e+02</td>
+      <td>6.880000e+02</td>
+      <td>5.446232e+01</td>
+      <td>7.000000e+00</td>
+      <td>1.061510e+00</td>
+      <td>8.218400e-01</td>
+      <td>8.709700e-01</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>8.076620e+05</td>
+      <td>5.800000e+01</td>
+      <td>4.868000e+03</td>
+      <td>0.000000e+00</td>
+      <td>4.595000e+03</td>
+      <td>4.534000e+03</td>
+      <td>5.249000e+03</td>
+      <td>1.434662e+03</td>
+      <td>1.368470e+03</td>
+      <td>1.434676e+03</td>
+      <td>...</td>
+      <td>100.0</td>
+      <td>3.169700e+05</td>
+      <td>1.0</td>
+      <td>1.430000e+03</td>
+      <td>1.367000e+03</td>
+      <td>1.255377e+02</td>
+      <td>8.000000e+00</td>
+      <td>1.109590e+00</td>
+      <td>9.012400e-01</td>
+      <td>9.014100e-01</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>1.211492e+06</td>
+      <td>1.160000e+02</td>
+      <td>9.709000e+03</td>
+      <td>0.000000e+00</td>
+      <td>9.492000e+03</td>
+      <td>9.442000e+03</td>
+      <td>1.045600e+04</td>
+      <td>2.148138e+03</td>
+      <td>2.046322e+03</td>
+      <td>2.148138e+03</td>
+      <td>...</td>
+      <td>100.0</td>
+      <td>5.530990e+05</td>
+      <td>1.0</td>
+      <td>2.143000e+03</td>
+      <td>2.045000e+03</td>
+      <td>1.444623e+02</td>
+      <td>1.100000e+01</td>
+      <td>1.216780e+00</td>
+      <td>9.420500e-01</td>
+      <td>9.230800e-01</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>1.615323e+06</td>
+      <td>2.469600e+04</td>
+      <td>3.233200e+04</td>
+      <td>1.428012e+04</td>
+      <td>3.233200e+04</td>
+      <td>3.233200e+04</td>
+      <td>3.233200e+04</td>
+      <td>3.189167e+03</td>
+      <td>3.226500e+03</td>
+      <td>3.189167e+03</td>
+      <td>...</td>
+      <td>100.0</td>
+      <td>1.135496e+08</td>
+      <td>1.0</td>
+      <td>3.187000e+03</td>
+      <td>3.228000e+03</td>
+      <td>1.791449e+02</td>
+      <td>1.612912e+02</td>
+      <td>8.994840e+00</td>
+      <td>1.000000e+00</td>
+      <td>1.000000e+00</td>
+    </tr>
+  </tbody>
+</table>
+<p>8 rows × 35 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data2Path</span> <span class="o">=</span> <span class="s2">&quot;Dataset/Results_aptamil.csv&quot;</span> <span class="c1">#@param {type:&quot;string&quot;}</span>
+
+<span class="n">data2</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data2Path</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>Label</th>
+      <th>Area</th>
+      <th>Mean</th>
+      <th>StdDev</th>
+      <th>Mode</th>
+      <th>Min</th>
+      <th>Max</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>...</th>
+      <th>%Area</th>
+      <th>RawIntDen</th>
+      <th>Slice</th>
+      <th>FeretX</th>
+      <th>FeretY</th>
+      <th>FeretAngle</th>
+      <th>MinFeret</th>
+      <th>AR</th>
+      <th>Round</th>
+      <th>Solidity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Data2</td>
+      <td>2776</td>
+      <td>15.0</td>
+      <td>0.0</td>
+      <td>15</td>
+      <td>15</td>
+      <td>15</td>
+      <td>2574.66967</td>
+      <td>80.45245</td>
+      <td>...</td>
+      <td>100</td>
+      <td>41640.0</td>
+      <td>1</td>
+      <td>2510</td>
+      <td>79</td>
+      <td>0.84876</td>
+      <td>29.09975</td>
+      <td>4.99331</td>
+      <td>0.20027</td>
+      <td>0.94857</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Data2</td>
+      <td>2628</td>
+      <td>14.0</td>
+      <td>0.0</td>
+      <td>14</td>
+      <td>14</td>
+      <td>14</td>
+      <td>1015.16629</td>
+      <td>128.37938</td>
+      <td>...</td>
+      <td>100</td>
+      <td>36792.0</td>
+      <td>1</td>
+      <td>1013</td>
+      <td>92</td>
+      <td>95.04245</td>
+      <td>53.00000</td>
+      <td>1.28544</td>
+      <td>0.77795</td>
+      <td>0.97010</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Data2</td>
+      <td>337</td>
+      <td>13.0</td>
+      <td>0.0</td>
+      <td>13</td>
+      <td>13</td>
+      <td>13</td>
+      <td>2602.27448</td>
+      <td>103.22404</td>
+      <td>...</td>
+      <td>100</td>
+      <td>4381.0</td>
+      <td>1</td>
+      <td>2598</td>
+      <td>93</td>
+      <td>105.25512</td>
+      <td>20.78831</td>
+      <td>1.07470</td>
+      <td>0.93050</td>
+      <td>0.92837</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>Data2</td>
+      <td>491</td>
+      <td>16.0</td>
+      <td>0.0</td>
+      <td>16</td>
+      <td>16</td>
+      <td>16</td>
+      <td>2038.76069</td>
+      <td>290.29837</td>
+      <td>...</td>
+      <td>100</td>
+      <td>7856.0</td>
+      <td>1</td>
+      <td>2030</td>
+      <td>280</td>
+      <td>127.69424</td>
+      <td>24.00000</td>
+      <td>1.05842</td>
+      <td>0.94480</td>
+      <td>0.96464</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>Data2</td>
+      <td>509</td>
+      <td>5.0</td>
+      <td>0.0</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>2717.95972</td>
+      <td>401.13654</td>
+      <td>...</td>
+      <td>100</td>
+      <td>2545.0</td>
+      <td>1</td>
+      <td>2706</td>
+      <td>408</td>
+      <td>33.11134</td>
+      <td>24.00000</td>
+      <td>1.09402</td>
+      <td>0.91406</td>
+      <td>0.95140</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 36 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data2</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\schatzm\Anaconda3\envs\julab\lib\site-packages\numpy\lib\function_base.py:4527: RuntimeWarning: invalid value encountered in subtract
+  diff_b_a = subtract(b, a)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>Area</th>
+      <th>Mean</th>
+      <th>StdDev</th>
+      <th>Mode</th>
+      <th>Min</th>
+      <th>Max</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>XM</th>
+      <th>...</th>
+      <th>%Area</th>
+      <th>RawIntDen</th>
+      <th>Slice</th>
+      <th>FeretX</th>
+      <th>FeretY</th>
+      <th>FeretAngle</th>
+      <th>MinFeret</th>
+      <th>AR</th>
+      <th>Round</th>
+      <th>Solidity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>666214.000000</td>
+      <td>666214.000000</td>
+      <td>666214.000000</td>
+      <td>666214.000000</td>
+      <td>666214.000000</td>
+      <td>666214.000000</td>
+      <td>666214.000000</td>
+      <td>666214.000000</td>
+      <td>666214.000000</td>
+      <td>666214.000000</td>
+      <td>...</td>
+      <td>666214.0</td>
+      <td>6.662140e+05</td>
+      <td>666214.0</td>
+      <td>666214.000000</td>
+      <td>666214.000000</td>
+      <td>666214.000000</td>
+      <td>666214.000000</td>
+      <td>666214.000000</td>
+      <td>666214.000000</td>
+      <td>666214.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>333107.500000</td>
+      <td>107.186941</td>
+      <td>4778.728803</td>
+      <td>107.668110</td>
+      <td>4758.339600</td>
+      <td>4671.752471</td>
+      <td>4898.814561</td>
+      <td>1462.707549</td>
+      <td>1378.698306</td>
+      <td>1462.708680</td>
+      <td>...</td>
+      <td>100.0</td>
+      <td>2.964580e+05</td>
+      <td>1.0</td>
+      <td>1458.731747</td>
+      <td>1377.911724</td>
+      <td>97.782395</td>
+      <td>8.929439</td>
+      <td>1.235981</td>
+      <td>0.834769</td>
+      <td>0.890030</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>192319.560456</td>
+      <td>303.942842</td>
+      <td>4594.148721</td>
+      <td>620.511333</td>
+      <td>4627.082933</td>
+      <td>4580.314488</td>
+      <td>4698.678348</td>
+      <td>820.313937</td>
+      <td>786.322358</td>
+      <td>820.315810</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>6.119494e+05</td>
+      <td>0.0</td>
+      <td>820.405865</td>
+      <td>786.316653</td>
+      <td>47.704262</td>
+      <td>5.969685</td>
+      <td>0.278721</td>
+      <td>0.120508</td>
+      <td>0.043218</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1.000000</td>
+      <td>11.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>3.425930</td>
+      <td>3.029410</td>
+      <td>3.425930</td>
+      <td>...</td>
+      <td>100.0</td>
+      <td>2.900000e+01</td>
+      <td>1.0</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>0.848760</td>
+      <td>3.000000</td>
+      <td>1.000000</td>
+      <td>0.078880</td>
+      <td>0.371820</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>166554.250000</td>
+      <td>31.000000</td>
+      <td>873.000000</td>
+      <td>0.000000</td>
+      <td>848.000000</td>
+      <td>830.000000</td>
+      <td>882.000000</td>
+      <td>765.134703</td>
+      <td>708.711415</td>
+      <td>765.137985</td>
+      <td>...</td>
+      <td>100.0</td>
+      <td>4.565525e+04</td>
+      <td>1.0</td>
+      <td>761.000000</td>
+      <td>708.000000</td>
+      <td>45.000000</td>
+      <td>6.000000</td>
+      <td>1.091640</td>
+      <td>0.791510</td>
+      <td>0.869570</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>333107.500000</td>
+      <td>46.000000</td>
+      <td>3257.365065</td>
+      <td>0.000000</td>
+      <td>3173.000000</td>
+      <td>3072.000000</td>
+      <td>3337.000000</td>
+      <td>1470.000000</td>
+      <td>1378.719670</td>
+      <td>1470.022270</td>
+      <td>...</td>
+      <td>100.0</td>
+      <td>1.744200e+05</td>
+      <td>1.0</td>
+      <td>1466.000000</td>
+      <td>1378.000000</td>
+      <td>116.565050</td>
+      <td>7.000000</td>
+      <td>1.158650</td>
+      <td>0.863080</td>
+      <td>0.894740</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>499660.750000</td>
+      <td>75.000000</td>
+      <td>7718.000000</td>
+      <td>0.000000</td>
+      <td>7704.000000</td>
+      <td>7545.000000</td>
+      <td>7952.000000</td>
+      <td>2163.673910</td>
+      <td>2044.148023</td>
+      <td>2163.689600</td>
+      <td>...</td>
+      <td>100.0</td>
+      <td>3.975745e+05</td>
+      <td>1.0</td>
+      <td>2160.000000</td>
+      <td>2044.000000</td>
+      <td>135.000000</td>
+      <td>9.000000</td>
+      <td>1.263408</td>
+      <td>0.916050</td>
+      <td>0.918600</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>666214.000000</td>
+      <td>58667.000000</td>
+      <td>21305.000000</td>
+      <td>10052.812470</td>
+      <td>21305.000000</td>
+      <td>21305.000000</td>
+      <td>21305.000000</td>
+      <td>3139.107140</td>
+      <td>3086.326090</td>
+      <td>3139.107140</td>
+      <td>...</td>
+      <td>100.0</td>
+      <td>2.731261e+08</td>
+      <td>1.0</td>
+      <td>3136.000000</td>
+      <td>3089.000000</td>
+      <td>179.292680</td>
+      <td>359.467960</td>
+      <td>12.677090</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+<p>8 rows × 35 columns</p>
+</div></div></div>
+</div>
+<p>use</p>
+<p>Select columns of interest</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d1Area</span> <span class="o">=</span> <span class="n">data1</span><span class="p">[[</span><span class="s1">&#39;Label&#39;</span><span class="p">,</span> <span class="s1">&#39;Area&#39;</span><span class="p">,</span><span class="s1">&#39;Feret&#39;</span><span class="p">,</span><span class="s1">&#39;AR&#39;</span><span class="p">]]</span>
+<span class="n">d2Area</span> <span class="o">=</span> <span class="n">data2</span><span class="p">[[</span><span class="s1">&#39;Label&#39;</span><span class="p">,</span> <span class="s1">&#39;Area&#39;</span><span class="p">,</span><span class="s1">&#39;Feret&#39;</span><span class="p">,</span><span class="s1">&#39;AR&#39;</span><span class="p">]]</span>
+
+<span class="n">d1Area</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+<span class="n">d2Area</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Label</th>
+      <th>Area</th>
+      <th>Feret</th>
+      <th>AR</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Data2</td>
+      <td>2776</td>
+      <td>135.01481</td>
+      <td>4.99331</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Data2</td>
+      <td>2628</td>
+      <td>68.26419</td>
+      <td>1.28544</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Data2</td>
+      <td>337</td>
+      <td>22.80351</td>
+      <td>1.07470</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Data2</td>
+      <td>491</td>
+      <td>27.80288</td>
+      <td>1.05842</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Data2</td>
+      <td>509</td>
+      <td>27.45906</td>
+      <td>1.09402</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>666209</th>
+      <td>Data2</td>
+      <td>1787</td>
+      <td>62.64982</td>
+      <td>1.59116</td>
+    </tr>
+    <tr>
+      <th>666210</th>
+      <td>Data2</td>
+      <td>180</td>
+      <td>18.78829</td>
+      <td>1.38055</td>
+    </tr>
+    <tr>
+      <th>666211</th>
+      <td>Data2</td>
+      <td>45</td>
+      <td>8.94427</td>
+      <td>1.16188</td>
+    </tr>
+    <tr>
+      <th>666212</th>
+      <td>Data2</td>
+      <td>75</td>
+      <td>12.36932</td>
+      <td>1.28449</td>
+    </tr>
+    <tr>
+      <th>666213</th>
+      <td>Data2</td>
+      <td>62</td>
+      <td>15.52417</td>
+      <td>2.93601</td>
+    </tr>
+  </tbody>
+</table>
+<p>666214 rows × 4 columns</p>
+</div></div></div>
+</div>
+<p>Rename Labels entry</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d1Area</span> <span class="o">=</span> <span class="n">d1Area</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s1">&#39;Data1&#39;</span><span class="p">:</span><span class="s1">&#39;MM&#39;</span><span class="p">})</span>
+<span class="n">d2Area</span> <span class="o">=</span> <span class="n">d2Area</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s1">&#39;Data2&#39;</span><span class="p">:</span><span class="s1">&#39;Aptamil&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d1Area</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Label</th>
+      <th>Area</th>
+      <th>Feret</th>
+      <th>AR</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>MM</td>
+      <td>2541</td>
+      <td>60.67125</td>
+      <td>1.06228</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>MM</td>
+      <td>2419</td>
+      <td>59.77458</td>
+      <td>1.10986</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>MM</td>
+      <td>1855</td>
+      <td>50.47772</td>
+      <td>1.03663</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>MM</td>
+      <td>2596</td>
+      <td>60.44005</td>
+      <td>1.05496</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>MM</td>
+      <td>1409</td>
+      <td>46.23851</td>
+      <td>1.15185</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d1Area</span><span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    1.615323e+06
+mean     1.331084e+02
+std      2.516350e+02
+min      1.200000e+01
+25%      3.700000e+01
+50%      5.800000e+01
+75%      1.160000e+02
+max      2.469600e+04
+Name: Area, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_median</span> <span class="o">=</span> <span class="n">d1Area</span><span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+
+<span class="c1"># Take a look</span>
+<span class="n">df_median</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>58.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d2Area</span><span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    666214.000000
+mean        107.186941
+std         303.942842
+min          11.000000
+25%          31.000000
+50%          46.000000
+75%          75.000000
+max       58667.000000
+Name: Area, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_median</span> <span class="o">=</span> <span class="n">d2Area</span><span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+
+<span class="c1"># Take a look</span>
+<span class="n">df_median</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>46.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">d1Area</span><span class="p">,</span> <span class="n">d2Area</span><span class="p">])</span>
+
+<span class="c1">#del d1Area, d2Area</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Label</th>
+      <th>Area</th>
+      <th>Feret</th>
+      <th>AR</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>MM</td>
+      <td>2541</td>
+      <td>60.67125</td>
+      <td>1.06228</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>MM</td>
+      <td>2419</td>
+      <td>59.77458</td>
+      <td>1.10986</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>MM</td>
+      <td>1855</td>
+      <td>50.47772</td>
+      <td>1.03663</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>MM</td>
+      <td>2596</td>
+      <td>60.44005</td>
+      <td>1.05496</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>MM</td>
+      <td>1409</td>
+      <td>46.23851</td>
+      <td>1.15185</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;ticks&quot;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;pastel&quot;</span><span class="p">)</span> 
+<span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="n">result</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()],</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Area&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;Label&quot;</span> <span class="p">,</span> <span class="n">multiple</span><span class="o">=</span><span class="s2">&quot;stack&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\schatzm\Anaconda3\envs\julab\lib\site-packages\seaborn\distributions.py:254: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+  baselines.iloc[:, cols] = (curves
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x19a9c8c67c0&gt;
+</pre></div>
+</div>
+<img alt="../_images/07_seaborn_big_data_statistics_SOLUTION_23_2.png" src="../_images/07_seaborn_big_data_statistics_SOLUTION_23_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;ticks&quot;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;pastel&quot;</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+
+<span class="c1"># Load the example tips dataset</span>
+<span class="n">tips</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;tips&quot;</span><span class="p">)</span>
+
+<span class="c1"># Draw a nested boxplot to show bills by day and time</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;Area&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Label&quot;</span><span class="p">,</span>
+            <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;Label&quot;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;m&quot;</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">],</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">result</span><span class="p">,</span> 
+            <span class="n">showfliers</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="c1">#get rid of outliers</span>
+            <span class="c1"># data=result[np.mod(np.arange(result.index.size),3)!=0])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Area&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Label&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Milk Area&quot;</span><span class="p">)</span>
+
+<span class="c1"># Improve the legend</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">move_legend</span><span class="p">(</span>
+    <span class="n">ax</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;lower right&quot;</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">columnspacing</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">handletextpad</span><span class="o">=</span><span class="mi">0</span>
+<span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">(</span><span class="n">offset</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">trim</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">normaltest</span>
+
+<span class="n">k2</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">normaltest</span><span class="p">(</span><span class="n">d1Area</span><span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">])</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">1e-3</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;p = </span><span class="si">{:g}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;null hypothesis: Data1 (MM) comes from a normal distribution&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="n">alpha</span><span class="p">:</span>  <span class="c1"># null hypothesis: Data1 (MM) comes from a normal distribution</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The null hypothesis can be rejected&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The null hypothesis cannot be rejected&quot;</span><span class="p">)</span>
+
+<span class="n">k2</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">normaltest</span><span class="p">(</span><span class="n">d2Area</span><span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">])</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">1e-3</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;p = </span><span class="si">{:g}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;null hypothesis: Data2 (Aptamil) from a normal distribution&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="n">alpha</span><span class="p">:</span>  <span class="c1"># null hypothesis: Data2 (Aptamil) from a normal distribution</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The null hypothesis can be rejected&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The null hypothesis cannot be rejected&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>p = 0
+null hypothesis: Data1 (MM) comes from a normal distribution
+The null hypothesis can be rejected
+p = 0
+null hypothesis: Data2 (Aptamil) from a normal distribution
+The null hypothesis can be rejected
+</pre></div>
+</div>
+</div>
+</div>
+<p>Selecting non parametric test, and testing:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mann-Whitney U test</span>
+<span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">seed</span>
+<span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">randn</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">mannwhitneyu</span>
+<span class="c1"># import random  </span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">sample</span> 
+<span class="n">data1</span><span class="o">=</span><span class="n">d1Area</span><span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">data2</span><span class="o">=</span><span class="n">d2Area</span><span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;null hypothesis: data sets are from the same distribution&#39;</span><span class="p">)</span>
+<span class="c1"># compare samples</span>
+<span class="n">stat</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">mannwhitneyu</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Statistics=</span><span class="si">%.3f</span><span class="s1">, p=</span><span class="si">%.16f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">stat</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
+<span class="c1"># interpret</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="k">if</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="n">alpha</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Same distribution (fail to reject H0)&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Different distribution (reject H0)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>null hypothesis: data sets are from the same distribution
+Statistics=6272.500, p=0.0018810635846991
+Different distribution (reject H0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># pvalues with scipy:</span>
+<span class="n">stat_results</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="n">mannwhitneyu</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s2">&quot;two-sided&quot;</span><span class="p">),</span>
+  <span class="c1"># mannwhitneyu(flight, sound, alternative=&quot;two-sided&quot;),</span>
+  <span class="c1"># mannwhitneyu(robots, sound, alternative=&quot;two-sided&quot;)</span>
+<span class="p">]</span>
+
+<span class="n">pvalues</span> <span class="o">=</span> <span class="p">[</span><span class="n">result</span><span class="o">.</span><span class="n">pvalue</span> <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">stat_results</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pvalues</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.0018810635846990642]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="k">with</span> <span class="n">sns</span><span class="o">.</span><span class="n">plotting_context</span><span class="p">(</span><span class="s2">&quot;notebook&quot;</span><span class="p">,</span> <span class="n">font_scale</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
+    <span class="c1"># Create new plot</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+    <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">result</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Label&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Area&#39;</span><span class="p">,</span> 
+                <span class="n">showfliers</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                <span class="c1"># palette=subcat_palette,</span>
+                <span class="c1"># order=subcat_order</span>
+                <span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Aptamil vs MM&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.06</span><span class="p">)</span>
+    <span class="c1"># ax.set_ylabel(&quot;Goal ($)&quot;)</span>
+    <span class="c1"># ax.set_xlabel(&quot;Project State&quot;, labelpad=20)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">statannotations.Annotator</span> <span class="kn">import</span> <span class="n">Annotator</span>
+
+<span class="n">subcat_palette</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">dark_palette</span><span class="p">(</span><span class="s2">&quot;#8BF&quot;</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">n_colors</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">states_palette</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s2">&quot;YlGnBu&quot;</span><span class="p">,</span> <span class="n">n_colors</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="n">states_order</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Successful&quot;</span><span class="p">,</span> <span class="s2">&quot;Failed&quot;</span><span class="p">,</span> <span class="s2">&quot;Live&quot;</span><span class="p">,</span> <span class="s2">&quot;Suspended&quot;</span><span class="p">,</span> <span class="s2">&quot;Canceled&quot;</span><span class="p">]</span>
+<span class="n">subcat_order</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;MM&#39;</span><span class="p">,</span> <span class="s1">&#39;Aptamil&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Putting the parameters in a dictionary avoids code duplication</span>
+<span class="c1"># since we use the same for `sns.boxplot` and `Annotator` calls</span>
+<span class="n">plotting_parameters</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;data&#39;</span><span class="p">:</span><span class="n">result</span><span class="p">,</span> 
+    <span class="s1">&#39;x&#39;</span><span class="p">:</span><span class="s1">&#39;Label&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;y&#39;</span><span class="p">:</span><span class="s1">&#39;Area&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;showfliers&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">pairs</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;MM&#39;</span><span class="p">,</span> <span class="s1">&#39;Aptamil&#39;</span><span class="p">),</span>  <span class="c1"># &#39;Robots&#39; vs &#39;Flight&#39;</span>
+        <span class="c1">#  (&#39;Flight&#39;, &#39;Sound&#39;),   # &#39;Flight&#39; vs &#39;Sound&#39;</span>
+        <span class="c1">#  (&#39;Robots&#39;, &#39;Sound&#39;)   # &#39;Robots&#39; vs &#39;Sound&#39;</span>
+         <span class="p">]</span>
+
+<span class="n">formatted_pvalues</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;p=</span><span class="si">{</span><span class="n">p</span><span class="si">:</span><span class="s2">.2e</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pvalues</span><span class="p">]</span>
+
+<span class="k">with</span> <span class="n">sns</span><span class="o">.</span><span class="n">plotting_context</span><span class="p">(</span><span class="s1">&#39;notebook&#39;</span><span class="p">,</span> <span class="n">font_scale</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
+    <span class="c1"># Create new plot</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+    <span class="c1"># Plot with seaborn</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="o">**</span><span class="n">plotting_parameters</span><span class="p">)</span>
+
+    <span class="c1"># Add annotations</span>
+    <span class="n">annotator</span> <span class="o">=</span> <span class="n">Annotator</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">pairs</span><span class="p">,</span> <span class="o">**</span><span class="n">plotting_parameters</span><span class="p">)</span>
+    <span class="n">annotator</span><span class="o">.</span><span class="n">set_custom_annotations</span><span class="p">(</span><span class="n">formatted_pvalues</span><span class="p">)</span>
+    <span class="n">annotator</span><span class="o">.</span><span class="n">annotate</span><span class="p">()</span>
+
+    <span class="c1"># Label and show</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Aptamil vs MM&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.06</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;./plot1A.png&quot;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>p-value annotation legend:
+      ns: p &lt;= 1.00e+00
+       *: 1.00e-02 &lt; p &lt;= 5.00e-02
+      **: 1.00e-03 &lt; p &lt;= 1.00e-02
+     ***: 1.00e-04 &lt; p &lt;= 1.00e-03
+    ****: p &lt;= 1.00e-04
+
+MM vs. Aptamil: p=1.88e-03
+</pre></div>
+</div>
+<img alt="../_images/07_seaborn_big_data_statistics_SOLUTION_31_1.png" src="../_images/07_seaborn_big_data_statistics_SOLUTION_31_1.png" />
+<img alt="../_images/07_seaborn_big_data_statistics_SOLUTION_31_2.png" src="../_images/07_seaborn_big_data_statistics_SOLUTION_31_2.png" />
+<img alt="../_images/07_seaborn_big_data_statistics_SOLUTION_31_3.png" src="../_images/07_seaborn_big_data_statistics_SOLUTION_31_3.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">sns</span><span class="o">.</span><span class="n">plotting_context</span><span class="p">(</span><span class="s2">&quot;notebook&quot;</span><span class="p">,</span> <span class="n">font_scale</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
+    <span class="c1"># Create new plot</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+    <span class="c1"># Plot with seaborn</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">plotting_parameters</span><span class="p">)</span>
+
+    <span class="c1"># Add annotations</span>
+    <span class="n">annotator</span> <span class="o">=</span> <span class="n">Annotator</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">pairs</span><span class="p">,</span> <span class="o">**</span><span class="n">plotting_parameters</span><span class="p">)</span>
+    <span class="n">annotator</span><span class="o">.</span><span class="n">set_pvalues</span><span class="p">(</span><span class="n">pvalues</span><span class="p">)</span>
+    <span class="n">annotator</span><span class="o">.</span><span class="n">annotate</span><span class="p">()</span>
+
+    <span class="c1"># Label and show</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Aptamil vs MM&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.06</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>p-value annotation legend:
+      ns: p &lt;= 1.00e+00
+       *: 1.00e-02 &lt; p &lt;= 5.00e-02
+      **: 1.00e-03 &lt; p &lt;= 1.00e-02
+     ***: 1.00e-04 &lt; p &lt;= 1.00e-03
+    ****: p &lt;= 1.00e-04
+
+MM vs. Aptamil: Custom statistical test, P_val:1.881e-03
+</pre></div>
+</div>
+<img alt="../_images/07_seaborn_big_data_statistics_SOLUTION_32_1.png" src="../_images/07_seaborn_big_data_statistics_SOLUTION_32_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">watermark</span> <span class="kn">import</span> <span class="n">watermark</span>
+<span class="n">watermark</span><span class="p">(</span><span class="n">iversions</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">globals_</span><span class="o">=</span><span class="nb">globals</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">watermark</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">watermark</span><span class="p">(</span><span class="n">packages</span><span class="o">=</span><span class="s2">&quot;watermark,numpy,scipy,pandas,matplotlib,bokeh,statannotations&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Last updated: 2023-01-05T13:50:32.141879+01:00
+
+Python implementation: CPython
+Python version       : 3.9.15
+IPython version      : 8.8.0
+
+Compiler    : MSC v.1929 64 bit (AMD64)
+OS          : Windows
+Release     : 10
+Machine     : AMD64
+Processor   : Intel64 Family 6 Model 85 Stepping 7, GenuineIntel
+CPU cores   : 40
+Architecture: 64bit
+
+watermark      : 2.3.1
+numpy          : 1.23.5
+scipy          : 1.10.0
+pandas         : 1.5.2
+matplotlib     : 3.6.2
+bokeh          : 3.0.3
+statannotations: 0.5.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Statistics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="07_big_data_statistics_SOLUTION.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Big Data definition</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Martin Schatz<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

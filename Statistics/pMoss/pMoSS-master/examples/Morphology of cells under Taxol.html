@@ -1,0 +1,1560 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>DISpANALYSIS &#8212; MB100T01 Advanced Image Analysis Course</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../_static/copybutton.js"></script>
+    <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">MB100T01 Advanced Image Analysis Course</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../../intro.html">
+                    Welcome to MB100T01 Course
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../../Introduction/readme.html">
+   MB100T01 Advanced Image Analysis Course
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../../Python_Introduction/readme.html">
+     Brief introduction to Python
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../../Python_Introduction/01_Python_Basics.html">
+       Introduction to Python in Jupyter Notebook/Google Colab
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../../Pandas_Introduction/readme.html">
+   Introduction to Pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../Pandas_Introduction/02_intro_to_pandas.html">
+     Introduction to Pandas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../../Ploting_Introduction/readme.html">
+   Intro to plotting in Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../Ploting_Introduction/03_seaborn_introduction.html">
+     An introduction to seaborn
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../Ploting_Introduction/04_seaborn_distributions.html">
+     Visualizing distributions of data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../Ploting_Introduction/05_seaborn_categorical.html">
+     Visualizing categorical data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../Ploting_Introduction/02_BONUS_plotting_with_matplotlib.html">
+     Charting in Colaboratory
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../readme.html">
+   Statistics examples
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../06_statistics.html">
+     Statistic overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../06_Statannotations-Tutorial-1.html">
+     Showing statistical significance on seaborn plots with Statannotations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../07_big_data_statistics.html">
+     Exercise
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../07_big_data_statistics_SOLUTION.html">
+     Big Data definition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../07_seaborn_big_data_statistics_SOLUTION.html">
+     Big Data seaborn Solution
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Statistics/pMoss/pMoSS-master/examples/Morphology of cells under Taxol.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FStatistics/pMoss/pMoSS-master/examples/Morphology of cells under Taxol.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../../_sources/Statistics/pMoss/pMoSS-master/examples/Morphology of cells under Taxol.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#information-about-the-data">
+   Information about the data.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estimation-of-the-p-value-function">
+   Estimation of the p-value function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plot-of-results">
+   Plot of results
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>DISpANALYSIS</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#information-about-the-data">
+   Information about the data.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estimation-of-the-p-value-function">
+   Estimation of the p-value function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plot-of-results">
+   Plot of results
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="dispanalysis">
+<h1>DISpANALYSIS<a class="headerlink" href="#dispanalysis" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load the path containing all the functions to use DISpANALYSIS</span>
+<span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">path</span>
+<span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;../DISpANALYSIS/&#39;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">analysis_execution</span> <span class="kn">import</span> <span class="n">compute_diagnosis</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">data_classification_labels</span> <span class="kn">import</span> <span class="n">create_combination</span>
+<span class="kn">from</span> <span class="nn">graphics</span> <span class="kn">import</span> <span class="n">scatterplot_decrease_parameters</span><span class="p">,</span> <span class="n">plot_pcurve_by_measure</span><span class="p">,</span> <span class="n">composed_plot</span>
+<span class="kn">from</span> <span class="nn">table_of_results</span> <span class="kn">import</span> <span class="n">table_of_results</span>
+<span class="kn">from</span> <span class="nn">exponential_fit</span> <span class="kn">import</span> <span class="n">decission_data_exponential</span>
+<span class="kn">from</span> <span class="nn">load_morphology_data</span> <span class="kn">import</span> <span class="n">morphoparam</span>
+<span class="c1"># Avoid warnings</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">path</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;../DISpANALYSIS/&#39;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">analysis_execution</span> <span class="kn">import</span> <span class="n">compute_diagnosis</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;analysis_execution&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="information-about-the-data">
+<h2>Information about the data.<a class="headerlink" href="#information-about-the-data" title="Permalink to this headline">#</a></h2>
+<p>Provide path containing the data (csv or excel) and the name of the file.</p>
+<p>Note: The column identifying the group to which each value belongs to, must have the name “Condition” and should be the first column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># path containing the data</span>
+<span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;../data/morphology_taxol/&#39;</span>
+
+<span class="c1"># Name of the file containing the information. It can be a csv or excel file. </span>
+<span class="c1"># Note that the column containing the labels of the group must have the name &quot;Condition&quot; </span>
+<span class="c1"># and should be the first column of the file.</span>
+
+<span class="c1"># You can read either a csv or excel files:</span>
+<span class="n">file_name</span> <span class="o">=</span><span class="s1">&#39;cell_data.xlsx&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="estimation-of-the-p-value-function">
+<h2>Estimation of the p-value function<a class="headerlink" href="#estimation-of-the-p-value-function" title="Permalink to this headline">#</a></h2>
+<p>Initialization parameters</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># number of &quot;n-values&quot; to evaluate (size of N-grid)</span>
+<span class="n">grid_size</span> <span class="o">=</span> <span class="mi">250</span> 
+<span class="c1"># minimum &quot;n-value&quot; to compute Monte Carlo cross-validation</span>
+<span class="n">n0</span> <span class="o">=</span> <span class="mi">2</span> 
+<span class="c1"># maximum &quot;n-value&quot; to compute Monte Carlo cross-validation</span>
+<span class="n">Nmax</span> <span class="o">=</span> <span class="mi">2500</span>
+
+<span class="c1"># This value prevents from having only one iteration for the highest &quot;n-value&quot;:</span>
+<span class="c1"># final iterations = k*(m/min(m,Nmax)) where m is the size of group with less observations. </span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">20</span> 
+
+<span class="c1"># This value prevents from having millions of iterations in n0 (the lowest&quot;n-value&quot;):</span>
+<span class="c1"># initial iterations = np.log((m/n0)*initial_portion) where m is the size of group with less observations. </span>
+<span class="n">initial_portion</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="mf">15.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Parameters for the calculation of the decision index</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.05</span> <span class="c1"># alpha for a 100(1-alpha) statistical significance.</span>
+<span class="n">gamma</span> <span class="o">=</span> <span class="mf">5e-06</span> <span class="c1"># gamma in the paper = gamma*alpha.</span>
+<span class="c1"># Statistitical test to evaluate</span>
+<span class="n">test</span> <span class="o">=</span> <span class="s1">&#39;MannWhitneyU&#39;</span>
+<span class="c1"># Method to estimate the p-value function</span>
+<span class="n">method</span> <span class="o">=</span> <span class="s1">&#39;exponential&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Estimation of the p-value function and assesment of the decision index.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pvalues</span><span class="p">,</span> <span class="n">param</span><span class="p">,</span> <span class="n">Theta</span> <span class="o">=</span> <span class="n">compute_diagnosis</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">path</span> <span class="o">=</span> <span class="n">path</span><span class="p">,</span> <span class="n">gamma</span> <span class="o">=</span> <span class="n">gamma</span><span class="p">,</span>
+                                          <span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">grid_size</span> <span class="o">=</span> <span class="n">grid_size</span><span class="p">,</span>
+                                          <span class="n">n0</span> <span class="o">=</span> <span class="n">n0</span><span class="p">,</span> <span class="n">Nmax</span> <span class="o">=</span> <span class="n">Nmax</span><span class="p">,</span><span class="n">k</span> <span class="o">=</span> <span class="n">k</span><span class="p">,</span>
+                                          <span class="n">initial_portion</span><span class="o">=</span><span class="n">initial_portion</span><span class="p">,</span>
+                                          <span class="n">method</span> <span class="o">=</span> <span class="n">method</span><span class="p">,</span> <span class="n">test</span> <span class="o">=</span> <span class="n">test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>../data/morphology_taxol/
+cell_data.xlsx
+comparison: HD_control_HD_tax1
+Cross validation with N =  2  and folds =  2589  finished.
+Cross validation with N =  3  and folds =  2570  finished.
+Cross validation with N =  4  and folds =  2550  finished.
+Cross validation with N =  5  and folds =  2531  finished.
+Cross validation with N =  6  and folds =  2512  finished.
+Cross validation with N =  7  and folds =  2493  finished.
+Cross validation with N =  8  and folds =  2474  finished.
+Cross validation with N =  9  and folds =  2455  finished.
+Cross validation with N =  10  and folds =  2437  finished.
+Cross validation with N =  11  and folds =  2418  finished.
+Cross validation with N =  12  and folds =  2400  finished.
+Cross validation with N =  13  and folds =  2382  finished.
+Cross validation with N =  14  and folds =  2364  finished.
+Cross validation with N =  15  and folds =  2346  finished.
+Cross validation with N =  16  and folds =  2328  finished.
+Cross validation with N =  17  and folds =  2311  finished.
+Cross validation with N =  18  and folds =  2293  finished.
+Cross validation with N =  19  and folds =  2276  finished.
+Cross validation with N =  20  and folds =  2259  finished.
+Cross validation with N =  21  and folds =  2241  finished.
+Cross validation with N =  22  and folds =  2224  finished.
+Cross validation with N =  23  and folds =  2208  finished.
+Cross validation with N =  24  and folds =  2191  finished.
+Cross validation with N =  25  and folds =  2174  finished.
+Cross validation with N =  26  and folds =  2158  finished.
+Cross validation with N =  27  and folds =  2142  finished.
+Cross validation with N =  28  and folds =  2125  finished.
+Cross validation with N =  29  and folds =  2109  finished.
+Cross validation with N =  30  and folds =  2093  finished.
+Cross validation with N =  31  and folds =  2077  finished.
+Cross validation with N =  32  and folds =  2062  finished.
+Cross validation with N =  33  and folds =  2046  finished.
+Cross validation with N =  34  and folds =  2031  finished.
+Cross validation with N =  35  and folds =  2015  finished.
+Cross validation with N =  36  and folds =  2000  finished.
+Cross validation with N =  37  and folds =  1985  finished.
+Cross validation with N =  38  and folds =  1970  finished.
+Cross validation with N =  39  and folds =  1955  finished.
+Cross validation with N =  40  and folds =  1940  finished.
+Cross validation with N =  42  and folds =  1925  finished.
+Cross validation with N =  43  and folds =  1911  finished.
+Cross validation with N =  44  and folds =  1896  finished.
+Cross validation with N =  45  and folds =  1882  finished.
+Cross validation with N =  47  and folds =  1868  finished.
+Cross validation with N =  48  and folds =  1854  finished.
+Cross validation with N =  49  and folds =  1840  finished.
+Cross validation with N =  51  and folds =  1826  finished.
+Cross validation with N =  52  and folds =  1812  finished.
+Cross validation with N =  53  and folds =  1798  finished.
+Cross validation with N =  55  and folds =  1785  finished.
+Cross validation with N =  56  and folds =  1771  finished.
+Cross validation with N =  58  and folds =  1758  finished.
+Cross validation with N =  60  and folds =  1744  finished.
+Cross validation with N =  61  and folds =  1731  finished.
+Cross validation with N =  63  and folds =  1718  finished.
+Cross validation with N =  65  and folds =  1705  finished.
+Cross validation with N =  67  and folds =  1692  finished.
+Cross validation with N =  68  and folds =  1679  finished.
+Cross validation with N =  70  and folds =  1667  finished.
+Cross validation with N =  72  and folds =  1654  finished.
+Cross validation with N =  74  and folds =  1641  finished.
+Cross validation with N =  76  and folds =  1629  finished.
+Cross validation with N =  79  and folds =  1617  finished.
+Cross validation with N =  81  and folds =  1604  finished.
+Cross validation with N =  83  and folds =  1592  finished.
+Cross validation with N =  85  and folds =  1580  finished.
+Cross validation with N =  88  and folds =  1568  finished.
+Cross validation with N =  90  and folds =  1556  finished.
+Cross validation with N =  93  and folds =  1545  finished.
+Cross validation with N =  95  and folds =  1533  finished.
+Cross validation with N =  98  and folds =  1521  finished.
+Cross validation with N =  101  and folds =  1510  finished.
+Cross validation with N =  104  and folds =  1498  finished.
+Cross validation with N =  106  and folds =  1487  finished.
+Cross validation with N =  109  and folds =  1476  finished.
+Cross validation with N =  112  and folds =  1465  finished.
+Cross validation with N =  116  and folds =  1454  finished.
+Cross validation with N =  119  and folds =  1443  finished.
+Cross validation with N =  122  and folds =  1432  finished.
+Cross validation with N =  126  and folds =  1421  finished.
+Cross validation with N =  129  and folds =  1410  finished.
+Cross validation with N =  133  and folds =  1399  finished.
+Cross validation with N =  136  and folds =  1389  finished.
+Cross validation with N =  140  and folds =  1378  finished.
+Cross validation with N =  144  and folds =  1368  finished.
+Cross validation with N =  148  and folds =  1357  finished.
+Cross validation with N =  152  and folds =  1347  finished.
+Cross validation with N =  156  and folds =  1337  finished.
+Cross validation with N =  161  and folds =  1327  finished.
+Cross validation with N =  165  and folds =  1317  finished.
+Cross validation with N =  170  and folds =  1307  finished.
+Cross validation with N =  175  and folds =  1297  finished.
+Cross validation with N =  180  and folds =  1287  finished.
+Cross validation with N =  185  and folds =  1277  finished.
+Cross validation with N =  190  and folds =  1268  finished.
+Cross validation with N =  195  and folds =  1258  finished.
+Cross validation with N =  200  and folds =  1249  finished.
+Cross validation with N =  206  and folds =  1239  finished.
+Cross validation with N =  212  and folds =  1230  finished.
+Cross validation with N =  218  and folds =  1220  finished.
+Cross validation with N =  224  and folds =  1211  finished.
+Cross validation with N =  230  and folds =  1202  finished.
+Cross validation with N =  236  and folds =  1193  finished.
+Cross validation with N =  243  and folds =  1184  finished.
+Cross validation with N =  250  and folds =  1175  finished.
+Cross validation with N =  257  and folds =  1166  finished.
+Cross validation with N =  264  and folds =  1157  finished.
+Cross validation with N =  271  and folds =  1148  finished.
+Cross validation with N =  279  and folds =  1140  finished.
+Cross validation with N =  286  and folds =  1131  finished.
+Cross validation with N =  294  and folds =  1123  finished.
+Cross validation with N =  303  and folds =  1114  finished.
+Cross validation with N =  311  and folds =  1106  finished.
+Cross validation with N =  320  and folds =  1097  finished.
+Cross validation with N =  328  and folds =  1089  finished.
+Cross validation with N =  338  and folds =  1081  finished.
+Cross validation with N =  347  and folds =  1073  finished.
+Cross validation with N =  357  and folds =  1064  finished.
+Cross validation with N =  367  and folds =  1056  finished.
+Cross validation with N =  377  and folds =  1048  finished.
+Cross validation with N =  387  and folds =  1040  finished.
+Cross validation with N =  398  and folds =  1033  finished.
+Cross validation with N =  409  and folds =  1025  finished.
+Cross validation with N =  421  and folds =  1017  finished.
+Cross validation with N =  432  and folds =  1009  finished.
+Cross validation with N =  444  and folds =  1002  finished.
+Cross validation with N =  457  and folds =  994  finished.
+Cross validation with N =  469  and folds =  987  finished.
+Cross validation with N =  482  and folds =  979  finished.
+Cross validation with N =  496  and folds =  972  finished.
+Cross validation with N =  510  and folds =  964  finished.
+Cross validation with N =  524  and folds =  957  finished.
+Cross validation with N =  538  and folds =  950  finished.
+Cross validation with N =  553  and folds =  943  finished.
+Cross validation with N =  569  and folds =  935  finished.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cross validation with N =  584  and folds =  928  finished.
+Cross validation with N =  601  and folds =  921  finished.
+Cross validation with N =  617  and folds =  914  finished.
+Cross validation with N =  635  and folds =  907  finished.
+Cross validation with N =  652  and folds =  901  finished.
+Cross validation with N =  670  and folds =  894  finished.
+Cross validation with N =  689  and folds =  887  finished.
+Cross validation with N =  708  and folds =  880  finished.
+Cross validation with N =  728  and folds =  874  finished.
+Cross validation with N =  748  and folds =  867  finished.
+Cross validation with N =  769  and folds =  860  finished.
+Cross validation with N =  790  and folds =  854  finished.
+Cross validation with N =  812  and folds =  847  finished.
+Cross validation with N =  835  and folds =  841  finished.
+Cross validation with N =  858  and folds =  835  finished.
+Cross validation with N =  882  and folds =  828  finished.
+Cross validation with N =  906  and folds =  822  finished.
+Cross validation with N =  932  and folds =  816  finished.
+Cross validation with N =  957  and folds =  810  finished.
+Cross validation with N =  984  and folds =  804  finished.
+Cross validation with N =  1011  and folds =  797  finished.
+Cross validation with N =  1040  and folds =  791  finished.
+Cross validation with N =  1068  and folds =  785  finished.
+Cross validation with N =  1098  and folds =  779  finished.
+Cross validation with N =  1129  and folds =  774  finished.
+Cross validation with N =  1160  and folds =  768  finished.
+Cross validation with N =  1192  and folds =  762  finished.
+Cross validation with N =  1225  and folds =  756  finished.
+Cross validation with N =  1260  and folds =  750  finished.
+Cross validation with N =  1295  and folds =  745  finished.
+Cross validation with N =  1331  and folds =  739  finished.
+Cross validation with N =  1368  and folds =  733  finished.
+Cross validation with N =  1406  and folds =  728  finished.
+Cross validation with N =  1445  and folds =  722  finished.
+Cross validation with N =  1485  and folds =  717  finished.
+Cross validation with N =  1526  and folds =  711  finished.
+Cross validation with N =  1568  and folds =  706  finished.
+Cross validation with N =  1612  and folds =  701  finished.
+Cross validation with N =  1657  and folds =  695  finished.
+Cross validation with N =  1703  and folds =  690  finished.
+Cross validation with N =  1750  and folds =  685  finished.
+Cross validation with N =  1799  and folds =  680  finished.
+Cross validation with N =  1849  and folds =  675  finished.
+Cross validation with N =  1900  and folds =  670  finished.
+Cross validation with N =  1953  and folds =  664  finished.
+Cross validation with N =  2007  and folds =  659  finished.
+Cross validation with N =  2063  and folds =  654  finished.
+Cross validation with N =  2120  and folds =  649  finished.
+Cross validation with N =  2179  and folds =  645  finished.
+Cross validation with N =  2240  and folds =  640  finished.
+Cross validation with N =  2302  and folds =  635  finished.
+Cross validation with N =  2366  and folds =  630  finished.
+Cross validation with N =  2432  and folds =  625  finished.
+Cross validation with N =  2499  and folds =  621  finished.
+comparison: HD_control_HD_tax50
+Cross validation with N =  2  and folds =  2589  finished.
+Cross validation with N =  3  and folds =  2570  finished.
+Cross validation with N =  4  and folds =  2550  finished.
+Cross validation with N =  5  and folds =  2531  finished.
+Cross validation with N =  6  and folds =  2512  finished.
+Cross validation with N =  7  and folds =  2493  finished.
+Cross validation with N =  8  and folds =  2474  finished.
+Cross validation with N =  9  and folds =  2455  finished.
+Cross validation with N =  10  and folds =  2437  finished.
+Cross validation with N =  11  and folds =  2418  finished.
+Cross validation with N =  12  and folds =  2400  finished.
+Cross validation with N =  13  and folds =  2382  finished.
+Cross validation with N =  14  and folds =  2364  finished.
+Cross validation with N =  15  and folds =  2346  finished.
+Cross validation with N =  16  and folds =  2328  finished.
+Cross validation with N =  17  and folds =  2311  finished.
+Cross validation with N =  18  and folds =  2293  finished.
+Cross validation with N =  19  and folds =  2276  finished.
+Cross validation with N =  20  and folds =  2259  finished.
+Cross validation with N =  21  and folds =  2241  finished.
+Cross validation with N =  22  and folds =  2224  finished.
+Cross validation with N =  23  and folds =  2208  finished.
+Cross validation with N =  24  and folds =  2191  finished.
+Cross validation with N =  25  and folds =  2174  finished.
+Cross validation with N =  26  and folds =  2158  finished.
+Cross validation with N =  27  and folds =  2142  finished.
+Cross validation with N =  28  and folds =  2125  finished.
+Cross validation with N =  29  and folds =  2109  finished.
+Cross validation with N =  30  and folds =  2093  finished.
+Cross validation with N =  31  and folds =  2077  finished.
+Cross validation with N =  32  and folds =  2062  finished.
+Cross validation with N =  33  and folds =  2046  finished.
+Cross validation with N =  34  and folds =  2031  finished.
+Cross validation with N =  35  and folds =  2015  finished.
+Cross validation with N =  36  and folds =  2000  finished.
+Cross validation with N =  37  and folds =  1985  finished.
+Cross validation with N =  38  and folds =  1970  finished.
+Cross validation with N =  39  and folds =  1955  finished.
+Cross validation with N =  40  and folds =  1940  finished.
+Cross validation with N =  42  and folds =  1925  finished.
+Cross validation with N =  43  and folds =  1911  finished.
+Cross validation with N =  44  and folds =  1896  finished.
+Cross validation with N =  45  and folds =  1882  finished.
+Cross validation with N =  47  and folds =  1868  finished.
+Cross validation with N =  48  and folds =  1854  finished.
+Cross validation with N =  49  and folds =  1840  finished.
+Cross validation with N =  51  and folds =  1826  finished.
+Cross validation with N =  52  and folds =  1812  finished.
+Cross validation with N =  53  and folds =  1798  finished.
+Cross validation with N =  55  and folds =  1785  finished.
+Cross validation with N =  56  and folds =  1771  finished.
+Cross validation with N =  58  and folds =  1758  finished.
+Cross validation with N =  60  and folds =  1744  finished.
+Cross validation with N =  61  and folds =  1731  finished.
+Cross validation with N =  63  and folds =  1718  finished.
+Cross validation with N =  65  and folds =  1705  finished.
+Cross validation with N =  67  and folds =  1692  finished.
+Cross validation with N =  68  and folds =  1679  finished.
+Cross validation with N =  70  and folds =  1667  finished.
+Cross validation with N =  72  and folds =  1654  finished.
+Cross validation with N =  74  and folds =  1641  finished.
+Cross validation with N =  76  and folds =  1629  finished.
+Cross validation with N =  79  and folds =  1617  finished.
+Cross validation with N =  81  and folds =  1604  finished.
+Cross validation with N =  83  and folds =  1592  finished.
+Cross validation with N =  85  and folds =  1580  finished.
+Cross validation with N =  88  and folds =  1568  finished.
+Cross validation with N =  90  and folds =  1556  finished.
+Cross validation with N =  93  and folds =  1545  finished.
+Cross validation with N =  95  and folds =  1533  finished.
+Cross validation with N =  98  and folds =  1521  finished.
+Cross validation with N =  101  and folds =  1510  finished.
+Cross validation with N =  104  and folds =  1498  finished.
+Cross validation with N =  106  and folds =  1487  finished.
+Cross validation with N =  109  and folds =  1476  finished.
+Cross validation with N =  112  and folds =  1465  finished.
+Cross validation with N =  116  and folds =  1454  finished.
+Cross validation with N =  119  and folds =  1443  finished.
+Cross validation with N =  122  and folds =  1432  finished.
+Cross validation with N =  126  and folds =  1421  finished.
+Cross validation with N =  129  and folds =  1410  finished.
+Cross validation with N =  133  and folds =  1399  finished.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cross validation with N =  136  and folds =  1389  finished.
+Cross validation with N =  140  and folds =  1378  finished.
+Cross validation with N =  144  and folds =  1368  finished.
+Cross validation with N =  148  and folds =  1357  finished.
+Cross validation with N =  152  and folds =  1347  finished.
+Cross validation with N =  156  and folds =  1337  finished.
+Cross validation with N =  161  and folds =  1327  finished.
+Cross validation with N =  165  and folds =  1317  finished.
+Cross validation with N =  170  and folds =  1307  finished.
+Cross validation with N =  175  and folds =  1297  finished.
+Cross validation with N =  180  and folds =  1287  finished.
+Cross validation with N =  185  and folds =  1277  finished.
+Cross validation with N =  190  and folds =  1268  finished.
+Cross validation with N =  195  and folds =  1258  finished.
+Cross validation with N =  200  and folds =  1249  finished.
+Cross validation with N =  206  and folds =  1239  finished.
+Cross validation with N =  212  and folds =  1230  finished.
+Cross validation with N =  218  and folds =  1220  finished.
+Cross validation with N =  224  and folds =  1211  finished.
+Cross validation with N =  230  and folds =  1202  finished.
+Cross validation with N =  236  and folds =  1193  finished.
+Cross validation with N =  243  and folds =  1184  finished.
+Cross validation with N =  250  and folds =  1175  finished.
+Cross validation with N =  257  and folds =  1166  finished.
+Cross validation with N =  264  and folds =  1157  finished.
+Cross validation with N =  271  and folds =  1148  finished.
+Cross validation with N =  279  and folds =  1140  finished.
+Cross validation with N =  286  and folds =  1131  finished.
+Cross validation with N =  294  and folds =  1123  finished.
+Cross validation with N =  303  and folds =  1114  finished.
+Cross validation with N =  311  and folds =  1106  finished.
+Cross validation with N =  320  and folds =  1097  finished.
+Cross validation with N =  328  and folds =  1089  finished.
+Cross validation with N =  338  and folds =  1081  finished.
+Cross validation with N =  347  and folds =  1073  finished.
+Cross validation with N =  357  and folds =  1064  finished.
+Cross validation with N =  367  and folds =  1056  finished.
+Cross validation with N =  377  and folds =  1048  finished.
+Cross validation with N =  387  and folds =  1040  finished.
+Cross validation with N =  398  and folds =  1033  finished.
+Cross validation with N =  409  and folds =  1025  finished.
+Cross validation with N =  421  and folds =  1017  finished.
+Cross validation with N =  432  and folds =  1009  finished.
+Cross validation with N =  444  and folds =  1002  finished.
+Cross validation with N =  457  and folds =  994  finished.
+Cross validation with N =  469  and folds =  987  finished.
+Cross validation with N =  482  and folds =  979  finished.
+Cross validation with N =  496  and folds =  972  finished.
+Cross validation with N =  510  and folds =  964  finished.
+Cross validation with N =  524  and folds =  957  finished.
+Cross validation with N =  538  and folds =  950  finished.
+Cross validation with N =  553  and folds =  943  finished.
+Cross validation with N =  569  and folds =  935  finished.
+Cross validation with N =  584  and folds =  928  finished.
+Cross validation with N =  601  and folds =  921  finished.
+Cross validation with N =  617  and folds =  914  finished.
+Cross validation with N =  635  and folds =  907  finished.
+Cross validation with N =  652  and folds =  901  finished.
+Cross validation with N =  670  and folds =  894  finished.
+Cross validation with N =  689  and folds =  887  finished.
+Cross validation with N =  708  and folds =  880  finished.
+Cross validation with N =  728  and folds =  874  finished.
+Cross validation with N =  748  and folds =  867  finished.
+Cross validation with N =  769  and folds =  860  finished.
+Cross validation with N =  790  and folds =  854  finished.
+Cross validation with N =  812  and folds =  847  finished.
+Cross validation with N =  835  and folds =  841  finished.
+Cross validation with N =  858  and folds =  835  finished.
+Cross validation with N =  882  and folds =  828  finished.
+Cross validation with N =  906  and folds =  822  finished.
+Cross validation with N =  932  and folds =  816  finished.
+Cross validation with N =  957  and folds =  810  finished.
+Cross validation with N =  984  and folds =  804  finished.
+Cross validation with N =  1011  and folds =  797  finished.
+Cross validation with N =  1040  and folds =  791  finished.
+Cross validation with N =  1068  and folds =  785  finished.
+Cross validation with N =  1098  and folds =  779  finished.
+Cross validation with N =  1129  and folds =  774  finished.
+Cross validation with N =  1160  and folds =  768  finished.
+Cross validation with N =  1192  and folds =  762  finished.
+Cross validation with N =  1225  and folds =  756  finished.
+Cross validation with N =  1260  and folds =  750  finished.
+Cross validation with N =  1295  and folds =  745  finished.
+Cross validation with N =  1331  and folds =  739  finished.
+Cross validation with N =  1368  and folds =  733  finished.
+Cross validation with N =  1406  and folds =  728  finished.
+Cross validation with N =  1445  and folds =  722  finished.
+Cross validation with N =  1485  and folds =  717  finished.
+Cross validation with N =  1526  and folds =  711  finished.
+Cross validation with N =  1568  and folds =  706  finished.
+Cross validation with N =  1612  and folds =  701  finished.
+Cross validation with N =  1657  and folds =  695  finished.
+Cross validation with N =  1703  and folds =  690  finished.
+Cross validation with N =  1750  and folds =  685  finished.
+Cross validation with N =  1799  and folds =  680  finished.
+Cross validation with N =  1849  and folds =  675  finished.
+Cross validation with N =  1900  and folds =  670  finished.
+Cross validation with N =  1953  and folds =  664  finished.
+Cross validation with N =  2007  and folds =  659  finished.
+Cross validation with N =  2063  and folds =  654  finished.
+Cross validation with N =  2120  and folds =  649  finished.
+Cross validation with N =  2179  and folds =  645  finished.
+Cross validation with N =  2240  and folds =  640  finished.
+Cross validation with N =  2302  and folds =  635  finished.
+Cross validation with N =  2366  and folds =  630  finished.
+Cross validation with N =  2432  and folds =  625  finished.
+Cross validation with N =  2499  and folds =  621  finished.
+comparison: HD_tax1_HD_tax50
+Cross validation with N =  2  and folds =  2589  finished.
+Cross validation with N =  3  and folds =  2570  finished.
+Cross validation with N =  4  and folds =  2550  finished.
+Cross validation with N =  5  and folds =  2531  finished.
+Cross validation with N =  6  and folds =  2512  finished.
+Cross validation with N =  7  and folds =  2493  finished.
+Cross validation with N =  8  and folds =  2474  finished.
+Cross validation with N =  9  and folds =  2455  finished.
+Cross validation with N =  10  and folds =  2437  finished.
+Cross validation with N =  11  and folds =  2418  finished.
+Cross validation with N =  12  and folds =  2400  finished.
+Cross validation with N =  13  and folds =  2382  finished.
+Cross validation with N =  14  and folds =  2364  finished.
+Cross validation with N =  15  and folds =  2346  finished.
+Cross validation with N =  16  and folds =  2328  finished.
+Cross validation with N =  17  and folds =  2311  finished.
+Cross validation with N =  18  and folds =  2293  finished.
+Cross validation with N =  19  and folds =  2276  finished.
+Cross validation with N =  20  and folds =  2259  finished.
+Cross validation with N =  21  and folds =  2241  finished.
+Cross validation with N =  22  and folds =  2224  finished.
+Cross validation with N =  23  and folds =  2208  finished.
+Cross validation with N =  24  and folds =  2191  finished.
+Cross validation with N =  25  and folds =  2174  finished.
+Cross validation with N =  26  and folds =  2158  finished.
+Cross validation with N =  27  and folds =  2142  finished.
+Cross validation with N =  28  and folds =  2125  finished.
+Cross validation with N =  29  and folds =  2109  finished.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cross validation with N =  30  and folds =  2093  finished.
+Cross validation with N =  31  and folds =  2077  finished.
+Cross validation with N =  32  and folds =  2062  finished.
+Cross validation with N =  33  and folds =  2046  finished.
+Cross validation with N =  34  and folds =  2031  finished.
+Cross validation with N =  35  and folds =  2015  finished.
+Cross validation with N =  36  and folds =  2000  finished.
+Cross validation with N =  37  and folds =  1985  finished.
+Cross validation with N =  38  and folds =  1970  finished.
+Cross validation with N =  39  and folds =  1955  finished.
+Cross validation with N =  40  and folds =  1940  finished.
+Cross validation with N =  42  and folds =  1925  finished.
+Cross validation with N =  43  and folds =  1911  finished.
+Cross validation with N =  44  and folds =  1896  finished.
+Cross validation with N =  45  and folds =  1882  finished.
+Cross validation with N =  47  and folds =  1868  finished.
+Cross validation with N =  48  and folds =  1854  finished.
+Cross validation with N =  49  and folds =  1840  finished.
+Cross validation with N =  51  and folds =  1826  finished.
+Cross validation with N =  52  and folds =  1812  finished.
+Cross validation with N =  53  and folds =  1798  finished.
+Cross validation with N =  55  and folds =  1785  finished.
+Cross validation with N =  56  and folds =  1771  finished.
+Cross validation with N =  58  and folds =  1758  finished.
+Cross validation with N =  60  and folds =  1744  finished.
+Cross validation with N =  61  and folds =  1731  finished.
+Cross validation with N =  63  and folds =  1718  finished.
+Cross validation with N =  65  and folds =  1705  finished.
+Cross validation with N =  67  and folds =  1692  finished.
+Cross validation with N =  68  and folds =  1679  finished.
+Cross validation with N =  70  and folds =  1667  finished.
+Cross validation with N =  72  and folds =  1654  finished.
+Cross validation with N =  74  and folds =  1641  finished.
+Cross validation with N =  76  and folds =  1629  finished.
+Cross validation with N =  79  and folds =  1617  finished.
+Cross validation with N =  81  and folds =  1604  finished.
+Cross validation with N =  83  and folds =  1592  finished.
+Cross validation with N =  85  and folds =  1580  finished.
+Cross validation with N =  88  and folds =  1568  finished.
+Cross validation with N =  90  and folds =  1556  finished.
+Cross validation with N =  93  and folds =  1545  finished.
+Cross validation with N =  95  and folds =  1533  finished.
+Cross validation with N =  98  and folds =  1521  finished.
+Cross validation with N =  101  and folds =  1510  finished.
+Cross validation with N =  104  and folds =  1498  finished.
+Cross validation with N =  106  and folds =  1487  finished.
+Cross validation with N =  109  and folds =  1476  finished.
+Cross validation with N =  112  and folds =  1465  finished.
+Cross validation with N =  116  and folds =  1454  finished.
+Cross validation with N =  119  and folds =  1443  finished.
+Cross validation with N =  122  and folds =  1432  finished.
+Cross validation with N =  126  and folds =  1421  finished.
+Cross validation with N =  129  and folds =  1410  finished.
+Cross validation with N =  133  and folds =  1399  finished.
+Cross validation with N =  136  and folds =  1389  finished.
+Cross validation with N =  140  and folds =  1378  finished.
+Cross validation with N =  144  and folds =  1368  finished.
+Cross validation with N =  148  and folds =  1357  finished.
+Cross validation with N =  152  and folds =  1347  finished.
+Cross validation with N =  156  and folds =  1337  finished.
+Cross validation with N =  161  and folds =  1327  finished.
+Cross validation with N =  165  and folds =  1317  finished.
+Cross validation with N =  170  and folds =  1307  finished.
+Cross validation with N =  175  and folds =  1297  finished.
+Cross validation with N =  180  and folds =  1287  finished.
+Cross validation with N =  185  and folds =  1277  finished.
+Cross validation with N =  190  and folds =  1268  finished.
+Cross validation with N =  195  and folds =  1258  finished.
+Cross validation with N =  200  and folds =  1249  finished.
+Cross validation with N =  206  and folds =  1239  finished.
+Cross validation with N =  212  and folds =  1230  finished.
+Cross validation with N =  218  and folds =  1220  finished.
+Cross validation with N =  224  and folds =  1211  finished.
+Cross validation with N =  230  and folds =  1202  finished.
+Cross validation with N =  236  and folds =  1193  finished.
+Cross validation with N =  243  and folds =  1184  finished.
+Cross validation with N =  250  and folds =  1175  finished.
+Cross validation with N =  257  and folds =  1166  finished.
+Cross validation with N =  264  and folds =  1157  finished.
+Cross validation with N =  271  and folds =  1148  finished.
+Cross validation with N =  279  and folds =  1140  finished.
+Cross validation with N =  286  and folds =  1131  finished.
+Cross validation with N =  294  and folds =  1123  finished.
+Cross validation with N =  303  and folds =  1114  finished.
+Cross validation with N =  311  and folds =  1106  finished.
+Cross validation with N =  320  and folds =  1097  finished.
+Cross validation with N =  328  and folds =  1089  finished.
+Cross validation with N =  338  and folds =  1081  finished.
+Cross validation with N =  347  and folds =  1073  finished.
+Cross validation with N =  357  and folds =  1064  finished.
+Cross validation with N =  367  and folds =  1056  finished.
+Cross validation with N =  377  and folds =  1048  finished.
+Cross validation with N =  387  and folds =  1040  finished.
+Cross validation with N =  398  and folds =  1033  finished.
+Cross validation with N =  409  and folds =  1025  finished.
+Cross validation with N =  421  and folds =  1017  finished.
+Cross validation with N =  432  and folds =  1009  finished.
+Cross validation with N =  444  and folds =  1002  finished.
+Cross validation with N =  457  and folds =  994  finished.
+Cross validation with N =  469  and folds =  987  finished.
+Cross validation with N =  482  and folds =  979  finished.
+Cross validation with N =  496  and folds =  972  finished.
+Cross validation with N =  510  and folds =  964  finished.
+Cross validation with N =  524  and folds =  957  finished.
+Cross validation with N =  538  and folds =  950  finished.
+Cross validation with N =  553  and folds =  943  finished.
+Cross validation with N =  569  and folds =  935  finished.
+Cross validation with N =  584  and folds =  928  finished.
+Cross validation with N =  601  and folds =  921  finished.
+Cross validation with N =  617  and folds =  914  finished.
+Cross validation with N =  635  and folds =  907  finished.
+Cross validation with N =  652  and folds =  901  finished.
+Cross validation with N =  670  and folds =  894  finished.
+Cross validation with N =  689  and folds =  887  finished.
+Cross validation with N =  708  and folds =  880  finished.
+Cross validation with N =  728  and folds =  874  finished.
+Cross validation with N =  748  and folds =  867  finished.
+Cross validation with N =  769  and folds =  860  finished.
+Cross validation with N =  790  and folds =  854  finished.
+Cross validation with N =  812  and folds =  847  finished.
+Cross validation with N =  835  and folds =  841  finished.
+Cross validation with N =  858  and folds =  835  finished.
+Cross validation with N =  882  and folds =  828  finished.
+Cross validation with N =  906  and folds =  822  finished.
+Cross validation with N =  932  and folds =  816  finished.
+Cross validation with N =  957  and folds =  810  finished.
+Cross validation with N =  984  and folds =  804  finished.
+Cross validation with N =  1011  and folds =  797  finished.
+Cross validation with N =  1040  and folds =  791  finished.
+Cross validation with N =  1068  and folds =  785  finished.
+Cross validation with N =  1098  and folds =  779  finished.
+Cross validation with N =  1129  and folds =  774  finished.
+Cross validation with N =  1160  and folds =  768  finished.
+Cross validation with N =  1192  and folds =  762  finished.
+Cross validation with N =  1225  and folds =  756  finished.
+Cross validation with N =  1260  and folds =  750  finished.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cross validation with N =  1295  and folds =  745  finished.
+Cross validation with N =  1331  and folds =  739  finished.
+Cross validation with N =  1368  and folds =  733  finished.
+Cross validation with N =  1406  and folds =  728  finished.
+Cross validation with N =  1445  and folds =  722  finished.
+Cross validation with N =  1485  and folds =  717  finished.
+Cross validation with N =  1526  and folds =  711  finished.
+Cross validation with N =  1568  and folds =  706  finished.
+Cross validation with N =  1612  and folds =  701  finished.
+Cross validation with N =  1657  and folds =  695  finished.
+Cross validation with N =  1703  and folds =  690  finished.
+Cross validation with N =  1750  and folds =  685  finished.
+Cross validation with N =  1799  and folds =  680  finished.
+Cross validation with N =  1849  and folds =  675  finished.
+Cross validation with N =  1900  and folds =  670  finished.
+Cross validation with N =  1953  and folds =  664  finished.
+Cross validation with N =  2007  and folds =  659  finished.
+Cross validation with N =  2063  and folds =  654  finished.
+Cross validation with N =  2120  and folds =  649  finished.
+Cross validation with N =  2179  and folds =  645  finished.
+Cross validation with N =  2240  and folds =  640  finished.
+Cross validation with N =  2302  and folds =  635  finished.
+Cross validation with N =  2366  and folds =  630  finished.
+Cross validation with N =  2432  and folds =  625  finished.
+Cross validation with N =  2499  and folds =  621  finished.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Save the results</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Save computed parameters</span>
+<span class="n">pvalues</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;../data/morphology_taxol/cell_morphology_pvalues.csv&#39;</span><span class="p">,</span><span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="plot-of-results">
+<h2>Plot of results<a class="headerlink" href="#plot-of-results" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load the data</span>
+<span class="n">path</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;../data/morphology_taxol/&#39;</span>
+<span class="n">file_name</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;cell_data.xlsx&#39;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="s1">&#39;cell_morphology_pvalues.csv&#39;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+
+<span class="c1"># Obtain the data, variables and name of the groups for which you would like to get a plot</span>
+<span class="n">data</span><span class="p">,</span> <span class="n">variables</span><span class="p">,</span> <span class="n">group_labels</span> <span class="o">=</span> <span class="n">morphoparam</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">)</span>
+
+<span class="c1"># You can create all the combinations from a dictionary with the labels of each group, or declare which combinations you want:</span>
+<span class="c1"># 1.- All combinations should be written exactly as in the csv of the p-values.</span>
+<span class="n">combination</span> <span class="o">=</span> <span class="n">create_combination</span><span class="p">(</span><span class="n">group_labels</span><span class="p">)</span>
+
+<span class="c1"># Calculate the data related to exponential parameters:</span>
+<span class="n">param</span> <span class="o">=</span> <span class="n">decission_data_exponential</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">combination</span><span class="p">,</span> <span class="n">variables</span><span class="p">,</span> <span class="n">sign_level</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">,</span> <span class="n">gamma</span> <span class="o">=</span> <span class="mf">5e-06</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>../data/morphology_taxol/
+cell_data.xlsx
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># print the results:</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">table_of_results</span><span class="p">(</span><span class="n">param</span><span class="p">,</span> <span class="n">variables</span><span class="p">,</span> <span class="n">combination</span><span class="p">)</span>
+<span class="n">table</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>comparison</th>
+      <th>Cell body size microns a</th>
+      <th>Cell body size microns c</th>
+      <th>Cell body size microns ^n-alpha</th>
+      <th>Cell body size microns n-alpha</th>
+      <th>Cell body size microns Theta</th>
+      <th>Cell body perimeter microns a</th>
+      <th>Cell body perimeter microns c</th>
+      <th>Cell body perimeter microns ^n-alpha</th>
+      <th>Cell body perimeter microns n-alpha</th>
+      <th>...</th>
+      <th>Cell body axis ratio a</th>
+      <th>Cell body axis ratio c</th>
+      <th>Cell body axis ratio ^n-alpha</th>
+      <th>Cell body axis ratio n-alpha</th>
+      <th>Cell body axis ratio Theta</th>
+      <th>protrusion_binary a</th>
+      <th>protrusion_binary c</th>
+      <th>protrusion_binary ^n-alpha</th>
+      <th>protrusion_binary n-alpha</th>
+      <th>protrusion_binary Theta</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>HD_control_HD_tax1</td>
+      <td>0.255420</td>
+      <td>0.002498</td>
+      <td>708</td>
+      <td>652.0</td>
+      <td>0</td>
+      <td>0.254495</td>
+      <td>0.001586</td>
+      <td>1129</td>
+      <td>1026.0</td>
+      <td>...</td>
+      <td>0.256400</td>
+      <td>0.002736</td>
+      <td>617</td>
+      <td>597.0</td>
+      <td>0</td>
+      <td>0.552510</td>
+      <td>6.315218e-22</td>
+      <td>NaN</td>
+      <td>3.804222e+21</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>HD_control_HD_tax50</td>
+      <td>0.260012</td>
+      <td>0.007171</td>
+      <td>250</td>
+      <td>229.0</td>
+      <td>1</td>
+      <td>0.254589</td>
+      <td>0.001297</td>
+      <td>1368</td>
+      <td>1254.0</td>
+      <td>...</td>
+      <td>0.280993</td>
+      <td>0.039551</td>
+      <td>47</td>
+      <td>43.0</td>
+      <td>1</td>
+      <td>0.182387</td>
+      <td>3.219254e-02</td>
+      <td>45.0</td>
+      <td>4.000000e+01</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>HD_tax1_HD_tax50</td>
+      <td>0.271282</td>
+      <td>0.021280</td>
+      <td>83</td>
+      <td>79.0</td>
+      <td>1</td>
+      <td>0.259078</td>
+      <td>0.006770</td>
+      <td>257</td>
+      <td>243.0</td>
+      <td>...</td>
+      <td>0.289045</td>
+      <td>0.063996</td>
+      <td>29</td>
+      <td>27.0</td>
+      <td>1</td>
+      <td>0.191216</td>
+      <td>3.509398e-02</td>
+      <td>38.0</td>
+      <td>3.800000e+01</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>3 rows × 21 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot exponential parameters a and c from p(n) = aexp(-cn) </span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;#FF0000&#39;</span><span class="p">,</span> <span class="s1">&#39;#F89800&#39;</span><span class="p">,</span> <span class="s1">&#39;#0200DE&#39;</span><span class="p">]</span>
+<span class="n">scatterplot_decrease_parameters</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">combination</span><span class="p">,</span><span class="n">variables</span><span class="p">,</span> <span class="n">path</span> <span class="o">=</span> <span class="n">path</span><span class="p">,</span><span class="n">fs</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">plot_type</span><span class="o">=</span><span class="s2">&quot;exp-param&quot;</span><span class="p">,</span> <span class="n">colors</span> <span class="o">=</span> <span class="n">colors</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cell body size microns
+</pre></div>
+</div>
+<img alt="../../../../_images/Morphology of cells under Taxol_16_1.png" src="../../../../_images/Morphology of cells under Taxol_16_1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cell body perimeter microns
+</pre></div>
+</div>
+<img alt="../../../../_images/Morphology of cells under Taxol_16_3.png" src="../../../../_images/Morphology of cells under Taxol_16_3.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cell body axis ratio
+</pre></div>
+</div>
+<img alt="../../../../_images/Morphology of cells under Taxol_16_5.png" src="../../../../_images/Morphology of cells under Taxol_16_5.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>protrusion_binary
+</pre></div>
+</div>
+<img alt="../../../../_images/Morphology of cells under Taxol_16_7.png" src="../../../../_images/Morphology of cells under Taxol_16_7.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the estimator of the minimum sample size to observe statistically significant differences.</span>
+<span class="n">scatterplot_decrease_parameters</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">combination</span><span class="p">,</span><span class="n">variables</span><span class="p">,</span> <span class="n">path</span> <span class="o">=</span> <span class="n">path</span><span class="p">,</span><span class="n">fs</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">plot_type</span><span class="o">=</span><span class="s2">&quot;sampled-nalpha&quot;</span><span class="p">,</span> <span class="n">colors</span> <span class="o">=</span> <span class="n">colors</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cell body size microns
+</pre></div>
+</div>
+<img alt="../../../../_images/Morphology of cells under Taxol_17_1.png" src="../../../../_images/Morphology of cells under Taxol_17_1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cell body perimeter microns
+</pre></div>
+</div>
+<img alt="../../../../_images/Morphology of cells under Taxol_17_3.png" src="../../../../_images/Morphology of cells under Taxol_17_3.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cell body axis ratio
+</pre></div>
+</div>
+<img alt="../../../../_images/Morphology of cells under Taxol_17_5.png" src="../../../../_images/Morphology of cells under Taxol_17_5.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>protrusion_binary
+</pre></div>
+</div>
+<img alt="../../../../_images/Morphology of cells under Taxol_17_7.png" src="../../../../_images/Morphology of cells under Taxol_17_7.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the sample size n that satisfies alpha = aexp(-cn). This value is the theoretical minimum sample size needed to observe statistically significant differences.</span>
+<span class="n">scatterplot_decrease_parameters</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">combination</span><span class="p">,</span><span class="n">variables</span><span class="p">,</span> <span class="n">path</span> <span class="o">=</span> <span class="n">path</span><span class="p">,</span><span class="n">fs</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">plot_type</span><span class="o">=</span><span class="s2">&quot;theory-nalpha&quot;</span><span class="p">,</span> <span class="n">colors</span> <span class="o">=</span> <span class="n">colors</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cell body size microns
+</pre></div>
+</div>
+<img alt="../../../../_images/Morphology of cells under Taxol_18_1.png" src="../../../../_images/Morphology of cells under Taxol_18_1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cell body perimeter microns
+</pre></div>
+</div>
+<img alt="../../../../_images/Morphology of cells under Taxol_18_3.png" src="../../../../_images/Morphology of cells under Taxol_18_3.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cell body axis ratio
+</pre></div>
+</div>
+<img alt="../../../../_images/Morphology of cells under Taxol_18_5.png" src="../../../../_images/Morphology of cells under Taxol_18_5.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>protrusion_binary
+</pre></div>
+</div>
+<img alt="../../../../_images/Morphology of cells under Taxol_18_7.png" src="../../../../_images/Morphology of cells under Taxol_18_7.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the p-function for continuous measures</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;#FF0000&#39;</span><span class="p">,</span> <span class="s1">&#39;#F89800&#39;</span><span class="p">,</span> <span class="s1">&#39;#0200DE&#39;</span><span class="p">]</span>
+<span class="n">continuous_variables</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span><span class="n">variables</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">variables</span> <span class="k">if</span> <span class="n">variables</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">!=</span><span class="s1">&#39;protrusion_binary&#39;</span><span class="p">}</span>
+<span class="n">plot_pcurve_by_measure</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">combination</span><span class="p">,</span> <span class="n">continuous_variables</span><span class="p">,</span> <span class="n">path</span> <span class="o">=</span> <span class="n">path</span><span class="p">,</span> <span class="n">colors</span> <span class="o">=</span> <span class="n">colors</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cell body size microns
+</pre></div>
+</div>
+<img alt="../../../../_images/Morphology of cells under Taxol_19_1.png" src="../../../../_images/Morphology of cells under Taxol_19_1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cell body perimeter microns
+</pre></div>
+</div>
+<img alt="../../../../_images/Morphology of cells under Taxol_19_3.png" src="../../../../_images/Morphology of cells under Taxol_19_3.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cell body axis ratio
+</pre></div>
+</div>
+<img alt="../../../../_images/Morphology of cells under Taxol_19_5.png" src="../../../../_images/Morphology of cells under Taxol_19_5.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the p-function for continuous measures</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;#FF0000&#39;</span><span class="p">,</span> <span class="s1">&#39;#F89800&#39;</span><span class="p">,</span> <span class="s1">&#39;#0200DE&#39;</span><span class="p">]</span>
+<span class="n">continuous_variables</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span><span class="n">variables</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">variables</span> <span class="k">if</span> <span class="n">variables</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">!=</span><span class="s1">&#39;protrusion_binary&#39;</span><span class="p">}</span>
+<span class="n">composed_plot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">group_labels</span><span class="p">,</span> <span class="n">combination</span><span class="p">,</span> <span class="n">continuous_variables</span><span class="p">,</span> <span class="n">colors</span> <span class="o">=</span> <span class="n">colors</span><span class="p">,</span> 
+              <span class="n">fs</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">32</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">1500</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cell body size microns
+</pre></div>
+</div>
+<img alt="../../../../_images/Morphology of cells under Taxol_20_1.png" src="../../../../_images/Morphology of cells under Taxol_20_1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cell body perimeter microns
+</pre></div>
+</div>
+<img alt="../../../../_images/Morphology of cells under Taxol_20_3.png" src="../../../../_images/Morphology of cells under Taxol_20_3.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cell body axis ratio
+</pre></div>
+</div>
+<img alt="../../../../_images/Morphology of cells under Taxol_20_5.png" src="../../../../_images/Morphology of cells under Taxol_20_5.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the p-function for discrete variables measures</span>
+<span class="n">discrete_variables</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;0&#39;</span><span class="p">:</span> <span class="s1">&#39;protrusion_binary&#39;</span><span class="p">}</span>
+<span class="n">test</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;0&#39;</span><span class="p">:</span> <span class="s1">&#39;ChiSquared&#39;</span><span class="p">}</span>
+<span class="n">plot_pcurve_by_measure</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">combination</span><span class="p">,</span> <span class="n">discrete_variables</span><span class="p">,</span> <span class="n">path</span> <span class="o">=</span> <span class="n">path</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="n">test</span><span class="p">,</span> <span class="n">colors</span> <span class="o">=</span> <span class="n">colors</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>protrusion_binary
+</pre></div>
+</div>
+<img alt="../../../../_images/Morphology of cells under Taxol_21_1.png" src="../../../../_images/Morphology of cells under Taxol_21_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the p-function for discrete variables measures</span>
+<span class="n">discrete_variables</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;0&#39;</span><span class="p">:</span> <span class="s1">&#39;protrusion_binary&#39;</span><span class="p">}</span>
+<span class="n">test</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;0&#39;</span><span class="p">:</span> <span class="s1">&#39;ChiSquared&#39;</span><span class="p">}</span>
+<span class="n">composed_plot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">group_labels</span><span class="p">,</span> <span class="n">combination</span><span class="p">,</span> <span class="n">discrete_variables</span><span class="p">,</span><span class="n">test</span><span class="o">=</span><span class="n">test</span><span class="p">,</span> 
+              <span class="n">colors</span> <span class="o">=</span> <span class="n">colors</span><span class="p">,</span> <span class="n">fs</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>protrusion_binary
+</pre></div>
+</div>
+<img alt="../../../../_images/Morphology of cells under Taxol_22_1.png" src="../../../../_images/Morphology of cells under Taxol_22_1.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Statistics\pMoss\pMoSS-master\examples"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Martin Schatz<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

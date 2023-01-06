@@ -1,0 +1,1333 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>&lt;no title&gt; &#8212; MB100T01 Advanced Image Analysis Course</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">MB100T01 Advanced Image Analysis Course</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to MB100T01 Course
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Introduction/readme.html">
+   MB100T01 Advanced Image Analysis Course
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../Python_Introduction/readme.html">
+     Brief introduction to Python
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Python_Introduction/01_Python_Basics.html">
+       Introduction to Python in Jupyter Notebook/Google Colab
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Pandas_Introduction/readme.html">
+   Introduction to Pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Pandas_Introduction/02_intro_to_pandas.html">
+     Introduction to Pandas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Ploting_Introduction/readme.html">
+   Intro to plotting in Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Ploting_Introduction/03_seaborn_introduction.html">
+     An introduction to seaborn
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Ploting_Introduction/04_seaborn_distributions.html">
+     Visualizing distributions of data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Ploting_Introduction/05_seaborn_categorical.html">
+     Visualizing categorical data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Ploting_Introduction/02_BONUS_plotting_with_matplotlib.html">
+     Charting in Colaboratory
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../readme.html">
+   Statistics examples
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_statistics.html">
+     Statistic overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_Statannotations-Tutorial-1.html">
+     Showing statistical significance on seaborn plots with Statannotations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07_big_data_statistics.html">
+     Exercise
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07_big_data_statistics_SOLUTION.html">
+     Big Data definition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07_seaborn_big_data_statistics_SOLUTION.html">
+     Big Data seaborn Solution
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Statistics/pMoss/pMoss_MY_500_Pandas_csv_simple.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FStatistics/pMoss/pMoss_MY_500_Pandas_csv_simple.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/Statistics/pMoss/pMoss_MY_500_Pandas_csv_simple.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1><no title></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">import</span> <span class="nn">bokeh.plotting</span>
+<span class="kn">import</span> <span class="nn">bokeh.io</span>
+
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>bokeh-catplot
+<span class="kn">import</span> <span class="nn">bokeh_catplot</span>
+
+<span class="n">bokeh</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">output_notebook</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting bokeh-catplot
+  Using cached bokeh_catplot-0.1.9-py2.py3-none-any.whl (16 kB)
+Requirement already satisfied: numpy in c:\users\schatzm\anaconda3\envs\ju-book\lib\site-packages (from bokeh-catplot) (1.24.1)
+Collecting xarray
+  Using cached xarray-2022.12.0-py3-none-any.whl (969 kB)
+Collecting numba
+  Using cached numba-0.56.4.tar.gz (2.4 MB)
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status &#39;error&#39;
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  error: subprocess-exited-with-error
+  
+  python setup.py egg_info did not run successfully.
+  exit code: 1
+  
+  [8 lines of output]
+  Traceback (most recent call last):
+    File &quot;&lt;string&gt;&quot;, line 2, in &lt;module&gt;
+    File &quot;&lt;pip-setuptools-caller&gt;&quot;, line 34, in &lt;module&gt;
+    File &quot;C:\Users\schatzm\AppData\Local\Temp\13\pip-install-p0g5nh9t\numba_c007f49860cc4e489c768034512ff184\setup.py&quot;, line 51, in &lt;module&gt;
+      _guard_py_ver()
+    File &quot;C:\Users\schatzm\AppData\Local\Temp\13\pip-install-p0g5nh9t\numba_c007f49860cc4e489c768034512ff184\setup.py&quot;, line 48, in _guard_py_ver
+      raise RuntimeError(msg.format(cur_py, min_py, max_py))
+  RuntimeError: Cannot install on Python version 3.11.0; only versions &gt;=3.7,&lt;3.11 are supported.
+  [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+error: metadata-generation-failed
+
+Encountered error while generating package metadata.
+
+See above for output.
+
+note: This is an issue with the package mentioned above, not pip.
+hint: See above for details.
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">import</span> <span class="nn">bokeh.io</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;pip install --upgrade bokeh-catplot&#39;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">9</span> <span class="kn">import</span> <span class="nn">bokeh_catplot</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">bokeh</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">output_notebook</span><span class="p">()</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;bokeh_catplot&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mounted at /content/drive
+</pre></div>
+</div>
+</div>
+</div>
+<p>pMoss isntall</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">path</span>
+<span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;/content/drive/Shareddrives/MB100T01/Materials/Google_Colab/pMoss/pMoSS-master/pMoSS_edit&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>/content/drive/Shareddrives/MB100T01/Materials/Google_Colab/pMoss/pMoSS-master/requirements.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy in /usr/local/lib/python3.7/dist-packages (from -r /content/drive/Shareddrives/MB100T01/Materials/Google_Colab/pMoss/pMoSS-master/requirements.txt (line 1)) (1.19.5)
+Requirement already satisfied: scipy&gt;=1.1.0 in /usr/local/lib/python3.7/dist-packages (from -r /content/drive/Shareddrives/MB100T01/Materials/Google_Colab/pMoss/pMoSS-master/requirements.txt (line 2)) (1.4.1)
+Requirement already satisfied: pandas in /usr/local/lib/python3.7/dist-packages (from -r /content/drive/Shareddrives/MB100T01/Materials/Google_Colab/pMoss/pMoSS-master/requirements.txt (line 3)) (1.1.5)
+Requirement already satisfied: matplotlib in /usr/local/lib/python3.7/dist-packages (from -r /content/drive/Shareddrives/MB100T01/Materials/Google_Colab/pMoss/pMoSS-master/requirements.txt (line 4)) (3.2.2)
+Requirement already satisfied: xlrd&gt;=1.0.0 in /usr/local/lib/python3.7/dist-packages (from -r /content/drive/Shareddrives/MB100T01/Materials/Google_Colab/pMoss/pMoSS-master/requirements.txt (line 5)) (1.1.0)
+Requirement already satisfied: seaborn in /usr/local/lib/python3.7/dist-packages (from -r /content/drive/Shareddrives/MB100T01/Materials/Google_Colab/pMoss/pMoSS-master/requirements.txt (line 6)) (0.11.1)
+Requirement already satisfied: statsmodels&gt;=0.9.0 in /usr/local/lib/python3.7/dist-packages (from -r /content/drive/Shareddrives/MB100T01/Materials/Google_Colab/pMoss/pMoSS-master/requirements.txt (line 7)) (0.10.2)
+Requirement already satisfied: glob2 in /usr/local/lib/python3.7/dist-packages (from -r /content/drive/Shareddrives/MB100T01/Materials/Google_Colab/pMoss/pMoSS-master/requirements.txt (line 8)) (0.7)
+Collecting pytest-shutil
+  Downloading https://files.pythonhosted.org/packages/26/b7/ef48a8f1f81ae4cd6f22992f6ffb7e9bf030d6e6654e2e626a05aaf5e880/pytest_shutil-1.7.0-py2.py3-none-any.whl
+Requirement already satisfied: pytz&gt;=2017.2 in /usr/local/lib/python3.7/dist-packages (from pandas-&gt;-r /content/drive/Shareddrives/MB100T01/Materials/Google_Colab/pMoss/pMoSS-master/requirements.txt (line 3)) (2018.9)
+Requirement already satisfied: python-dateutil&gt;=2.7.3 in /usr/local/lib/python3.7/dist-packages (from pandas-&gt;-r /content/drive/Shareddrives/MB100T01/Materials/Google_Colab/pMoss/pMoSS-master/requirements.txt (line 3)) (2.8.1)
+Requirement already satisfied: cycler&gt;=0.10 in /usr/local/lib/python3.7/dist-packages (from matplotlib-&gt;-r /content/drive/Shareddrives/MB100T01/Materials/Google_Colab/pMoss/pMoSS-master/requirements.txt (line 4)) (0.10.0)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in /usr/local/lib/python3.7/dist-packages (from matplotlib-&gt;-r /content/drive/Shareddrives/MB100T01/Materials/Google_Colab/pMoss/pMoSS-master/requirements.txt (line 4)) (1.3.1)
+Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,&gt;=2.0.1 in /usr/local/lib/python3.7/dist-packages (from matplotlib-&gt;-r /content/drive/Shareddrives/MB100T01/Materials/Google_Colab/pMoss/pMoSS-master/requirements.txt (line 4)) (2.4.7)
+Requirement already satisfied: patsy&gt;=0.4.0 in /usr/local/lib/python3.7/dist-packages (from statsmodels&gt;=0.9.0-&gt;-r /content/drive/Shareddrives/MB100T01/Materials/Google_Colab/pMoss/pMoSS-master/requirements.txt (line 7)) (0.5.1)
+Collecting execnet
+  Downloading https://files.pythonhosted.org/packages/41/85/0cd8c8670ea330150be3427f9d279143e766839e83545f77572749b6d8c3/execnet-1.8.1-py2.py3-none-any.whl
+Requirement already satisfied: pytest in /usr/local/lib/python3.7/dist-packages (from pytest-shutil-&gt;-r /content/drive/Shareddrives/MB100T01/Materials/Google_Colab/pMoss/pMoSS-master/requirements.txt (line 9)) (3.6.4)
+Collecting path.py
+  Downloading https://files.pythonhosted.org/packages/8f/04/130b7a538c25693c85c4dee7e25d126ebf5511b1eb7320e64906687b159e/path.py-12.5.0-py3-none-any.whl
+Collecting mock
+  Downloading https://files.pythonhosted.org/packages/5c/03/b7e605db4a57c0f6fba744b11ef3ddf4ddebcada35022927a2b5fc623fdf/mock-4.0.3-py3-none-any.whl
+Requirement already satisfied: contextlib2 in /usr/local/lib/python3.7/dist-packages (from pytest-shutil-&gt;-r /content/drive/Shareddrives/MB100T01/Materials/Google_Colab/pMoss/pMoSS-master/requirements.txt (line 9)) (0.5.5)
+Requirement already satisfied: six in /usr/local/lib/python3.7/dist-packages (from pytest-shutil-&gt;-r /content/drive/Shareddrives/MB100T01/Materials/Google_Colab/pMoss/pMoSS-master/requirements.txt (line 9)) (1.15.0)
+Requirement already satisfied: termcolor in /usr/local/lib/python3.7/dist-packages (from pytest-shutil-&gt;-r /content/drive/Shareddrives/MB100T01/Materials/Google_Colab/pMoss/pMoSS-master/requirements.txt (line 9)) (1.1.0)
+Collecting apipkg&gt;=1.4
+  Downloading https://files.pythonhosted.org/packages/67/08/4815a09603fc800209431bec5b8bd2acf2f95abdfb558a44a42507fb94da/apipkg-1.5-py2.py3-none-any.whl
+Requirement already satisfied: setuptools in /usr/local/lib/python3.7/dist-packages (from pytest-&gt;pytest-shutil-&gt;-r /content/drive/Shareddrives/MB100T01/Materials/Google_Colab/pMoss/pMoSS-master/requirements.txt (line 9)) (57.0.0)
+Requirement already satisfied: py&gt;=1.5.0 in /usr/local/lib/python3.7/dist-packages (from pytest-&gt;pytest-shutil-&gt;-r /content/drive/Shareddrives/MB100T01/Materials/Google_Colab/pMoss/pMoSS-master/requirements.txt (line 9)) (1.10.0)
+Requirement already satisfied: attrs&gt;=17.4.0 in /usr/local/lib/python3.7/dist-packages (from pytest-&gt;pytest-shutil-&gt;-r /content/drive/Shareddrives/MB100T01/Materials/Google_Colab/pMoss/pMoSS-master/requirements.txt (line 9)) (21.2.0)
+Requirement already satisfied: atomicwrites&gt;=1.0 in /usr/local/lib/python3.7/dist-packages (from pytest-&gt;pytest-shutil-&gt;-r /content/drive/Shareddrives/MB100T01/Materials/Google_Colab/pMoss/pMoSS-master/requirements.txt (line 9)) (1.4.0)
+Requirement already satisfied: more-itertools&gt;=4.0.0 in /usr/local/lib/python3.7/dist-packages (from pytest-&gt;pytest-shutil-&gt;-r /content/drive/Shareddrives/MB100T01/Materials/Google_Colab/pMoss/pMoSS-master/requirements.txt (line 9)) (8.7.0)
+Requirement already satisfied: pluggy&lt;0.8,&gt;=0.5 in /usr/local/lib/python3.7/dist-packages (from pytest-&gt;pytest-shutil-&gt;-r /content/drive/Shareddrives/MB100T01/Materials/Google_Colab/pMoss/pMoSS-master/requirements.txt (line 9)) (0.7.1)
+Collecting path
+  Downloading https://files.pythonhosted.org/packages/d3/2a/b0f97e1b736725f6ec48a8bd564ee1d1f3f945bb5d39cb44ef8bbe66bd14/path-15.1.2-py3-none-any.whl
+Installing collected packages: apipkg, execnet, path, path.py, mock, pytest-shutil
+Successfully installed apipkg-1.5 execnet-1.8.1 mock-4.0.3 path-15.1.2 path.py-12.5.0 pytest-shutil-1.7.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">analysis_execution</span> <span class="kn">import</span> <span class="n">compute_diagnosis</span>
+<span class="kn">from</span> <span class="nn">data_classification_labels</span> <span class="kn">import</span> <span class="n">create_combination</span>
+<span class="kn">from</span> <span class="nn">graphics</span> <span class="kn">import</span> <span class="n">scatterplot_decrease_parameters</span><span class="p">,</span> <span class="n">plot_pcurve_by_measure</span><span class="p">,</span> <span class="n">composed_plot</span>
+<span class="kn">from</span> <span class="nn">table_of_results</span> <span class="kn">import</span> <span class="n">table_of_results</span>
+<span class="kn">from</span> <span class="nn">exponential_fit</span> <span class="kn">import</span> <span class="n">decission_data_exponential</span>
+<span class="kn">from</span> <span class="nn">load_morphology_data</span> <span class="kn">import</span> <span class="n">morphoparam</span>
+<span class="c1"># Avoid warnings</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.7/dist-packages/statsmodels/tools/_testing.py:19: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
+  import pandas.util.testing as tm
+/usr/local/lib/python3.7/dist-packages/patsy/constraint.py:13: DeprecationWarning: Using or importing the ABCs from &#39;collections&#39; instead of from &#39;collections.abc&#39; is deprecated since Python 3.3,and in 3.9 it will stop working
+  from collections import Mapping
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # path containing the data</span>
+<span class="c1"># path = r&#39;/content/drive/MyDrive/NEUBIAS/pMoSS-master/pMoSS-master/data/morphology/&#39;</span>
+
+<span class="c1"># # Name of the file containing the information. It can be a csv or excel file. </span>
+<span class="c1"># # Note that the column containing the labels of the group must have the name &quot;Condition&quot; </span>
+<span class="c1"># # and should be the first column of the file.</span>
+
+<span class="c1"># # You can read either a csv or excel files:</span>
+
+<span class="c1"># # file_name =&#39;Aging morphology data.csv&#39;</span>
+<span class="c1"># file_name = r&#39;Aging morphology data.csv&#39;</span>
+
+<span class="c1"># path containing the data</span>
+<span class="n">path</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;/content/drive/Shareddrives/MB100T01/Materials/Google_Colab/pMoss/mleko/&#39;</span>
+
+<span class="c1"># Name of the file containing the information. It can be a csv or excel file. </span>
+<span class="c1"># Note that the column containing the labels of the group must have the name &quot;Condition&quot; </span>
+<span class="c1"># and should be the first column of the file.</span>
+
+<span class="c1"># You can read either a csv or excel files:</span>
+
+<span class="c1"># file_name =&#39;Aging morphology data.csv&#39;</span>
+<span class="n">file_name</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;prep500.csv&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pdHead</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1">#@param {type:&quot;boolean&quot;}</span>
+<span class="k">if</span> <span class="n">pdHead</span><span class="p">:</span>
+  <span class="n">dataInfo</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s1">&#39;;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">pdHead</span><span class="p">:</span>
+  <span class="n">dataInfo</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="c1">#first Label has to be named Condition, and means class of data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">pdHead</span><span class="p">:</span>
+  <span class="n">dataInfo</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># number of &quot;n-values&quot; to evaluate (size of N-grid)</span>
+<span class="n">grid_size</span> <span class="o">=</span> <span class="mi">200</span> 
+<span class="c1"># minimum &quot;n-value&quot; to compute Monte Carlo cross-validation</span>
+<span class="n">n0</span> <span class="o">=</span> <span class="mi">2</span> 
+<span class="c1"># maximum &quot;n-value&quot; to compute Monte Carlo cross-validation</span>
+<span class="n">Nmax</span> <span class="o">=</span> <span class="mi">1200</span>
+
+<span class="c1"># This value prevents from having only one iteration for the highest &quot;n-value&quot;:</span>
+<span class="c1"># final iterations = k*(m/min(m,Nmax)) where m is the size of group with less observations. </span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">20</span> 
+
+<span class="c1"># This value prevents from having millions of iterations in n0 (the lowest&quot;n-value&quot;):</span>
+<span class="c1"># initial iterations = np.log((m/n0)*initial_portion) where m is the size of group with less observations. </span>
+<span class="n">initial_portion</span><span class="o">=</span><span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.05</span> <span class="c1"># alpha for a 100(1-alpha) statistical significance.</span>
+<span class="n">gamma</span> <span class="o">=</span> <span class="mf">5e-06</span> <span class="c1"># gamma in the paper = gamma*alpha.</span>
+<span class="c1"># Statistitical test to evaluate</span>
+<span class="n">test</span> <span class="o">=</span> <span class="s1">&#39;MannWhitneyU&#39;</span>
+<span class="c1"># Method to estimate the p-value function</span>
+<span class="n">method</span> <span class="o">=</span> <span class="s1">&#39;exponential&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">data_diagnosis</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">pvalues</span><span class="p">,</span> <span class="n">param</span><span class="p">,</span> <span class="n">Theta</span> <span class="o">=</span> <span class="n">compute_diagnosis</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">path</span> <span class="o">=</span> <span class="n">path</span><span class="p">,</span> <span class="n">gamma</span> <span class="o">=</span> <span class="n">gamma</span><span class="p">,</span>
+                                          <span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">grid_size</span> <span class="o">=</span> <span class="n">grid_size</span><span class="p">,</span>
+                                          <span class="n">n0</span> <span class="o">=</span> <span class="n">n0</span><span class="p">,</span> <span class="n">Nmax</span> <span class="o">=</span> <span class="n">Nmax</span><span class="p">,</span><span class="n">k</span> <span class="o">=</span> <span class="n">k</span><span class="p">,</span>
+                                          <span class="n">initial_portion</span><span class="o">=</span><span class="n">initial_portion</span><span class="p">,</span>
+                                          <span class="n">method</span> <span class="o">=</span> <span class="n">method</span><span class="p">,</span> <span class="n">test</span> <span class="o">=</span> <span class="n">test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/content/drive/Shareddrives/MB100T01/Materials/Google_Colab/pMoss/mleko/
+prep500.csv
+comparison: Aptamil_Data1
+Cross validation with N =  2  and folds =  249  finished.
+Cross validation with N =  3  and folds =  245  finished.
+Cross validation with N =  4  and folds =  241  finished.
+Cross validation with N =  5  and folds =  237  finished.
+Cross validation with N =  6  and folds =  233  finished.
+Cross validation with N =  7  and folds =  229  finished.
+Cross validation with N =  8  and folds =  225  finished.
+Cross validation with N =  9  and folds =  221  finished.
+Cross validation with N =  10  and folds =  218  finished.
+Cross validation with N =  11  and folds =  214  finished.
+Cross validation with N =  12  and folds =  210  finished.
+Cross validation with N =  13  and folds =  207  finished.
+Cross validation with N =  14  and folds =  203  finished.
+Cross validation with N =  15  and folds =  200  finished.
+Cross validation with N =  16  and folds =  196  finished.
+Cross validation with N =  17  and folds =  193  finished.
+Cross validation with N =  18  and folds =  190  finished.
+Cross validation with N =  19  and folds =  187  finished.
+Cross validation with N =  20  and folds =  183  finished.
+Cross validation with N =  21  and folds =  180  finished.
+Cross validation with N =  22  and folds =  177  finished.
+Cross validation with N =  23  and folds =  174  finished.
+Cross validation with N =  24  and folds =  171  finished.
+Cross validation with N =  25  and folds =  168  finished.
+Cross validation with N =  26  and folds =  165  finished.
+Cross validation with N =  27  and folds =  163  finished.
+Cross validation with N =  28  and folds =  160  finished.
+Cross validation with N =  29  and folds =  157  finished.
+Cross validation with N =  30  and folds =  155  finished.
+Cross validation with N =  31  and folds =  152  finished.
+Cross validation with N =  32  and folds =  149  finished.
+Cross validation with N =  33  and folds =  147  finished.
+Cross validation with N =  34  and folds =  144  finished.
+Cross validation with N =  35  and folds =  142  finished.
+Cross validation with N =  36  and folds =  139  finished.
+Cross validation with N =  37  and folds =  137  finished.
+Cross validation with N =  38  and folds =  135  finished.
+Cross validation with N =  40  and folds =  132  finished.
+Cross validation with N =  41  and folds =  130  finished.
+Cross validation with N =  42  and folds =  128  finished.
+Cross validation with N =  44  and folds =  126  finished.
+Cross validation with N =  45  and folds =  124  finished.
+Cross validation with N =  46  and folds =  122  finished.
+Cross validation with N =  48  and folds =  120  finished.
+Cross validation with N =  49  and folds =  117  finished.
+Cross validation with N =  51  and folds =  115  finished.
+Cross validation with N =  52  and folds =  114  finished.
+Cross validation with N =  54  and folds =  112  finished.
+Cross validation with N =  56  and folds =  110  finished.
+Cross validation with N =  57  and folds =  108  finished.
+Cross validation with N =  59  and folds =  106  finished.
+Cross validation with N =  61  and folds =  104  finished.
+Cross validation with N =  63  and folds =  102  finished.
+Cross validation with N =  65  and folds =  101  finished.
+Cross validation with N =  67  and folds =  99  finished.
+Cross validation with N =  69  and folds =  97  finished.
+Cross validation with N =  71  and folds =  96  finished.
+Cross validation with N =  74  and folds =  94  finished.
+Cross validation with N =  76  and folds =  92  finished.
+Cross validation with N =  78  and folds =  91  finished.
+Cross validation with N =  81  and folds =  89  finished.
+Cross validation with N =  83  and folds =  88  finished.
+Cross validation with N =  86  and folds =  86  finished.
+Cross validation with N =  89  and folds =  85  finished.
+Cross validation with N =  91  and folds =  83  finished.
+Cross validation with N =  94  and folds =  82  finished.
+Cross validation with N =  97  and folds =  81  finished.
+Cross validation with N =  100  and folds =  79  finished.
+Cross validation with N =  103  and folds =  78  finished.
+Cross validation with N =  106  and folds =  77  finished.
+Cross validation with N =  110  and folds =  75  finished.
+Cross validation with N =  113  and folds =  74  finished.
+Cross validation with N =  117  and folds =  73  finished.
+Cross validation with N =  120  and folds =  71  finished.
+Cross validation with N =  124  and folds =  70  finished.
+Cross validation with N =  128  and folds =  69  finished.
+Cross validation with N =  132  and folds =  68  finished.
+Cross validation with N =  136  and folds =  67  finished.
+Cross validation with N =  140  and folds =  66  finished.
+Cross validation with N =  145  and folds =  64  finished.
+Cross validation with N =  149  and folds =  63  finished.
+Cross validation with N =  154  and folds =  62  finished.
+Cross validation with N =  159  and folds =  61  finished.
+Cross validation with N =  164  and folds =  60  finished.
+Cross validation with N =  169  and folds =  59  finished.
+Cross validation with N =  174  and folds =  58  finished.
+Cross validation with N =  179  and folds =  57  finished.
+Cross validation with N =  185  and folds =  56  finished.
+Cross validation with N =  191  and folds =  55  finished.
+Cross validation with N =  197  and folds =  54  finished.
+Cross validation with N =  203  and folds =  53  finished.
+Cross validation with N =  209  and folds =  52  finished.
+Cross validation with N =  216  and folds =  52  finished.
+Cross validation with N =  222  and folds =  51  finished.
+Cross validation with N =  229  and folds =  50  finished.
+Cross validation with N =  237  and folds =  49  finished.
+Cross validation with N =  244  and folds =  48  finished.
+Cross validation with N =  251  and folds =  47  finished.
+Cross validation with N =  259  and folds =  46  finished.
+Cross validation with N =  267  and folds =  46  finished.
+Cross validation with N =  276  and folds =  45  finished.
+Cross validation with N =  284  and folds =  44  finished.
+Cross validation with N =  293  and folds =  43  finished.
+Cross validation with N =  302  and folds =  43  finished.
+Cross validation with N =  312  and folds =  42  finished.
+Cross validation with N =  321  and folds =  41  finished.
+Cross validation with N =  331  and folds =  40  finished.
+Cross validation with N =  342  and folds =  40  finished.
+Cross validation with N =  352  and folds =  39  finished.
+Cross validation with N =  363  and folds =  38  finished.
+Cross validation with N =  375  and folds =  38  finished.
+Cross validation with N =  386  and folds =  37  finished.
+Cross validation with N =  398  and folds =  36  finished.
+Cross validation with N =  411  and folds =  36  finished.
+Cross validation with N =  423  and folds =  35  finished.
+Cross validation with N =  437  and folds =  35  finished.
+Cross validation with N =  450  and folds =  34  finished.
+Cross validation with N =  464  and folds =  33  finished.
+Cross validation with N =  479  and folds =  33  finished.
+Cross validation with N =  494  and folds =  32  finished.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Save computed parameters</span>
+<span class="n">pvalues</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">path</span><span class="o">+</span><span class="s1">&#39;/aging_morphology_pvalues2.csv&#39;</span><span class="p">,</span><span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="c1"># param.to_csv(&#39;../data/morphology/aging_morphology_param.csv&#39;,index = False)</span>
+<span class="c1"># Theta.to_csv(&#39;../data/morphology/aging_morphology_Theta.csv&#39;,index = False)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">PermissionError</span><span class="g g-Whitespace">                           </span>Traceback (most recent call last)
+<span class="nn">/usr/local/lib/python3.7/dist-packages/pandas/io/formats/csvs.py</span> in <span class="ni">save</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">205</span> 
+<span class="ne">--&gt; </span><span class="mi">206</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_save</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">207</span> 
+
+<span class="nn">/usr/local/lib/python3.7/dist-packages/pandas/io/formats/csvs.py</span> in <span class="ni">_save</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">327</span> 
+<span class="ne">--&gt; </span><span class="mi">328</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_save_chunk</span><span class="p">(</span><span class="n">start_i</span><span class="p">,</span> <span class="n">end_i</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">329</span> 
+
+<span class="nn">/usr/local/lib/python3.7/dist-packages/pandas/io/formats/csvs.py</span> in <span class="ni">_save_chunk</span><span class="nt">(self, start_i, end_i)</span>
+<span class="g g-Whitespace">    </span><span class="mi">361</span> 
+<span class="ne">--&gt; </span><span class="mi">362</span>         <span class="n">libwriters</span><span class="o">.</span><span class="n">write_csv_rows</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">ix</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nlevels</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">cols</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">writer</span><span class="p">)</span>
+
+<span class="nn">pandas/_libs/writers.pyx</span> in <span class="ni">pandas._libs.writers.write_csv_rows</span><span class="nt">()</span>
+
+<span class="ne">PermissionError</span>: [Errno 1] Operation not permitted
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">PermissionError</span><span class="g g-Whitespace">                           </span>Traceback (most recent call last)
+<span class="ne">PermissionError</span>: [Errno 1] Operation not permitted
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">PermissionError</span><span class="g g-Whitespace">                           </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-14-aaf3641849f3&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Save computed parameters</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">pvalues</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">path</span><span class="o">+</span><span class="s1">&#39;/aging_morphology_pvalues2.csv&#39;</span><span class="p">,</span><span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># param.to_csv(&#39;../data/morphology/aging_morphology_param.csv&#39;,index = False)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Theta.to_csv(&#39;../data/morphology/aging_morphology_Theta.csv&#39;,index = False)</span>
+
+<span class="nn">/usr/local/lib/python3.7/dist-packages/pandas/core/generic.py</span> in <span class="ni">to_csv</span><span class="nt">(self, path_or_buf, sep, na_rep, float_format, columns, header, index, index_label, mode, encoding, compression, quoting, quotechar, line_terminator, chunksize, date_format, doublequote, escapechar, decimal, errors)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3168</span>             <span class="n">decimal</span><span class="o">=</span><span class="n">decimal</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3169</span>         <span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">3170</span>         <span class="n">formatter</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">3171</span> 
+<span class="g g-Whitespace">   </span><span class="mi">3172</span>         <span class="k">if</span> <span class="n">path_or_buf</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">/usr/local/lib/python3.7/dist-packages/pandas/io/formats/csvs.py</span> in <span class="ni">save</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">225</span>                     <span class="n">close</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="g g-Whitespace">    </span><span class="mi">226</span>             <span class="k">if</span> <span class="n">close</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">227</span>                 <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">228</span>                 <span class="k">for</span> <span class="n">_fh</span> <span class="ow">in</span> <span class="n">handles</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">229</span>                     <span class="n">_fh</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="ne">PermissionError</span>: [Errno 1] Operation not permitted
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load the data</span>
+<span class="c1">#path = r&#39;../data/morphology/&#39;</span>
+<span class="c1">#file_name = r&#39;Aging morphology data.xlsx&#39;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="o">+</span><span class="s1">&#39;/aging_morphology_pvalues2.csv&#39;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+
+<span class="c1"># Obtain the data, variables and name of the groups for which you would like to get a plot</span>
+<span class="n">data</span><span class="p">,</span> <span class="n">variables</span><span class="p">,</span> <span class="n">group_labels</span> <span class="o">=</span> <span class="n">morphoparam</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">path</span> <span class="o">=</span> <span class="n">path</span><span class="p">)</span>
+
+<span class="c1"># Declare the variables for which you would like to get a plot</span>
+<span class="c1"># variables={</span>
+<span class="c1">#             &#39;0&#39;: &#39;area (px^2)&#39;,</span>
+<span class="c1">#             &#39;1&#39;: &#39;short axis length (px)&#39;,</span>
+<span class="c1">#             &#39;2&#39;: &#39;orientation&#39;</span>
+<span class="c1">#             }</span>
+
+<span class="n">variables</span><span class="o">=</span><span class="p">{</span>
+            <span class="s1">&#39;0&#39;</span><span class="p">:</span> <span class="s1">&#39;Area&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;1&#39;</span><span class="p">:</span> <span class="s1">&#39;Feret&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;2&#39;</span><span class="p">:</span> <span class="s1">&#39;AR&#39;</span>
+            <span class="p">}</span>
+
+<span class="c1"># You can create all the combinations from a dictionary with the labels of each group, or declare which combinations you want:</span>
+<span class="c1"># 1.- All combinations should be written exactly as in the csv of the p-values.</span>
+
+<span class="c1"># group_labels = {&#39;0&#39;:&#39;A02&#39;,</span>
+<span class="c1">#             &#39;1&#39;:&#39;A03&#39;,</span>
+<span class="c1">#             &#39;2&#39;:&#39;A09&#39;,</span>
+<span class="c1">#             &#39;3&#39;:&#39;A16&#39;,</span>
+<span class="c1">#             &#39;4&#39;:&#39;A29&#39;,</span>
+<span class="c1">#             &#39;5&#39;:&#39;A35&#39;,</span>
+<span class="c1">#             &#39;6&#39;:&#39;A55&#39;,</span>
+<span class="c1">#             &#39;7&#39;:&#39;A65&#39;,</span>
+<span class="c1">#             &#39;8&#39;:&#39;A85&#39;,</span>
+<span class="c1">#             &#39;9&#39;:&#39;A96&#39;</span>
+<span class="c1">#             }</span>
+<span class="c1">#combination = create_combination(group_labels)</span>
+
+<span class="c1"># 2.- Set the desired combinations</span>
+<span class="c1"># combination={</span>
+<span class="c1">#  &#39;0&#39;: &#39;A02_A03&#39;,</span>
+<span class="c1">#  &#39;1&#39;: &#39;A02_A09&#39;,</span>
+<span class="c1">#  &#39;2&#39;: &#39;A02_A16&#39;,</span>
+<span class="c1">#  &#39;3&#39;: &#39;A02_A29&#39;,</span>
+<span class="c1">#  &#39;4&#39;: &#39;A02_A35&#39;,</span>
+<span class="c1">#  &#39;5&#39;: &#39;A02_A55&#39;, </span>
+<span class="c1">#  &#39;6&#39;: &#39;A02_A65&#39;, </span>
+<span class="c1">#  &#39;7&#39;: &#39;A02_A85&#39;, </span>
+<span class="c1">#  &#39;8&#39;: &#39;A02_A96&#39;</span>
+<span class="c1">#  }</span>
+<span class="n">combination</span><span class="o">=</span><span class="p">{</span>
+ <span class="c1">#&#39;0&#39;: &#39;Data1_Data2&#39;</span>
+ <span class="s1">&#39;0&#39;</span><span class="p">:</span> <span class="s1">&#39;Aptamil_Data1&#39;</span>
+ <span class="p">}</span>
+
+<span class="c1"># Load the data related to exponential parameters:</span>
+
+<span class="c1"># param = pd.read_csv(&#39;../data/morphology/aging_morphology_param.csv&#39;,sep=&#39;,&#39;)</span>
+
+<span class="c1"># or calculate it:</span>
+<span class="n">param</span> <span class="o">=</span> <span class="n">decission_data_exponential</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">combination</span><span class="p">,</span> <span class="n">variables</span><span class="p">,</span> <span class="n">sign_level</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">,</span> <span class="n">gamma</span> <span class="o">=</span> <span class="mf">5e-06</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">EmptyDataError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-15-24ada72c9954&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1">#path = r&#39;../data/morphology/&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1">#file_name = r&#39;Aging morphology data.xlsx&#39;</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="o">+</span><span class="s1">&#39;/aging_morphology_pvalues2.csv&#39;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># Obtain the data, variables and name of the groups for which you would like to get a plot</span>
+
+<span class="nn">/usr/local/lib/python3.7/dist-packages/pandas/io/parsers.py</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, dialect, error_bad_lines, warn_bad_lines, delim_whitespace, low_memory, memory_map, float_precision)</span>
+<span class="g g-Whitespace">    </span><span class="mi">686</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">687</span> 
+<span class="ne">--&gt; </span><span class="mi">688</span>     <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">689</span> 
+<span class="g g-Whitespace">    </span><span class="mi">690</span> 
+
+<span class="nn">/usr/local/lib/python3.7/dist-packages/pandas/io/parsers.py</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">452</span> 
+<span class="g g-Whitespace">    </span><span class="mi">453</span>     <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">454</span>     <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">fp_or_buf</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">455</span> 
+<span class="g g-Whitespace">    </span><span class="mi">456</span>     <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+
+<span class="nn">/usr/local/lib/python3.7/dist-packages/pandas/io/parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">946</span>             <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">947</span> 
+<span class="ne">--&gt; </span><span class="mi">948</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">949</span> 
+<span class="g g-Whitespace">    </span><span class="mi">950</span>     <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="nn">/usr/local/lib/python3.7/dist-packages/pandas/io/parsers.py</span> in <span class="ni">_make_engine</span><span class="nt">(self, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1178</span>     <span class="k">def</span> <span class="nf">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;c&quot;</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1179</span>         <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1180</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="n">CParserWrapper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1181</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1182</span>             <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;python&quot;</span><span class="p">:</span>
+
+<span class="nn">/usr/local/lib/python3.7/dist-packages/pandas/io/parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, src, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2008</span>         <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;usecols&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">usecols</span>
+<span class="g g-Whitespace">   </span><span class="mi">2009</span> 
+<span class="ne">-&gt; </span><span class="mi">2010</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span> <span class="o">=</span> <span class="n">parsers</span><span class="o">.</span><span class="n">TextReader</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2011</span>         <span class="bp">self</span><span class="o">.</span><span class="n">unnamed_cols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span><span class="o">.</span><span class="n">unnamed_cols</span>
+<span class="g g-Whitespace">   </span><span class="mi">2012</span> 
+
+<span class="nn">pandas/_libs/parsers.pyx</span> in <span class="ni">pandas._libs.parsers.TextReader.__cinit__</span><span class="nt">()</span>
+
+<span class="ne">EmptyDataError</span>: No columns to parse from file
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># print the results:</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">table_of_results</span><span class="p">(</span><span class="n">param</span><span class="p">,</span> <span class="n">variables</span><span class="p">,</span> <span class="n">combination</span><span class="p">)</span>
+<span class="n">table</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot </span>
+<span class="n">scatterplot_decrease_parameters</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">combination</span><span class="p">,</span><span class="n">variables</span><span class="p">,</span> <span class="n">path</span> <span class="o">=</span> <span class="n">path</span><span class="p">,</span><span class="n">fs</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">plot_type</span><span class="o">=</span><span class="s2">&quot;exp-param&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scatterplot_decrease_parameters</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">combination</span><span class="p">,</span><span class="n">variables</span><span class="p">,</span> <span class="n">path</span> <span class="o">=</span> <span class="n">path</span><span class="p">,</span><span class="n">fs</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">plot_type</span><span class="o">=</span><span class="s2">&quot;sampled-nalpha&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scatterplot_decrease_parameters</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">combination</span><span class="p">,</span><span class="n">variables</span><span class="p">,</span> <span class="n">path</span> <span class="o">=</span> <span class="n">path</span><span class="p">,</span><span class="n">fs</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">plot_type</span><span class="o">=</span><span class="s2">&quot;theory-nalpha&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_pcurve_by_measure</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">combination</span><span class="p">,</span> <span class="n">variables</span><span class="p">,</span> <span class="n">path</span> <span class="o">=</span> <span class="n">path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">composed_plot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">group_labels</span><span class="p">,</span> <span class="n">combination</span><span class="p">,</span> <span class="n">variables</span><span class="p">,</span> <span class="n">fs</span> <span class="o">=</span> <span class="mi">23</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">37</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">15</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-16-72543466678e&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">composed_plot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">group_labels</span><span class="p">,</span> <span class="n">combination</span><span class="p">,</span> <span class="n">variables</span><span class="p">,</span> <span class="n">fs</span> <span class="o">=</span> <span class="mi">23</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">37</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">15</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;data&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Data load</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data1Path</span> <span class="o">=</span> <span class="s2">&quot;/content/drive/MyDrive/Python/Pandas/Pandas csv/Results_MM.csv&quot;</span> <span class="c1">#@param {type:&quot;string&quot;}</span>
+
+<span class="n">data1</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data1Path</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data1</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data2Path</span> <span class="o">=</span> <span class="s2">&quot;/content/drive/MyDrive/Python/Pandas/Pandas csv/Results_aptamil.csv&quot;</span> <span class="c1">#@param {type:&quot;string&quot;}</span>
+
+<span class="n">data2</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data2Path</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>use</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#d1Area = data1[&#39;Label&#39;,&#39;Area&#39;]</span>
+
+<span class="c1">#d2Area = data2[&#39;Area&#39;]</span>
+
+<span class="c1">#d1Area = data1.rename(index={&#39;Label Image&#39;: &#39;Data1&#39;})</span>
+<span class="c1">#d2Area = data2.rename(index={&#39;Label Image&#39;: &#39;Data2&#39;})</span>
+
+<span class="n">d1Area</span> <span class="o">=</span> <span class="n">data1</span><span class="p">[[</span><span class="s1">&#39;Label&#39;</span><span class="p">,</span> <span class="s1">&#39;Area&#39;</span><span class="p">]]</span>
+<span class="n">d2Area</span> <span class="o">=</span> <span class="n">data2</span><span class="p">[[</span><span class="s1">&#39;Label&#39;</span><span class="p">,</span> <span class="s1">&#39;Area&#39;</span><span class="p">]]</span>
+
+<span class="k">del</span> <span class="n">data1</span><span class="p">,</span> <span class="n">data2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d1Area</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d1Area</span><span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_median</span> <span class="o">=</span> <span class="n">d1Area</span><span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+
+<span class="c1"># Take a look</span>
+<span class="n">df_median</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d2Area</span><span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_median</span> <span class="o">=</span> <span class="n">d2Area</span><span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+
+<span class="c1"># Take a look</span>
+<span class="n">df_median</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">d1Area</span><span class="p">,</span> <span class="n">d2Area</span><span class="p">])</span>
+
+<span class="c1">#del d1Area, d2Area</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># p = bokeh_catplot.box(</span>
+<span class="c1">#     data=result,</span>
+<span class="c1">#     cats=&#39;Label&#39;,</span>
+<span class="c1">#     val=&#39;Area&#39;</span>
+<span class="c1"># )</span>
+
+<span class="c1"># bokeh.io.show(p)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">bokeh_catplot</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">result</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">mod</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">size</span><span class="p">),</span><span class="mi">3</span><span class="p">)</span><span class="o">!=</span><span class="mi">0</span><span class="p">],</span>
+    <span class="n">cats</span><span class="o">=</span><span class="s1">&#39;Label&#39;</span><span class="p">,</span>
+    <span class="n">val</span><span class="o">=</span><span class="s1">&#39;Area&#39;</span>
+<span class="p">)</span>
+
+<span class="n">bokeh</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">bokeh_catplot</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">result</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">mod</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">size</span><span class="p">),</span><span class="mi">3</span><span class="p">)</span><span class="o">!=</span><span class="mi">0</span><span class="p">],</span>
+    <span class="n">cats</span><span class="o">=</span><span class="s1">&#39;Label&#39;</span><span class="p">,</span>
+    <span class="n">val</span><span class="o">=</span><span class="s1">&#39;Area&#39;</span><span class="p">,</span>
+    <span class="n">horizontal</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">jitter</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">250</span>
+<span class="p">)</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">bokeh_catplot</span><span class="o">.</span><span class="n">box</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">result</span><span class="p">,</span>
+    <span class="n">cats</span><span class="o">=</span><span class="s1">&#39;Label&#39;</span><span class="p">,</span>
+    <span class="n">val</span><span class="o">=</span><span class="s1">&#39;Area&#39;</span><span class="p">,</span>
+    <span class="n">horizontal</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">whisker_caps</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">display_points</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">outlier_marker</span><span class="o">=</span><span class="s1">&#39;diamond&#39;</span><span class="p">,</span>
+    <span class="c1">#box_kwargs=dict(fill_color=None, line_color=&#39;gray&#39;),</span>
+    <span class="c1">#median_kwargs=dict(line_color=&#39;gray&#39;),</span>
+    <span class="c1">#whisker_kwargs=dict(line_color=&#39;gray&#39;),</span>
+    <span class="c1"># p=p,</span>
+<span class="p">)</span>
+
+<span class="n">bokeh</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mann-Whitney U test</span>
+<span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">seed</span>
+<span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">randn</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">mannwhitneyu</span>
+<span class="c1"># import random  </span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">sample</span> 
+<span class="n">data1</span><span class="o">=</span><span class="n">d1Area</span><span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">500000</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">data2</span><span class="o">=</span><span class="n">d2Area</span><span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">500000</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># compare samples</span>
+<span class="n">stat</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">mannwhitneyu</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Statistics=</span><span class="si">%.3f</span><span class="s1">, p=</span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">stat</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
+<span class="c1"># interpret</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="k">if</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="n">alpha</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Same distribution (fail to reject H0)&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Different distribution (reject H0)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># p = bokeh_catplot.box(</span>
+<span class="c1">#     data=result,</span>
+<span class="c1">#     cats=&#39;Label&#39;,</span>
+<span class="c1">#     val=&#39;Area&#39;,</span>
+<span class="c1">#     whisker_caps=True,</span>
+<span class="c1">#     outlier_marker=&#39;diamond&#39;,</span>
+<span class="c1">#     box_kwargs=dict(fill_color=&#39;#7C0000&#39;),</span>
+<span class="c1">#     whisker_kwargs=dict(line_color=&#39;#7C0000&#39;, line_width=2),</span>
+<span class="c1"># )</span>
+
+<span class="c1"># bokeh.io.show(p)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Statistics\pMoss"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Martin Schatz<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

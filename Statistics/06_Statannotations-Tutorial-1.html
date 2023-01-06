@@ -1,0 +1,2292 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Showing statistical significance on seaborn plots with Statannotations &#8212; MB100T01 Advanced Image Analysis Course</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Exercise" href="07_big_data_statistics.html" />
+    <link rel="prev" title="Statistic overview" href="06_statistics.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">MB100T01 Advanced Image Analysis Course</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to MB100T01 Course
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Introduction/readme.html">
+   MB100T01 Advanced Image Analysis Course
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Python_Introduction/readme.html">
+     Brief introduction to Python
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Python_Introduction/01_Python_Basics.html">
+       Introduction to Python in Jupyter Notebook/Google Colab
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Pandas_Introduction/readme.html">
+   Introduction to Pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Pandas_Introduction/02_intro_to_pandas.html">
+     Introduction to Pandas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ploting_Introduction/readme.html">
+   Intro to plotting in Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ploting_Introduction/03_seaborn_introduction.html">
+     An introduction to seaborn
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ploting_Introduction/04_seaborn_distributions.html">
+     Visualizing distributions of data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ploting_Introduction/05_seaborn_categorical.html">
+     Visualizing categorical data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ploting_Introduction/02_BONUS_plotting_with_matplotlib.html">
+     Charting in Colaboratory
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="readme.html">
+   Statistics examples
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="06_statistics.html">
+     Statistic overview
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Showing statistical significance on seaborn plots with Statannotations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07_big_data_statistics.html">
+     Exercise
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07_big_data_statistics_SOLUTION.html">
+     Big Data definition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07_seaborn_big_data_statistics_SOLUTION.html">
+     Big Data seaborn Solution
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Statistics/06_Statannotations-Tutorial-1.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FStatistics/06_Statannotations-Tutorial-1.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/Statistics/06_Statannotations-Tutorial-1.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preparing-the-tools">
+   Preparing the tools
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#imports">
+     Imports
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preparing-the-data">
+   Preparing the data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exploring-the-technology-category">
+     Exploring the Technology category
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#total-goal-amounts-by-subcategory">
+     Total Goal amounts by
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Subcategory
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-closer-look-to-these-categories-robots-flight-sound">
+     A closer look to these categories:
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Robots
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Flight
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Sound
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-1">
+     PLOT 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-2">
+     PLOT 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#so-are-these-values-statistically-different">
+     So, are these values
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       statistically
+      </span>
+     </code>
+     different ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prepare-arrays-for-scipy">
+     Prepare arrays for
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       scipy
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#by-subcategory">
+       By
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Subcategory
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#test-normality">
+       Test normality
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-statannotations">
+   What is Statannotations ?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installation">
+     Installation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#importing-the-main-class">
+       Importing the main class
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#use-statannotations">
+   Use statannotations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-add-any-text-such-as-previously-calculated-results">
+     A - Add any text, such as previously calculated results
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#b-let-s-automatically-format-these-pvalues-for-prettier-result">
+     B - Let’s automatically format these pvalues for prettier result
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#with-the-star-notation-default">
+       With the star notation (default)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#with-a-simple-format-to-display-significance">
+       With a simple format to display significance
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#tweak-the-layout">
+       Tweak the layout
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#use-statannotations-to-apply-scipy-test">
+     Use statannotations to apply scipy test
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#and-that-plot-by-state">
+       And that plot by
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         State
+        </span>
+       </code>
+       ?
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#boxplots-with-hue">
+     Boxplots with hue
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#plot-3">
+       PLOT 3
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#plot-4">
+       PLOT 4
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#correcting-for-multiple-testing-introduction">
+       Correcting for multiple testing (introduction)
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bonus">
+   Bonus
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   Conclusion
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-s-next">
+     What’s next?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#acknowledgements">
+     Acknowledgements
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Showing statistical significance on seaborn plots with Statannotations</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preparing-the-tools">
+   Preparing the tools
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#imports">
+     Imports
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preparing-the-data">
+   Preparing the data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exploring-the-technology-category">
+     Exploring the Technology category
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#total-goal-amounts-by-subcategory">
+     Total Goal amounts by
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Subcategory
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-closer-look-to-these-categories-robots-flight-sound">
+     A closer look to these categories:
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Robots
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Flight
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Sound
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-1">
+     PLOT 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-2">
+     PLOT 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#so-are-these-values-statistically-different">
+     So, are these values
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       statistically
+      </span>
+     </code>
+     different ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prepare-arrays-for-scipy">
+     Prepare arrays for
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       scipy
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#by-subcategory">
+       By
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Subcategory
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#test-normality">
+       Test normality
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-statannotations">
+   What is Statannotations ?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installation">
+     Installation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#importing-the-main-class">
+       Importing the main class
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#use-statannotations">
+   Use statannotations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-add-any-text-such-as-previously-calculated-results">
+     A - Add any text, such as previously calculated results
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#b-let-s-automatically-format-these-pvalues-for-prettier-result">
+     B - Let’s automatically format these pvalues for prettier result
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#with-the-star-notation-default">
+       With the star notation (default)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#with-a-simple-format-to-display-significance">
+       With a simple format to display significance
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#tweak-the-layout">
+       Tweak the layout
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#use-statannotations-to-apply-scipy-test">
+     Use statannotations to apply scipy test
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#and-that-plot-by-state">
+       And that plot by
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         State
+        </span>
+       </code>
+       ?
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#boxplots-with-hue">
+     Boxplots with hue
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#plot-3">
+       PLOT 3
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#plot-4">
+       PLOT 4
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#correcting-for-multiple-testing-introduction">
+       Correcting for multiple testing (introduction)
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bonus">
+   Bonus
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   Conclusion
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-s-next">
+     What’s next?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#acknowledgements">
+     Acknowledgements
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="showing-statistical-significance-on-seaborn-plots-with-statannotations">
+<h1>Showing statistical significance on seaborn plots with Statannotations<a class="headerlink" href="#showing-statistical-significance-on-seaborn-plots-with-statannotations" title="Permalink to this headline">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<p>Many libraries are available in Python to clean, analyze, and plot data.
+Python also has robust statistical packages which are used by thousands of other projects.
+On Github only, <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> is used today in more than 44,000 open-source projects, and <code class="docutils literal notranslate"><span class="pre">scipy</span></code> in more than 350,000 !
+(granted, not all for <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>).</p>
+<p>That said, if you wish, basically, to add p-values to your plots, with the beautiful brackets as you can see in papers
+using R or other statistical software, there are not many options.</p>
+<p>In this tutorial, we will describe <code class="docutils literal notranslate"><span class="pre">statannotations</span></code>, a package to add statistical significance annotations on seaborn
+categorical plots (v0.4.1).</p>
+<p>We will first setup the required tools, then describe the dataset we’ll work on. Then, we’ll learn how to do go from
+plots like this,
+<img alt="Adding annotations" src="Statistics/example_hue_layout_no_annot.png" />
+to plots like this ↓ !
+<img alt="Adding annotations" src="Statistics/example_hue_layout.png" /></p>
+<p>Specifically, after showing how to install and import statannotations, we will answer the following questions:</p>
+<ul class="simple">
+<li><p>How to add custom annotations to a seaborn plot?</p></li>
+<li><p>How to automatically format previously computed p-values in several different ways, then add these to a plot in a
+single function call?</p></li>
+<li><p>How to both perform the statistical tests and add their results to a plot, optionally applying a multiple comparisons
+correction method?</p></li>
+</ul>
+<p>A subsequent tutorial will cover more advanced features, such as interfacing other statistical tests, multiple
+comparisons correction methods, and a detailed review of formatting options.</p>
+<p><strong>DISCLAIMER</strong>: This tutorial aims to describe <em>how to use a plot annotation library, not to teach statistics</em>. The
+examples are meant only to illustrate the plots, not the statistical methodology, and we will not draw any conclusions
+about the dataset explored. A correct approach would have required the careful definition of a research question and
+maybe, ultimately, different group comparisons and/or tests. Of course, the p-value is not the right answer for
+everything either. This is the topic of many <em>other</em> resources.</p>
+</section>
+<section id="preparing-the-tools">
+<h2>Preparing the tools<a class="headerlink" href="#preparing-the-tools" title="Permalink to this headline">#</a></h2>
+<p>First, let’s prepare the tools we’ll need, namely <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">pyplot</span></code>, <code class="docutils literal notranslate"><span class="pre">scipy</span></code>, and of course <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>, plus a
+few additional functions.</p>
+<section id="imports">
+<h3>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>-q<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">mannwhitneyu</span><span class="p">,</span> <span class="n">normaltest</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In <code class="docutils literal notranslate"><span class="pre">utils</span></code>, the folowing functions are implemented:</p>
+<p>Pretty-print:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">print_n_projects</span></code>:
+Prints the number of projects in the passed dataset</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">describe_array</span></code>:
+Prints a few statistics about the 1D-array</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">print_projects_by</span></code>:
+Prints a list of projects, sorted by <code class="docutils literal notranslate"><span class="pre">func</span></code> result by <code class="docutils literal notranslate"><span class="pre">Subcategory</span></code></p></li>
+</ul>
+<p>And these, to reduce repetition for plotting:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">get_log_ax</span></code>:
+Creates a new pyplot figure, applies a logarithmic scale, an opaque background, and returns <code class="docutils literal notranslate"><span class="pre">ax</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">label_plot_for_subcats</span></code>:
+Adds title and axes labels for plots with <code class="docutils literal notranslate"><span class="pre">Subcategory</span></code> as <code class="docutils literal notranslate"><span class="pre">x</span></code> coordinate</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">label_plot_for_states</span></code>:
+Adds title and axes labels for plots with <code class="docutils literal notranslate"><span class="pre">State</span></code> as <code class="docutils literal notranslate"><span class="pre">x</span></code> coordinate</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">add_legend</span></code>:
+Adds the legend to the plot</p></li>
+</ul>
+</section>
+</section>
+<section id="preparing-the-data">
+<h2>Preparing the data<a class="headerlink" href="#preparing-the-data" title="Permalink to this headline">#</a></h2>
+<p>For this tutorial, we’ll use the Kickstarter dataset
+“<em>Data for 375,000+ Kickstarter projects from 2009–2017</em>” which includes 374,853 campaigns records, downloaded from
+<a class="reference external" href="https://www.mavenanalytics.io/data-playground">https://www.mavenanalytics.io/data-playground</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>wget
+<span class="kn">import</span> <span class="nn">wget</span>
+<span class="n">wget</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;https://github.com/trevismd/statannotations-tutorials/raw/main/Tutorial_1/utils.py&#39;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: wget in c:\users\schatzm\anaconda3\envs\julab\lib\site-packages (3.2)
+100% [................................................................................] 2114 / 2114
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;Dataset/kickstarter_projects.csv&#39;</span><span class="p">)</span>
+<span class="n">dataset</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Subcategory</th>
+      <th>Country</th>
+      <th>Launched</th>
+      <th>Deadline</th>
+      <th>Goal</th>
+      <th>Pledged</th>
+      <th>Backers</th>
+      <th>State</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1860890148</td>
+      <td>Grace Jones Does Not Give A F$#% T-Shirt (limi...</td>
+      <td>Fashion</td>
+      <td>Fashion</td>
+      <td>United States</td>
+      <td>2009-04-21 21:02:48</td>
+      <td>2009-05-31</td>
+      <td>1000</td>
+      <td>625</td>
+      <td>30</td>
+      <td>Failed</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>709707365</td>
+      <td>CRYSTAL ANTLERS UNTITLED MOVIE</td>
+      <td>Film &amp; Video</td>
+      <td>Shorts</td>
+      <td>United States</td>
+      <td>2009-04-23 00:07:53</td>
+      <td>2009-07-20</td>
+      <td>80000</td>
+      <td>22</td>
+      <td>3</td>
+      <td>Failed</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1703704063</td>
+      <td>drawing for dollars</td>
+      <td>Art</td>
+      <td>Illustration</td>
+      <td>United States</td>
+      <td>2009-04-24 21:52:03</td>
+      <td>2009-05-03</td>
+      <td>20</td>
+      <td>35</td>
+      <td>3</td>
+      <td>Successful</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>727286</td>
+      <td>Offline Wikipedia iPhone app</td>
+      <td>Technology</td>
+      <td>Software</td>
+      <td>United States</td>
+      <td>2009-04-25 17:36:21</td>
+      <td>2009-07-14</td>
+      <td>99</td>
+      <td>145</td>
+      <td>25</td>
+      <td>Successful</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1622952265</td>
+      <td>Pantshirts</td>
+      <td>Fashion</td>
+      <td>Fashion</td>
+      <td>United States</td>
+      <td>2009-04-27 14:10:39</td>
+      <td>2009-05-26</td>
+      <td>1900</td>
+      <td>387</td>
+      <td>10</td>
+      <td>Failed</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Campaigns are categorized into categories:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">Category</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Fashion&#39;,
+ &#39;Film &amp; Video&#39;,
+ &#39;Art&#39;,
+ &#39;Technology&#39;,
+ &#39;Journalism&#39;,
+ &#39;Publishing&#39;,
+ &#39;Theater&#39;,
+ &#39;Music&#39;,
+ &#39;Photography&#39;,
+ &#39;Games&#39;,
+ &#39;Design&#39;,
+ &#39;Food&#39;,
+ &#39;Crafts&#39;,
+ &#39;Comics&#39;,
+ &#39;Dance&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>I like technology, let’s see what’s in there</p>
+<section id="exploring-the-technology-category">
+<h3>Exploring the Technology category<a class="headerlink" href="#exploring-the-technology-category" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tech</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">dataset</span><span class="o">.</span><span class="n">Category</span><span class="o">==</span><span class="s1">&#39;Technology&#39;</span><span class="p">),</span> <span class="p">:]</span>
+<span class="n">print_n_projects</span><span class="p">(</span><span class="n">tech</span><span class="p">,</span> <span class="s1">&#39;Technology&#39;</span><span class="p">)</span>
+<span class="n">print_projects_by</span><span class="p">(</span><span class="n">tech</span><span class="p">,</span> <span class="s1">&#39;ID&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There are 32562 projects in Technology.
+1. Technology           6.93e+03
+2. Apps                 6.34e+03
+3. Web                  3.91e+03
+4. Hardware             3.66e+03
+5. Software             3.05e+03
+6. Gadgets              2.96e+03
+7. Wearables            1.23e+03
+8. DIY Electronics      9.02e+02
+9. 3D Printing          6.82e+02
+10. Sound               6.69e+02
+11. Robots              5.72e+02
+12. Flight              4.26e+02
+13. Camera Equipment    4.16e+02
+14. Space Exploration   3.23e+02
+15. Fabrication Tools   2.50e+02
+16. Makerspaces         2.38e+02
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are over 30,000 projects in <code class="docutils literal notranslate"><span class="pre">Technology</span></code>. The largest subcategory is also named <code class="docutils literal notranslate"><span class="pre">Technology</span></code>, with almost
+7,000 registered projects, while the smallest, <code class="docutils literal notranslate"><span class="pre">Makerspaces</span></code> has 238.
+Let’s now have a look at the <code class="docutils literal notranslate"><span class="pre">Goal</span></code> column, representing the campaigns financing objectives in USD.</p>
+</section>
+<section id="total-goal-amounts-by-subcategory">
+<h3>Total Goal amounts by <code class="docutils literal notranslate"><span class="pre">Subcategory</span></code><a class="headerlink" href="#total-goal-amounts-by-subcategory" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># List of tech subcategories, sorted by sum of project Goals</span>
+<span class="n">print_projects_by</span><span class="p">(</span><span class="n">tech</span><span class="p">,</span> <span class="s2">&quot;Goal&quot;</span><span class="p">,</span> <span class="s2">&quot;sum&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1. Technology           1.11e+09
+2. Apps                 4.49e+08
+3. Web                  4.00e+08
+4. Hardware             3.43e+08
+5. Software             2.85e+08
+6. Space Exploration    1.86e+08
+7. Gadgets              1.55e+08
+8. Robots               1.07e+08
+9. Wearables            7.47e+07
+10. Flight              5.93e+07
+11. 3D Printing         3.18e+07
+12. Sound               3.12e+07
+13. Makerspaces         3.11e+07
+14. Fabrication Tools   2.90e+07
+15. DIY Electronics     1.81e+07
+16. Camera Equipment    1.66e+07
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\USERS_ANALYSIS\Schatzm\GitHub\MB100T01\MB100T01\Statistics\utils.py:23: FutureWarning: The default value of numeric_only in DataFrameGroupBy.sum is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
+  grouped_df = (func(df.groupby(&quot;Subcategory&quot;))
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can see that the order of <code class="docutils literal notranslate"><span class="pre">Sound</span></code>(#10), <code class="docutils literal notranslate"><span class="pre">Robots</span></code>(#11), and <code class="docutils literal notranslate"><span class="pre">Flight</span></code> (#12) with respect to the total number of
+projects is not the same as their order considering total goal amounts which is <code class="docutils literal notranslate"><span class="pre">Robots</span></code>(#8, +3 positions),
+<code class="docutils literal notranslate"><span class="pre">Flight</span></code>(#10, +2 positions), and <code class="docutils literal notranslate"><span class="pre">Sound</span></code>(#12, -2 positions).</p>
+</section>
+<section id="a-closer-look-to-these-categories-robots-flight-sound">
+<h3>A closer look to these categories: <code class="docutils literal notranslate"><span class="pre">Robots</span></code>, <code class="docutils literal notranslate"><span class="pre">Flight</span></code>, <code class="docutils literal notranslate"><span class="pre">Sound</span></code><a class="headerlink" href="#a-closer-look-to-these-categories-robots-flight-sound" title="Permalink to this headline">#</a></h3>
+<p>For simplicity, we define a subset of the dataset as a new DataFrame named <code class="docutils literal notranslate"><span class="pre">rfs</span></code>, keeping only the rows belonging to the three
+Subcategories.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rfs</span> <span class="o">=</span> <span class="n">tech</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">tech</span><span class="o">.</span><span class="n">Subcategory</span><span class="o">.</span><span class="n">isin</span><span class="p">((</span><span class="s2">&quot;Robots&quot;</span><span class="p">,</span> <span class="s2">&quot;Flight&quot;</span><span class="p">,</span> <span class="s2">&quot;Sound&quot;</span><span class="p">))),</span> <span class="p">:]</span>
+
+<span class="n">print_n_projects</span><span class="p">(</span><span class="n">rfs</span><span class="p">,</span> <span class="s2">&quot;rfs&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There are 1667 projects in rfs.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s define colors and orderings for subcategories and states plots</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">subcat_palette</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">dark_palette</span><span class="p">(</span><span class="s2">&quot;#8BF&quot;</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">n_colors</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">states_palette</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s2">&quot;YlGnBu&quot;</span><span class="p">,</span> <span class="n">n_colors</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="n">states_order</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Successful&quot;</span><span class="p">,</span> <span class="s2">&quot;Failed&quot;</span><span class="p">,</span> <span class="s2">&quot;Live&quot;</span><span class="p">,</span> <span class="s2">&quot;Suspended&quot;</span><span class="p">,</span> <span class="s2">&quot;Canceled&quot;</span><span class="p">]</span>
+<span class="n">subcat_order</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Robots&#39;</span><span class="p">,</span> <span class="s1">&#39;Flight&#39;</span><span class="p">,</span> <span class="s1">&#39;Sound&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="plot-1">
+<h3>PLOT 1<a class="headerlink" href="#plot-1" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">sns</span><span class="o">.</span><span class="n">plotting_context</span><span class="p">(</span><span class="s2">&quot;notebook&quot;</span><span class="p">,</span> <span class="n">font_scale</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
+    <span class="c1"># Create new plot</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">get_log_ax</span><span class="p">()</span>
+
+    <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">rfs</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Subcategory&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Goal&#39;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="n">subcat_palette</span><span class="p">,</span>
+                <span class="n">order</span><span class="o">=</span><span class="n">subcat_order</span><span class="p">)</span>
+
+    <span class="n">label_plot_for_subcats</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;plot1.png&quot;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/06_Statannotations-Tutorial-1_25_0.png" src="../_images/06_Statannotations-Tutorial-1_25_0.png" />
+</div>
+</div>
+</section>
+<section id="plot-2">
+<h3>PLOT 2<a class="headerlink" href="#plot-2" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">sns</span><span class="o">.</span><span class="n">plotting_context</span><span class="p">(</span><span class="s2">&quot;notebook&quot;</span><span class="p">,</span> <span class="n">font_scale</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
+    <span class="c1"># Create new plot</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">get_log_ax</span><span class="p">()</span>
+
+    <span class="c1"># Plot with seaborn</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">rfs</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;State&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Goal&#39;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="n">states_palette</span><span class="p">,</span>
+                <span class="n">order</span><span class="o">=</span><span class="n">states_order</span><span class="p">)</span>
+
+    <span class="n">label_plot_for_states</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;./plot2.png&quot;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/06_Statannotations-Tutorial-1_27_0.png" src="../_images/06_Statannotations-Tutorial-1_27_0.png" />
+</div>
+</div>
+</section>
+<section id="so-are-these-values-statistically-different">
+<h3>So, are these values <code class="docutils literal notranslate"><span class="pre">statistically</span></code> different ?<a class="headerlink" href="#so-are-these-values-statistically-different" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="prepare-arrays-for-scipy">
+<h3>Prepare arrays for <code class="docutils literal notranslate"><span class="pre">scipy</span></code><a class="headerlink" href="#prepare-arrays-for-scipy" title="Permalink to this headline">#</a></h3>
+<section id="by-subcategory">
+<h4>By <code class="docutils literal notranslate"><span class="pre">Subcategory</span></code><a class="headerlink" href="#by-subcategory" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">robots</span> <span class="o">=</span> <span class="n">rfs</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">rfs</span><span class="o">.</span><span class="n">Subcategory</span> <span class="o">==</span> <span class="s2">&quot;Robots&quot;</span><span class="p">),</span> <span class="s2">&quot;Goal&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">flight</span> <span class="o">=</span> <span class="n">rfs</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">rfs</span><span class="o">.</span><span class="n">Subcategory</span> <span class="o">==</span> <span class="s2">&quot;Flight&quot;</span><span class="p">),</span> <span class="s2">&quot;Goal&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">sound</span> <span class="o">=</span> <span class="n">rfs</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">rfs</span><span class="o">.</span><span class="n">Subcategory</span> <span class="o">==</span> <span class="s2">&quot;Sound&quot;</span><span class="p">),</span> <span class="s2">&quot;Goal&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="n">log_robots</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">robots</span><span class="p">)</span>
+<span class="n">log_flight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">flight</span><span class="p">)</span>
+<span class="n">log_sound</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">sound</span><span class="p">)</span>
+
+<span class="n">describe_array</span><span class="p">(</span><span class="n">robots</span><span class="p">,</span> <span class="s2">&quot;Robots&quot;</span><span class="p">)</span>
+<span class="n">describe_array</span><span class="p">(</span><span class="n">flight</span><span class="p">,</span> <span class="s2">&quot;Flight&quot;</span><span class="p">)</span>
+<span class="n">describe_array</span><span class="p">(</span><span class="n">sound</span><span class="p">,</span> <span class="s2">&quot;Sound&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="n">describe_array</span><span class="p">(</span><span class="n">log_robots</span><span class="p">,</span> <span class="s2">&quot;Log(Robots)&quot;</span><span class="p">)</span>
+<span class="n">describe_array</span><span class="p">(</span><span class="n">log_flight</span><span class="p">,</span> <span class="s2">&quot;Log(Flight)&quot;</span><span class="p">)</span>
+<span class="n">describe_array</span><span class="p">(</span><span class="n">log_sound</span><span class="p">,</span> <span class="s2">&quot;Log(Sound)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;Robots&quot;       Number of projects: 572	Min: 6.00	Max: 3.00e+07	Avg: 187211.62	Median: 1.43e+04
+&quot;Flight&quot;       Number of projects: 426	Min: 1.00	Max: 7.50e+06	Avg: 139219.90	Median: 2.40e+04
+&quot;Sound&quot;        Number of projects: 669	Min: 1.00	Max: 8.00e+05	Avg: 46710.19	Median: 2.00e+04
+
+&quot;Log(Robots)&quot;  Number of projects: 572	Min: 1.79	Max: 1.72e+01	Avg: 9.42	Median: 9.57e+00
+&quot;Log(Flight)&quot;  Number of projects: 426	Min: 0.00	Max: 1.58e+01	Avg: 9.87	Median: 1.01e+01
+&quot;Log(Sound)&quot;   Number of projects: 669	Min: 0.00	Max: 1.36e+01	Avg: 9.79	Median: 9.90e+00
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="test-normality">
+<h4>Test normality<a class="headerlink" href="#test-normality" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">normaltest</span><span class="p">,</span> <span class="n">mannwhitneyu</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Robots: &quot;</span><span class="p">,</span> <span class="n">normaltest</span><span class="p">(</span><span class="n">robots</span><span class="p">)</span><span class="o">.</span><span class="n">pvalue</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Flight: &quot;</span><span class="p">,</span> <span class="n">normaltest</span><span class="p">(</span><span class="n">flight</span><span class="p">)</span><span class="o">.</span><span class="n">pvalue</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sound: &quot;</span><span class="p">,</span> <span class="n">normaltest</span><span class="p">(</span><span class="n">sound</span><span class="p">)</span><span class="o">.</span><span class="n">pvalue</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Log(robots): &quot;</span><span class="p">,</span> <span class="n">normaltest</span><span class="p">(</span><span class="n">log_robots</span><span class="p">)</span><span class="o">.</span><span class="n">pvalue</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Log(Flight): &quot;</span><span class="p">,</span> <span class="n">normaltest</span><span class="p">(</span><span class="n">log_flight</span><span class="p">)</span><span class="o">.</span><span class="n">pvalue</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Log(Sound): &quot;</span><span class="p">,</span> <span class="n">normaltest</span><span class="p">(</span><span class="n">log_sound</span><span class="p">)</span><span class="o">.</span><span class="n">pvalue</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Robots:  7.130273714967154e-254
+Flight:  2.2950178743850582e-154
+Sound:  8.976320746933668e-155
+
+Log(robots):  0.05827453161920078
+Log(Flight):  1.9621087718193705e-06
+Log(Sound):  8.503743627935909e-22
+</pre></div>
+</div>
+</div>
+</div>
+<p>That’s mostly no, let’s apply Mann Whitney U test</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># pvalues with scipy:</span>
+<span class="n">stat_results</span> <span class="o">=</span> <span class="p">[</span><span class="n">mannwhitneyu</span><span class="p">(</span><span class="n">robots</span><span class="p">,</span> <span class="n">flight</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s2">&quot;two-sided&quot;</span><span class="p">),</span>
+                <span class="n">mannwhitneyu</span><span class="p">(</span><span class="n">flight</span><span class="p">,</span> <span class="n">sound</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s2">&quot;two-sided&quot;</span><span class="p">),</span>
+                <span class="n">mannwhitneyu</span><span class="p">(</span><span class="n">robots</span><span class="p">,</span> <span class="n">sound</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s2">&quot;two-sided&quot;</span><span class="p">)]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Robots vs Flight: &quot;</span><span class="p">,</span> <span class="n">stat_results</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Flight vs Sound: &quot;</span><span class="p">,</span> <span class="n">stat_results</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;robots vs Sound: &quot;</span><span class="p">,</span> <span class="n">stat_results</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+
+<span class="n">pvalues</span> <span class="o">=</span> <span class="p">[</span><span class="n">result</span><span class="o">.</span><span class="n">pvalue</span> <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">stat_results</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Robots vs Flight:  MannwhitneyuResult(statistic=104646.0, pvalue=0.00013485140468088997)
+Flight vs Sound:  MannwhitneyuResult(statistic=148294.5, pvalue=0.2557331102364572)
+robots vs Sound:  MannwhitneyuResult(statistic=168156.0, pvalue=0.00022985464929005115)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Remember the first plot
+<img alt="plot1" src="../_images/plot1.png" /></p>
+<p>So how to add the statistical significance (pvalues) on there ?
+There are a few options that you could find, requiring to code quite a few lines. You’ll find them if you look for them.</p>
+<p>Instead, I’m going to present you <code class="docutils literal notranslate"><span class="pre">statannotations</span></code>.</p>
+</section>
+</section>
+</section>
+<section id="what-is-statannotations">
+<h2>What is Statannotations ?<a class="headerlink" href="#what-is-statannotations" title="Permalink to this headline">#</a></h2>
+<p>Statannotations is an <a class="reference external" href="https://github.com/trevismd/statannotations">open-source</a> package enabling users to add
+statistical significance annotations onto <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> categorical plots (<code class="docutils literal notranslate"><span class="pre">barplot</span></code>, <code class="docutils literal notranslate"><span class="pre">boxplot</span></code>, <code class="docutils literal notranslate"><span class="pre">stripplot</span></code>, <code class="docutils literal notranslate"><span class="pre">swarmplot</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">violinplot</span></code>).</p>
+<p>It is based on <a class="reference external" href="https://github.com/webermarcolivier/statannot"><code class="docutils literal notranslate"><span class="pre">statannot</span></code></a>, but now offers a different API.</p>
+<section id="installation">
+<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h3>
+<p>To install <code class="docutils literal notranslate"><span class="pre">statannotations</span></code>, use pip:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install statannotations
+</pre></div>
+</div>
+<p>Optionally, to use multiple comparisons correction as further down in this tutorial you will also need <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code>.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install statsmodels
+</pre></div>
+</div>
+<section id="importing-the-main-class">
+<h4>Importing the main class<a class="headerlink" href="#importing-the-main-class" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>statannotations<span class="w"> </span>statsmodels
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: statannotations in c:\users\schatzm\anaconda3\envs\julab\lib\site-packages (0.5.0)
+Requirement already satisfied: statsmodels in c:\users\schatzm\anaconda3\envs\julab\lib\site-packages (0.13.5)
+Requirement already satisfied: matplotlib&gt;=2.2.2 in c:\users\schatzm\anaconda3\envs\julab\lib\site-packages (from statannotations) (3.6.2)
+Requirement already satisfied: pandas&gt;=0.23.0 in c:\users\schatzm\anaconda3\envs\julab\lib\site-packages (from statannotations) (1.5.2)
+Requirement already satisfied: numpy&gt;=1.12.1 in c:\users\schatzm\anaconda3\envs\julab\lib\site-packages (from statannotations) (1.24.1)
+Requirement already satisfied: scipy&gt;=1.1.0 in c:\users\schatzm\anaconda3\envs\julab\lib\site-packages (from statannotations) (1.10.0)
+Requirement already satisfied: seaborn&lt;0.12,&gt;=0.9.0 in c:\users\schatzm\anaconda3\envs\julab\lib\site-packages (from statannotations) (0.11.2)
+Requirement already satisfied: patsy&gt;=0.5.2 in c:\users\schatzm\anaconda3\envs\julab\lib\site-packages (from statsmodels) (0.5.3)
+Requirement already satisfied: packaging&gt;=21.3 in c:\users\schatzm\anaconda3\envs\julab\lib\site-packages (from statsmodels) (22.0)
+Requirement already satisfied: contourpy&gt;=1.0.1 in c:\users\schatzm\anaconda3\envs\julab\lib\site-packages (from matplotlib&gt;=2.2.2-&gt;statannotations) (1.0.6)
+Requirement already satisfied: pillow&gt;=6.2.0 in c:\users\schatzm\anaconda3\envs\julab\lib\site-packages (from matplotlib&gt;=2.2.2-&gt;statannotations) (9.4.0)
+Requirement already satisfied: cycler&gt;=0.10 in c:\users\schatzm\anaconda3\envs\julab\lib\site-packages (from matplotlib&gt;=2.2.2-&gt;statannotations) (0.11.0)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in c:\users\schatzm\anaconda3\envs\julab\lib\site-packages (from matplotlib&gt;=2.2.2-&gt;statannotations) (1.4.4)
+Requirement already satisfied: python-dateutil&gt;=2.7 in c:\users\schatzm\anaconda3\envs\julab\lib\site-packages (from matplotlib&gt;=2.2.2-&gt;statannotations) (2.8.2)
+Requirement already satisfied: fonttools&gt;=4.22.0 in c:\users\schatzm\anaconda3\envs\julab\lib\site-packages (from matplotlib&gt;=2.2.2-&gt;statannotations) (4.38.0)
+Requirement already satisfied: pyparsing&gt;=2.2.1 in c:\users\schatzm\anaconda3\envs\julab\lib\site-packages (from matplotlib&gt;=2.2.2-&gt;statannotations) (3.0.9)
+Requirement already satisfied: pytz&gt;=2020.1 in c:\users\schatzm\anaconda3\envs\julab\lib\site-packages (from pandas&gt;=0.23.0-&gt;statannotations) (2022.7)
+Requirement already satisfied: six in c:\users\schatzm\anaconda3\envs\julab\lib\site-packages (from patsy&gt;=0.5.2-&gt;statsmodels) (1.16.0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">statannotations.Annotator</span> <span class="kn">import</span> <span class="n">Annotator</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="use-statannotations">
+<h2>Use statannotations<a class="headerlink" href="#use-statannotations" title="Permalink to this headline">#</a></h2>
+<p>The general pattern is
+0. Decide which pairs of data you would like to annotate</p>
+<ol class="simple">
+<li><p>Instantiate an <code class="docutils literal notranslate"><span class="pre">Annotator</span></code> (or reuse it on a new plot, we’ll cover that later)</p></li>
+<li><p>Configure it (text formatting, statistical test, multiple comparisons correction method…)</p></li>
+<li><p>Make the annotations (we’ll cover these cases)</p>
+<ul class="simple">
+<li><p>By providing completely custom annotations (A)</p></li>
+<li><p>By providing pvalues to be formatted before being added to the plot (B)</p></li>
+<li><p>By applying a configured test (C)</p></li>
+</ul>
+</li>
+<li><p>Annotate !</p></li>
+</ol>
+<section id="a-add-any-text-such-as-previously-calculated-results">
+<h3>A - Add any text, such as previously calculated results<a class="headerlink" href="#a-add-any-text-such-as-previously-calculated-results" title="Permalink to this headline">#</a></h3>
+<p>If we already have a seaborn plot (and its associated <code class="docutils literal notranslate"><span class="pre">ax</span></code>), and statistical results, or any other text we would like to
+display on the plot, these are the detailed steps required.</p>
+<p><strong>STEP 0</strong>: What to compare</p>
+<p>A pre-requisite to annotating the plot, is deciding which pairs you are comparing.
+You’ll pass which boxes (or bars, violins, etc) you want to annotate in a <code class="docutils literal notranslate"><span class="pre">pairs</span></code> parameter. In this case, it is the
+equivalent of <code class="docutils literal notranslate"><span class="pre">'Robots</span> <span class="pre">vs</span> <span class="pre">Flight'</span></code> and others.</p>
+<p>For statannotations, we specify this as a list of tuples like <code class="docutils literal notranslate"><span class="pre">('Robots',</span> <span class="pre">'Flight')</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pairs</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Robots&#39;</span><span class="p">,</span> <span class="s1">&#39;Flight&#39;</span><span class="p">),</span>  <span class="c1"># &#39;Robots&#39; vs &#39;Flight&#39;</span>
+             <span class="p">(</span><span class="s1">&#39;Flight&#39;</span><span class="p">,</span> <span class="s1">&#39;Sound&#39;</span><span class="p">),</span>   <span class="c1"># &#39;Flight&#39; vs &#39;Sound&#39;</span>
+             <span class="p">(</span><span class="s1">&#39;Robots&#39;</span><span class="p">,</span> <span class="s1">&#39;Sound&#39;</span><span class="p">)]</span>   <span class="c1"># &#39;Robots&#39; vs &#39;Sound&#39;</span>
+</pre></div>
+</div>
+<p><strong>STEP 1</strong>: The annotator</p>
+<p>We now have all we need to instantiate the annotator</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">annotator</span> <span class="o">=</span> <span class="n">Annotator</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">pairs</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>  <span class="c1"># With ... = all parameters passed to seaborn&#39;s plotter</span>
+</pre></div>
+</div>
+<p><strong>STEP 2</strong>: In this first example, we will not configure anything.</p>
+<p><strong>STEP 3</strong>: We’ll then add the raw pvalues from scipy’s returned values</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pvalues</span> <span class="o">=</span> <span class="p">[</span><span class="n">sci_stats</span><span class="o">.</span><span class="n">mannwhitneyu</span><span class="p">(</span><span class="n">robots</span><span class="p">,</span> <span class="n">flight</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s2">&quot;two-sided&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">pvalue</span><span class="p">,</span>
+           <span class="n">sci_stats</span><span class="o">.</span><span class="n">mannwhitneyu</span><span class="p">(</span><span class="n">flight</span><span class="p">,</span> <span class="n">sound</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s2">&quot;two-sided&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">pvalue</span><span class="p">,</span>
+           <span class="n">sci_stats</span><span class="o">.</span><span class="n">mannwhitneyu</span><span class="p">(</span><span class="n">robots</span><span class="p">,</span> <span class="n">sound</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s2">&quot;two-sided&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">pvalue</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>using</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">annotator</span><span class="o">.</span><span class="n">set_custom_annotations</span><span class="p">(</span><span class="n">pvalues</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>STEP 4</strong>: Annotate !</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">annotator</span><span class="o">.</span><span class="n">annotate</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>(*) Make sure pairs and annotations (pvalues here) are in the same order</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Putting the parameters in a dictionary avoids code duplication</span>
+<span class="c1"># since we use the same for `sns.boxplot` and `Annotator` calls</span>
+<span class="n">plotting_parameters</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;data&#39;</span><span class="p">:</span>    <span class="n">rfs</span><span class="p">,</span>
+    <span class="s1">&#39;x&#39;</span><span class="p">:</span>       <span class="s1">&#39;Subcategory&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;y&#39;</span><span class="p">:</span>       <span class="s1">&#39;Goal&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;order&#39;</span><span class="p">:</span>   <span class="n">subcat_order</span><span class="p">,</span>
+    <span class="s1">&#39;palette&#39;</span><span class="p">:</span> <span class="n">subcat_palette</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">pairs</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Robots&#39;</span><span class="p">,</span> <span class="s1">&#39;Flight&#39;</span><span class="p">),</span>
+         <span class="p">(</span><span class="s1">&#39;Flight&#39;</span><span class="p">,</span> <span class="s1">&#39;Sound&#39;</span><span class="p">),</span>
+         <span class="p">(</span><span class="s1">&#39;Robots&#39;</span><span class="p">,</span> <span class="s1">&#39;Sound&#39;</span><span class="p">)]</span>
+
+<span class="n">formatted_pvalues</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;p=</span><span class="si">{</span><span class="n">p</span><span class="si">:</span><span class="s2">.2e</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pvalues</span><span class="p">]</span>
+
+<span class="k">with</span> <span class="n">sns</span><span class="o">.</span><span class="n">plotting_context</span><span class="p">(</span><span class="s1">&#39;notebook&#39;</span><span class="p">,</span> <span class="n">font_scale</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
+    <span class="c1"># Create new plot</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">get_log_ax</span><span class="p">()</span>
+
+    <span class="c1"># Plot with seaborn</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="o">**</span><span class="n">plotting_parameters</span><span class="p">)</span>
+
+    <span class="c1"># Add annotations</span>
+    <span class="n">annotator</span> <span class="o">=</span> <span class="n">Annotator</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">pairs</span><span class="p">,</span> <span class="o">**</span><span class="n">plotting_parameters</span><span class="p">)</span>
+    <span class="n">annotator</span><span class="o">.</span><span class="n">set_custom_annotations</span><span class="p">(</span><span class="n">formatted_pvalues</span><span class="p">)</span>
+    <span class="n">annotator</span><span class="o">.</span><span class="n">annotate</span><span class="p">()</span>
+
+    <span class="c1"># Label and show</span>
+    <span class="n">label_plot_for_subcats</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;./plot1A.png&quot;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>p-value annotation legend:
+      ns: p &lt;= 1.00e+00
+       *: 1.00e-02 &lt; p &lt;= 5.00e-02
+      **: 1.00e-03 &lt; p &lt;= 1.00e-02
+     ***: 1.00e-04 &lt; p &lt;= 1.00e-03
+    ****: p &lt;= 1.00e-04
+
+Robots vs. Flight: p=1.35e-04
+Flight vs. Sound: p=2.56e-01
+Robots vs. Sound: p=2.30e-04
+</pre></div>
+</div>
+<img alt="../_images/06_Statannotations-Tutorial-1_47_1.png" src="../_images/06_Statannotations-Tutorial-1_47_1.png" />
+</div>
+</div>
+</section>
+<section id="b-let-s-automatically-format-these-pvalues-for-prettier-result">
+<h3>B - Let’s automatically format these pvalues for prettier result<a class="headerlink" href="#b-let-s-automatically-format-these-pvalues-for-prettier-result" title="Permalink to this headline">#</a></h3>
+<p>We will use <code class="docutils literal notranslate"><span class="pre">set_pvalues</span></code> instead of <code class="docutils literal notranslate"><span class="pre">set_custom_annotations</span></code> to benefit from formatting options</p>
+<section id="with-the-star-notation-default">
+<h4>With the star notation (default)<a class="headerlink" href="#with-the-star-notation-default" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">sns</span><span class="o">.</span><span class="n">plotting_context</span><span class="p">(</span><span class="s2">&quot;notebook&quot;</span><span class="p">,</span> <span class="n">font_scale</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
+    <span class="c1"># Create new plot</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">get_log_ax</span><span class="p">()</span>
+
+    <span class="c1"># Plot with seaborn</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">plotting_parameters</span><span class="p">)</span>
+
+    <span class="c1"># Add annotations</span>
+    <span class="n">annotator</span> <span class="o">=</span> <span class="n">Annotator</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">pairs</span><span class="p">,</span> <span class="o">**</span><span class="n">plotting_parameters</span><span class="p">)</span>
+    <span class="n">annotator</span><span class="o">.</span><span class="n">set_pvalues</span><span class="p">(</span><span class="n">pvalues</span><span class="p">)</span>
+    <span class="n">annotator</span><span class="o">.</span><span class="n">annotate</span><span class="p">()</span>
+
+    <span class="c1"># Label and show</span>
+    <span class="n">label_plot_for_subcats</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>p-value annotation legend:
+      ns: p &lt;= 1.00e+00
+       *: 1.00e-02 &lt; p &lt;= 5.00e-02
+      **: 1.00e-03 &lt; p &lt;= 1.00e-02
+     ***: 1.00e-04 &lt; p &lt;= 1.00e-03
+    ****: p &lt;= 1.00e-04
+
+Robots vs. Flight: Custom statistical test, P_val:1.349e-04
+Flight vs. Sound: Custom statistical test, P_val:2.557e-01
+Robots vs. Sound: Custom statistical test, P_val:2.299e-04
+</pre></div>
+</div>
+<img alt="../_images/06_Statannotations-Tutorial-1_51_1.png" src="../_images/06_Statannotations-Tutorial-1_51_1.png" />
+</div>
+</div>
+</section>
+<section id="with-a-simple-format-to-display-significance">
+<h4>With a simple format to display significance<a class="headerlink" href="#with-a-simple-format-to-display-significance" title="Permalink to this headline">#</a></h4>
+<p>In this case, we will configure <code class="docutils literal notranslate"><span class="pre">text_format</span></code> to <code class="docutils literal notranslate"><span class="pre">simple</span></code> to show a summary of pvalues.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">sns</span><span class="o">.</span><span class="n">plotting_context</span><span class="p">(</span><span class="s2">&quot;notebook&quot;</span><span class="p">,</span> <span class="n">font_scale</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
+    <span class="c1"># Create new plot</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">get_log_ax</span><span class="p">()</span>
+
+    <span class="c1"># Plot with seaborn</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">plotting_parameters</span><span class="p">)</span>
+
+    <span class="c1"># Add annotations</span>
+    <span class="n">annotator</span> <span class="o">=</span> <span class="n">Annotator</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">pairs</span><span class="p">,</span> <span class="o">**</span><span class="n">plotting_parameters</span><span class="p">)</span>
+    <span class="n">annotator</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">text_format</span><span class="o">=</span><span class="s2">&quot;simple&quot;</span><span class="p">)</span>
+    <span class="n">annotator</span><span class="o">.</span><span class="n">set_pvalues</span><span class="p">(</span><span class="n">pvalues</span><span class="p">)</span><span class="o">.</span><span class="n">annotate</span><span class="p">()</span>
+
+    <span class="c1"># Label and show</span>
+    <span class="n">label_plot_for_subcats</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Robots vs. Flight: Custom statistical test, P_val:1.349e-04
+Flight vs. Sound: Custom statistical test, P_val:2.557e-01
+Robots vs. Sound: Custom statistical test, P_val:2.299e-04
+</pre></div>
+</div>
+<img alt="../_images/06_Statannotations-Tutorial-1_53_1.png" src="../_images/06_Statannotations-Tutorial-1_53_1.png" />
+</div>
+</div>
+<p>We can also provide a <code class="docutils literal notranslate"><span class="pre">test_short_name</span></code> parameter to be displayed right before the pvalue.</p>
+<p>I’ll also show how to reduce the code needed a bit more by reusing the annotator instance,
+since we are not changing the data and pairs. This will also remember our <code class="docutils literal notranslate"><span class="pre">text_format</span></code> option configured.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">sns</span><span class="o">.</span><span class="n">plotting_context</span><span class="p">(</span><span class="s2">&quot;notebook&quot;</span><span class="p">,</span> <span class="n">font_scale</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
+    <span class="c1"># Create new plot</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">get_log_ax</span><span class="p">()</span>
+
+    <span class="c1"># Plot with seaborn</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">plotting_parameters</span><span class="p">)</span>
+
+    <span class="c1"># Add annotations</span>
+    <span class="n">annotator</span><span class="o">.</span><span class="n">new_plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">plotting_parameters</span><span class="p">)</span>  <span class="c1"># Same pairs and data, we can keep the annotator</span>
+    <span class="n">annotator</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">test_short_name</span><span class="o">=</span><span class="s2">&quot;MWW&quot;</span><span class="p">)</span>     <span class="c1"># text_format is still simple</span>
+    <span class="n">annotator</span><span class="o">.</span><span class="n">set_pvalues_and_annotate</span><span class="p">(</span><span class="n">pvalues</span><span class="p">)</span>    <span class="c1"># in one function call</span>
+
+    <span class="c1"># Label and show</span>
+    <span class="n">label_plot_for_subcats</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Robots vs. Flight: Custom statistical test, P_val:1.349e-04
+Flight vs. Sound: Custom statistical test, P_val:2.557e-01
+Robots vs. Sound: Custom statistical test, P_val:2.299e-04
+</pre></div>
+</div>
+<img alt="../_images/06_Statannotations-Tutorial-1_55_1.png" src="../_images/06_Statannotations-Tutorial-1_55_1.png" />
+</div>
+</div>
+</section>
+<section id="tweak-the-layout">
+<h4>Tweak the layout<a class="headerlink" href="#tweak-the-layout" title="Permalink to this headline">#</a></h4>
+<p>I would like to see more space between the annotations and the text.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">annotate</span></code> method allows to parameters to do just that</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">sns</span><span class="o">.</span><span class="n">plotting_context</span><span class="p">(</span><span class="s2">&quot;notebook&quot;</span><span class="p">,</span> <span class="n">font_scale</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
+    <span class="c1"># Create new plot</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">get_log_ax</span><span class="p">()</span>
+
+    <span class="c1"># Plot with seaborn</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">plotting_parameters</span><span class="p">)</span>
+
+    <span class="c1"># Add annotations</span>
+    <span class="n">annotator</span><span class="o">.</span><span class="n">new_plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">plotting_parameters</span><span class="p">)</span>    <span class="c1"># Same pairs and data, we can keep the annotator</span>
+    <span class="n">annotator</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">text_offset</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># Disabling printed output as it is the same</span>
+    <span class="n">annotator</span><span class="o">.</span><span class="n">set_pvalues</span><span class="p">(</span><span class="n">pvalues</span><span class="p">)</span>                   <span class="c1"># Now, test_short_name is also remembered</span>
+    <span class="n">annotator</span><span class="o">.</span><span class="n">annotate</span><span class="p">()</span>
+
+    <span class="c1"># Label and show</span>
+    <span class="n">label_plot_for_subcats</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/06_Statannotations-Tutorial-1_57_0.png" src="../_images/06_Statannotations-Tutorial-1_57_0.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="use-statannotations-to-apply-scipy-test">
+<h3>Use statannotations to apply scipy test<a class="headerlink" href="#use-statannotations-to-apply-scipy-test" title="Permalink to this headline">#</a></h3>
+<p>Finally, <code class="docutils literal notranslate"><span class="pre">statannotations</span></code> can take care of most of the steps required to run the test by calling <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> directly
+and annotate the plot.
+The available options are</p>
+<ul class="simple">
+<li><p>Mann-Whitney</p></li>
+<li><p>t-test (independent and paired)</p></li>
+<li><p>Welch’s t-test</p></li>
+<li><p>Levene test</p></li>
+<li><p>Wilcoxon test</p></li>
+<li><p>Kruskal-Wallis test</p></li>
+</ul>
+<p>In the next tutorial, I’ll cover how to use a test that is not one of those already interfaced in <code class="docutils literal notranslate"><span class="pre">statannotations</span></code>.
+If you are curious, you can also take a look at the usage
+<a class="reference external" href="https://github.com/trevismd/statannotations/blob/master/usage/example.ipynb">notebook</a> in the project repository.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">sns</span><span class="o">.</span><span class="n">plotting_context</span><span class="p">(</span><span class="s1">&#39;notebook&#39;</span><span class="p">,</span> <span class="n">font_scale</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
+    <span class="c1"># Create new plot</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">get_log_ax</span><span class="p">()</span>
+
+    <span class="c1"># Plot with seaborn</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">plotting_parameters</span><span class="p">)</span>
+
+    <span class="c1"># Add annotations</span>
+    <span class="n">annotator</span><span class="o">.</span><span class="n">new_plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">pairs</span><span class="o">=</span><span class="n">pairs</span><span class="p">,</span> <span class="o">**</span><span class="n">plotting_parameters</span><span class="p">)</span>
+    <span class="n">annotator</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">test</span><span class="o">=</span><span class="s1">&#39;Mann-Whitney&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">apply_and_annotate</span><span class="p">()</span>
+
+    <span class="c1"># Label and show</span>
+    <span class="n">label_plot_for_subcats</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Robots vs. Flight: Mann-Whitney-Wilcoxon test two-sided, P_val:1.349e-04 U_stat=1.046e+05
+Flight vs. Sound: Mann-Whitney-Wilcoxon test two-sided, P_val:2.557e-01 U_stat=1.483e+05
+Robots vs. Sound: Mann-Whitney-Wilcoxon test two-sided, P_val:2.299e-04 U_stat=1.682e+05
+</pre></div>
+</div>
+<img alt="../_images/06_Statannotations-Tutorial-1_60_1.png" src="../_images/06_Statannotations-Tutorial-1_60_1.png" />
+</div>
+</div>
+<p>There is also the <code class="docutils literal notranslate"><span class="pre">&quot;full&quot;</span></code> format for annotations</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">sns</span><span class="o">.</span><span class="n">plotting_context</span><span class="p">(</span><span class="s2">&quot;notebook&quot;</span><span class="p">,</span> <span class="n">font_scale</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
+    <span class="c1"># Create new plot</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">get_log_ax</span><span class="p">()</span>
+
+    <span class="c1"># Plot with seaborn</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">plotting_parameters</span><span class="p">)</span>
+
+    <span class="c1"># Add annotations</span>
+    <span class="n">annotator</span><span class="o">.</span><span class="n">new_plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">plotting_parameters</span><span class="p">)</span>
+    <span class="n">annotator</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">text_format</span><span class="o">=</span><span class="s2">&quot;full&quot;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">apply_and_annotate</span><span class="p">()</span>
+
+    <span class="c1"># Label and show</span>
+    <span class="n">label_plot_for_subcats</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/06_Statannotations-Tutorial-1_62_0.png" src="../_images/06_Statannotations-Tutorial-1_62_0.png" />
+</div>
+</div>
+<section id="and-that-plot-by-state">
+<h4>And that plot by <code class="docutils literal notranslate"><span class="pre">State</span></code> ?<a class="headerlink" href="#and-that-plot-by-state" title="Permalink to this headline">#</a></h4>
+<p><img alt="plot2" src="../_images/plot2.png" /></p>
+<p>Say we’re interested in comparing ‘Successful’, ‘Failed’, ‘Cancelled’ and ‘Live’ states</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">values</span> <span class="o">=</span> <span class="n">rfs</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">rfs</span><span class="o">.</span><span class="n">State</span> <span class="o">==</span> <span class="s2">&quot;Successful&quot;</span><span class="p">),</span> <span class="s2">&quot;Goal&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">describe_array</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="s2">&quot;Successful&quot;</span><span class="p">,</span> <span class="mi">18</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">normaltest</span><span class="p">(</span><span class="n">values</span><span class="p">),</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">log_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">rfs</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">rfs</span><span class="o">.</span><span class="n">State</span> <span class="o">==</span> <span class="s2">&quot;Successful&quot;</span><span class="p">),</span> <span class="s2">&quot;Goal&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">describe_array</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="s2">&quot;Log(Successful)&quot;</span><span class="p">,</span> <span class="mi">18</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">normaltest</span><span class="p">(</span><span class="n">log_values</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;Successful&quot;      Number of projects: 576	Min: 1.00	Max: 8.00e+05	Avg: 31438.18	Median: 1.38e+04
+NormaltestResult(statistic=756.6903519347284, pvalue=4.8615843204626055e-165) 
+
+&quot;Log(Successful)&quot; Number of projects: 576	Min: 1.00	Max: 8.00e+05	Avg: 31438.18	Median: 1.38e+04
+NormaltestResult(statistic=56.79986477039819, pvalue=4.635174393791566e-13)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will need to define the new pairs to compare, then apply the same method to configure, get test results and annotate
+the plot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pairs</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">&quot;Successful&quot;</span><span class="p">,</span> <span class="s2">&quot;Failed&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Successful&quot;</span><span class="p">,</span> <span class="s2">&quot;Live&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Failed&quot;</span><span class="p">,</span> <span class="s2">&quot;Live&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Canceled&quot;</span><span class="p">,</span> <span class="s2">&quot;Successful&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Canceled&quot;</span><span class="p">,</span> <span class="s2">&quot;Failed&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Canceled&quot;</span><span class="p">,</span> <span class="s2">&quot;Live&quot;</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="n">state_plot_params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="n">rfs</span><span class="p">,</span>
+    <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="s1">&#39;State&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="s1">&#39;Goal&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;order&#39;</span><span class="p">:</span> <span class="n">states_order</span><span class="p">,</span>
+    <span class="s1">&#39;palette&#39;</span><span class="p">:</span> <span class="n">states_palette</span>
+<span class="p">}</span>
+
+<span class="k">with</span> <span class="n">sns</span><span class="o">.</span><span class="n">plotting_context</span><span class="p">(</span><span class="s1">&#39;notebook&#39;</span><span class="p">,</span> <span class="n">font_scale</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
+    <span class="c1"># Create new plot</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">get_log_ax</span><span class="p">()</span>
+
+    <span class="c1"># Plot with seaborn</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">state_plot_params</span><span class="p">)</span>
+
+    <span class="c1"># Add annotations</span>
+    <span class="n">annotator</span> <span class="o">=</span> <span class="n">Annotator</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">pairs</span><span class="p">,</span> <span class="o">**</span><span class="n">state_plot_params</span><span class="p">)</span>
+    <span class="n">annotator</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">test</span><span class="o">=</span><span class="s1">&#39;Mann-Whitney&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">apply_and_annotate</span><span class="p">()</span>
+
+    <span class="c1"># Label and show</span>
+    <span class="n">label_plot_for_states</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;./plot2C.png&quot;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s2">&quot;tight&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>p-value annotation legend:
+      ns: p &lt;= 1.00e+00
+       *: 1.00e-02 &lt; p &lt;= 5.00e-02
+      **: 1.00e-03 &lt; p &lt;= 1.00e-02
+     ***: 1.00e-04 &lt; p &lt;= 1.00e-03
+    ****: p &lt;= 1.00e-04
+
+Successful vs. Failed: Mann-Whitney-Wilcoxon test two-sided, P_val:2.813e-08 U_stat=1.962e+05
+Failed vs. Live: Mann-Whitney-Wilcoxon test two-sided, P_val:2.511e-01 U_stat=9.932e+03
+Successful vs. Live: Mann-Whitney-Wilcoxon test two-sided, P_val:9.215e-01 U_stat=5.971e+03
+Live vs. Canceled: Mann-Whitney-Wilcoxon test two-sided, P_val:6.641e-03 U_stat=1.460e+03
+Failed vs. Canceled: Mann-Whitney-Wilcoxon test two-sided, P_val:1.423e-05 U_stat=7.239e+04
+Successful vs. Canceled: Mann-Whitney-Wilcoxon test two-sided, P_val:4.054e-16 U_stat=3.910e+04
+</pre></div>
+</div>
+<img alt="../_images/06_Statannotations-Tutorial-1_67_1.png" src="../_images/06_Statannotations-Tutorial-1_67_1.png" />
+</div>
+</div>
+<p>Now, that’s a pretty plot !</p>
+<p>If you are worried about multiple testing and correction methods, read on !</p>
+<p>But first, let’s see what happends with two levels of categorization, box plots with hue.</p>
+</section>
+</section>
+<section id="boxplots-with-hue">
+<h3>Boxplots with hue<a class="headerlink" href="#boxplots-with-hue" title="Permalink to this headline">#</a></h3>
+<p>We are also going to work on these two plots of the same data</p>
+<section id="plot-3">
+<h4>PLOT 3<a class="headerlink" href="#plot-3" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title</span>
+<span class="k">with</span> <span class="n">sns</span><span class="o">.</span><span class="n">plotting_context</span><span class="p">(</span><span class="s1">&#39;notebook&#39;</span><span class="p">,</span> <span class="n">font_scale</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
+    <span class="c1"># Create new plot</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">get_log_ax</span><span class="p">()</span>
+
+    <span class="c1"># Plot with seaborn</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+                     <span class="n">data</span><span class="o">=</span><span class="n">rfs</span><span class="p">,</span>
+                     <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Subcategory&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Goal&#39;</span><span class="p">,</span>
+                     <span class="n">order</span><span class="o">=</span><span class="n">subcat_order</span><span class="p">,</span>
+                     <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;State&quot;</span><span class="p">,</span>
+                     <span class="n">hue_order</span><span class="o">=</span><span class="n">states_order</span><span class="p">,</span>
+                     <span class="n">palette</span><span class="o">=</span><span class="n">states_palette</span><span class="p">)</span>
+
+    <span class="c1"># Label and show</span>
+    <span class="n">add_legend</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">label_plot_for_subcats</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/06_Statannotations-Tutorial-1_71_0.png" src="../_images/06_Statannotations-Tutorial-1_71_0.png" />
+</div>
+</div>
+<p>I’d like to compare “Successful” and “Failed” and “Live” states in the 3 subcategories.
+Box pairs must then contain the information
+about the subcategory and the state, and are defined as below</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pairs</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[(</span><span class="s1">&#39;Robots&#39;</span><span class="p">,</span> <span class="s1">&#39;Successful&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Robots&#39;</span><span class="p">,</span> <span class="s1">&#39;Failed&#39;</span><span class="p">)],</span>
+    <span class="p">[(</span><span class="s1">&#39;Flight&#39;</span><span class="p">,</span> <span class="s1">&#39;Successful&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Flight&#39;</span><span class="p">,</span> <span class="s1">&#39;Failed&#39;</span><span class="p">)],</span>
+    <span class="p">[(</span><span class="s1">&#39;Sound&#39;</span><span class="p">,</span> <span class="s1">&#39;Successful&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Sound&#39;</span><span class="p">,</span> <span class="s1">&#39;Failed&#39;</span><span class="p">)],</span>
+
+    <span class="p">[(</span><span class="s1">&#39;Robots&#39;</span><span class="p">,</span> <span class="s1">&#39;Successful&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Robots&#39;</span><span class="p">,</span> <span class="s1">&#39;Live&#39;</span><span class="p">)],</span>
+    <span class="p">[(</span><span class="s1">&#39;Flight&#39;</span><span class="p">,</span> <span class="s1">&#39;Successful&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Flight&#39;</span><span class="p">,</span> <span class="s1">&#39;Live&#39;</span><span class="p">)],</span>
+    <span class="p">[(</span><span class="s1">&#39;Sound&#39;</span><span class="p">,</span> <span class="s1">&#39;Successful&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Sound&#39;</span><span class="p">,</span> <span class="s1">&#39;Live&#39;</span><span class="p">)],</span>
+
+    <span class="p">[(</span><span class="s1">&#39;Robots&#39;</span><span class="p">,</span> <span class="s1">&#39;Failed&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Robots&#39;</span><span class="p">,</span> <span class="s1">&#39;Live&#39;</span><span class="p">)],</span>
+    <span class="p">[(</span><span class="s1">&#39;Flight&#39;</span><span class="p">,</span> <span class="s1">&#39;Failed&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Flight&#39;</span><span class="p">,</span> <span class="s1">&#39;Live&#39;</span><span class="p">)],</span>
+    <span class="p">[(</span><span class="s1">&#39;Sound&#39;</span><span class="p">,</span> <span class="s1">&#39;Failed&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Sound&#39;</span><span class="p">,</span> <span class="s1">&#39;Live&#39;</span><span class="p">)],</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>again, putting plot parameters in a dictionary so that we can use it twice, then using the Annotator</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hue_plot_params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="n">rfs</span><span class="p">,</span>
+    <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="s1">&#39;Subcategory&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="s1">&#39;Goal&#39;</span><span class="p">,</span>
+    <span class="s2">&quot;order&quot;</span><span class="p">:</span> <span class="n">subcat_order</span><span class="p">,</span>
+    <span class="s2">&quot;hue&quot;</span><span class="p">:</span> <span class="s2">&quot;State&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;hue_order&quot;</span><span class="p">:</span> <span class="n">states_order</span><span class="p">,</span>
+    <span class="s2">&quot;palette&quot;</span><span class="p">:</span> <span class="n">states_palette</span>
+<span class="p">}</span>
+
+<span class="k">with</span> <span class="n">sns</span><span class="o">.</span><span class="n">plotting_context</span><span class="p">(</span><span class="s2">&quot;notebook&quot;</span><span class="p">,</span> <span class="n">font_scale</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
+    <span class="c1"># Create new plot</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">get_log_ax</span><span class="p">()</span>
+
+    <span class="c1"># Plot with seaborn</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">hue_plot_params</span><span class="p">)</span>
+
+    <span class="c1"># Add annotations</span>
+    <span class="n">annotator</span> <span class="o">=</span> <span class="n">Annotator</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">pairs</span><span class="p">,</span> <span class="o">**</span><span class="n">hue_plot_params</span><span class="p">)</span>
+    <span class="n">annotator</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">test</span><span class="o">=</span><span class="s2">&quot;Mann-Whitney&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">apply_and_annotate</span><span class="p">()</span>
+
+    <span class="c1"># Label and show</span>
+    <span class="n">add_legend</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">label_plot_for_subcats</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>p-value annotation legend:
+      ns: p &lt;= 1.00e+00
+       *: 1.00e-02 &lt; p &lt;= 5.00e-02
+      **: 1.00e-03 &lt; p &lt;= 1.00e-02
+     ***: 1.00e-04 &lt; p &lt;= 1.00e-03
+    ****: p &lt;= 1.00e-04
+
+Sound_Failed vs. Sound_Live: Mann-Whitney-Wilcoxon test two-sided, P_val:5.311e-02 U_stat=2.534e+03
+Robots_Successful vs. Robots_Failed: Mann-Whitney-Wilcoxon test two-sided, P_val:1.435e-04 U_stat=2.447e+04
+Robots_Failed vs. Robots_Live: Mann-Whitney-Wilcoxon test two-sided, P_val:2.393e-01 U_stat=2.445e+02
+Flight_Successful vs. Flight_Failed: Mann-Whitney-Wilcoxon test two-sided, P_val:4.658e-02 U_stat=8.990e+03
+Flight_Failed vs. Flight_Live: Mann-Whitney-Wilcoxon test two-sided, P_val:4.185e-01 U_stat=6.875e+02
+Sound_Successful vs. Sound_Failed: Mann-Whitney-Wilcoxon test two-sided, P_val:1.222e-03 U_stat=3.191e+04
+Robots_Successful vs. Robots_Live: Mann-Whitney-Wilcoxon test two-sided, P_val:8.216e-02 U_stat=1.405e+02
+Flight_Successful vs. Flight_Live: Mann-Whitney-Wilcoxon test two-sided, P_val:7.825e-01 U_stat=1.650e+02
+Sound_Successful vs. Sound_Live: Mann-Whitney-Wilcoxon test two-sided, P_val:2.220e-01 U_stat=2.290e+03
+</pre></div>
+</div>
+<img alt="../_images/06_Statannotations-Tutorial-1_75_1.png" src="../_images/06_Statannotations-Tutorial-1_75_1.png" />
+</div>
+</div>
+</section>
+<section id="plot-4">
+<h4>PLOT 4<a class="headerlink" href="#plot-4" title="Permalink to this headline">#</a></h4>
+<p>To compare the states, across categories, let’s plot it differently</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Switching hue and x</span>
+<span class="n">hue_plot_params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;data&#39;</span><span class="p">:</span>      <span class="n">rfs</span><span class="p">,</span>
+    <span class="s1">&#39;x&#39;</span><span class="p">:</span>         <span class="s1">&#39;State&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;y&#39;</span><span class="p">:</span>         <span class="s1">&#39;Goal&#39;</span><span class="p">,</span>
+    <span class="s2">&quot;order&quot;</span><span class="p">:</span>     <span class="n">states_order</span><span class="p">,</span>
+    <span class="s2">&quot;hue&quot;</span><span class="p">:</span>       <span class="s2">&quot;Subcategory&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;hue_order&quot;</span><span class="p">:</span> <span class="n">subcat_order</span><span class="p">,</span>
+    <span class="s2">&quot;palette&quot;</span><span class="p">:</span>   <span class="n">subcat_palette</span>
+<span class="p">}</span>
+
+<span class="k">with</span> <span class="n">sns</span><span class="o">.</span><span class="n">plotting_context</span><span class="p">(</span><span class="s2">&quot;notebook&quot;</span><span class="p">,</span> <span class="n">font_scale</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
+    <span class="c1"># Create new plot</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">get_log_ax</span><span class="p">()</span>
+
+    <span class="c1"># Plot with seaborn</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">hue_plot_params</span><span class="p">)</span>
+
+    <span class="c1"># Label and show</span>
+    <span class="n">add_legend</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">label_plot_for_states</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/06_Statannotations-Tutorial-1_77_0.png" src="../_images/06_Statannotations-Tutorial-1_77_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pairs</span> <span class="o">=</span><span class="p">(</span>
+    <span class="p">[(</span><span class="s1">&#39;Successful&#39;</span><span class="p">,</span> <span class="s1">&#39;Robots&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Successful&#39;</span><span class="p">,</span> <span class="s1">&#39;Flight&#39;</span><span class="p">)],</span>
+    <span class="p">[(</span><span class="s1">&#39;Successful&#39;</span><span class="p">,</span> <span class="s1">&#39;Flight&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Successful&#39;</span><span class="p">,</span> <span class="s1">&#39;Sound&#39;</span><span class="p">)],</span>
+    <span class="p">[(</span><span class="s1">&#39;Successful&#39;</span><span class="p">,</span> <span class="s1">&#39;Robots&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Successful&#39;</span><span class="p">,</span> <span class="s1">&#39;Sound&#39;</span><span class="p">)],</span>
+
+    <span class="p">[(</span><span class="s1">&#39;Failed&#39;</span><span class="p">,</span> <span class="s1">&#39;Robots&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Failed&#39;</span><span class="p">,</span> <span class="s1">&#39;Flight&#39;</span><span class="p">)],</span>
+    <span class="p">[(</span><span class="s1">&#39;Failed&#39;</span><span class="p">,</span> <span class="s1">&#39;Flight&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Failed&#39;</span><span class="p">,</span> <span class="s1">&#39;Sound&#39;</span><span class="p">)],</span>
+    <span class="p">[(</span><span class="s1">&#39;Failed&#39;</span><span class="p">,</span> <span class="s1">&#39;Robots&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Failed&#39;</span><span class="p">,</span> <span class="s1">&#39;Sound&#39;</span><span class="p">)],</span>
+
+    <span class="p">[(</span><span class="s1">&#39;Live&#39;</span><span class="p">,</span> <span class="s1">&#39;Robots&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Live&#39;</span><span class="p">,</span> <span class="s1">&#39;Flight&#39;</span><span class="p">)],</span>
+    <span class="p">[(</span><span class="s1">&#39;Live&#39;</span><span class="p">,</span> <span class="s1">&#39;Flight&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Live&#39;</span><span class="p">,</span> <span class="s1">&#39;Sound&#39;</span><span class="p">)],</span>
+    <span class="p">[(</span><span class="s1">&#39;Live&#39;</span><span class="p">,</span> <span class="s1">&#39;Robots&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Live&#39;</span><span class="p">,</span> <span class="s1">&#39;Sound&#39;</span><span class="p">)],</span>
+<span class="p">)</span>
+
+<span class="k">with</span> <span class="n">sns</span><span class="o">.</span><span class="n">plotting_context</span><span class="p">(</span><span class="s2">&quot;notebook&quot;</span><span class="p">,</span> <span class="n">font_scale</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
+    <span class="c1"># Create new plot</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">get_log_ax</span><span class="p">()</span>
+
+    <span class="c1"># Plot with seaborn</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">hue_plot_params</span><span class="p">)</span>
+
+    <span class="c1"># Add annotations</span>
+    <span class="n">annotator</span> <span class="o">=</span> <span class="n">Annotator</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">pairs</span><span class="p">,</span> <span class="o">**</span><span class="n">hue_plot_params</span><span class="p">)</span>
+    <span class="n">annotator</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">test</span><span class="o">=</span><span class="s2">&quot;Mann-Whitney&quot;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">results</span> <span class="o">=</span> <span class="n">annotator</span><span class="o">.</span><span class="n">apply_and_annotate</span><span class="p">()</span>
+
+    <span class="c1"># Label and show</span>
+    <span class="n">add_legend</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">label_plot_for_states</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/06_Statannotations-Tutorial-1_78_0.png" src="../_images/06_Statannotations-Tutorial-1_78_0.png" />
+</div>
+</div>
+<p>Now again, that is a lot of tests. If one would like to apply a multiple testing correction method, it is possible.</p>
+</section>
+<section id="correcting-for-multiple-testing-introduction">
+<h4>Correcting for multiple testing (introduction)<a class="headerlink" href="#correcting-for-multiple-testing-introduction" title="Permalink to this headline">#</a></h4>
+<p>In this section, I will quickly demonstrate how to use one of the readily available interfaces. More advanced uses will
+be described in the following tutorial.</p>
+<p>Basically, you can use the <code class="docutils literal notranslate"><span class="pre">comparisons_correction</span></code> parameter for the <code class="docutils literal notranslate"><span class="pre">.configure</span></code> method, for one of the following
+correction methods (as implemented by <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code>)</p>
+<ul class="simple">
+<li><p>Bonferroni (“bonf”)</p></li>
+<li><p>Benjamini-Hochberg (“BH”)</p></li>
+<li><p>Holm-Bonferroni (“HB”)</p></li>
+<li><p>Benjamini-Yekutieli (“BY”)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">sns</span><span class="o">.</span><span class="n">plotting_context</span><span class="p">(</span><span class="s2">&quot;notebook&quot;</span><span class="p">,</span> <span class="n">font_scale</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
+    <span class="c1"># Create new plot</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">get_log_ax</span><span class="p">()</span>
+
+    <span class="c1"># Plot with seaborn</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">hue_plot_params</span><span class="p">)</span>
+
+    <span class="c1"># Add annotations</span>
+    <span class="n">annotator</span> <span class="o">=</span> <span class="n">Annotator</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">pairs</span><span class="p">,</span> <span class="o">**</span><span class="n">hue_plot_params</span><span class="p">)</span>
+    <span class="n">annotator</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">test</span><span class="o">=</span><span class="s2">&quot;Mann-Whitney&quot;</span><span class="p">,</span> <span class="n">comparisons_correction</span><span class="o">=</span><span class="s2">&quot;bonferroni&quot;</span><span class="p">)</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">corrected_results</span> <span class="o">=</span> <span class="n">annotator</span><span class="o">.</span><span class="n">apply_and_annotate</span><span class="p">()</span>
+
+    <span class="c1"># Label and show</span>
+    <span class="n">add_legend</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">label_plot_for_states</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>p-value annotation legend:
+      ns: p &lt;= 1.00e+00
+       *: 1.00e-02 &lt; p &lt;= 5.00e-02
+      **: 1.00e-03 &lt; p &lt;= 1.00e-02
+     ***: 1.00e-04 &lt; p &lt;= 1.00e-03
+    ****: p &lt;= 1.00e-04
+
+Failed_Flight vs. Failed_Sound: Mann-Whitney-Wilcoxon test two-sided with Bonferroni correction, P_val:1.000e+00 U_stat=3.803e+04
+Live_Robots vs. Live_Flight: Mann-Whitney-Wilcoxon test two-sided with Bonferroni correction, P_val:1.000e+00 U_stat=9.500e+00
+Live_Flight vs. Live_Sound: Mann-Whitney-Wilcoxon test two-sided with Bonferroni correction, P_val:1.000e+00 U_stat=2.900e+01
+Successful_Robots vs. Successful_Flight: Mann-Whitney-Wilcoxon test two-sided with Bonferroni correction, P_val:8.862e-01 U_stat=7.500e+03
+Successful_Flight vs. Successful_Sound: Mann-Whitney-Wilcoxon test two-sided with Bonferroni correction, P_val:1.000e+00 U_stat=1.013e+04
+Failed_Robots vs. Failed_Flight: Mann-Whitney-Wilcoxon test two-sided with Bonferroni correction, P_val:8.298e-01 U_stat=3.441e+04
+Live_Robots vs. Live_Sound: Mann-Whitney-Wilcoxon test two-sided with Bonferroni correction, P_val:1.000e+00 U_stat=3.400e+01
+Failed_Robots vs. Failed_Sound: Mann-Whitney-Wilcoxon test two-sided with Bonferroni correction, P_val:3.771e-01 U_stat=3.364e+04
+Successful_Robots vs. Successful_Sound: Mann-Whitney-Wilcoxon test two-sided with Bonferroni correction, P_val:1.504e-03 U_stat=2.491e+04
+</pre></div>
+</div>
+<img alt="../_images/06_Statannotations-Tutorial-1_81_1.png" src="../_images/06_Statannotations-Tutorial-1_81_1.png" />
+</div>
+</div>
+<p>Which didn’t change the conclusion in this case, but as you can see, the pvalues were corrected</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">result</span><span class="p">,</span> <span class="n">corrected_result</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">corrected_results</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">pvalue</span><span class="si">:</span><span class="s2">.2e</span><span class="si">}</span><span class="s2"> =&gt; </span><span class="si">{</span><span class="n">corrected_result</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">pvalue</span><span class="si">:</span><span class="s2">.2e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.04e-01 =&gt; 1.00e+00
+2.85e-01 =&gt; 1.00e+00
+9.59e-01 =&gt; 1.00e+00
+9.85e-02 =&gt; 8.86e-01
+7.23e-01 =&gt; 1.00e+00
+9.22e-02 =&gt; 8.30e-01
+1.21e-01 =&gt; 1.00e+00
+4.19e-02 =&gt; 3.77e-01
+1.67e-04 =&gt; 1.50e-03
+</pre></div>
+</div>
+</div>
+</div>
+<p>So the difference in goal amounts for <code class="docutils literal notranslate"><span class="pre">Failed</span></code> <code class="docutils literal notranslate"><span class="pre">Robots</span></code> and <code class="docutils literal notranslate"><span class="pre">Sound</span></code> projects went from about <code class="docutils literal notranslate"><span class="pre">0.04</span></code> to about <code class="docutils literal notranslate"><span class="pre">0.4</span></code> (the
+one before last in previous list), and is no longer considered statistically significant with the default alpha of
+<code class="docutils literal notranslate"><span class="pre">0.05</span></code>.</p>
+</section>
+</section>
+</section>
+<section id="bonus">
+<h2>Bonus<a class="headerlink" href="#bonus" title="Permalink to this headline">#</a></h2>
+<p>Other types of plots are supported. Here is the same plot with <code class="docutils literal notranslate"><span class="pre">barplot</span></code>, and other tweaked parameters</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hue_plot_params</span> <span class="o">=</span> <span class="p">{</span><span class="o">**</span><span class="n">hue_plot_params</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">:</span>  <span class="s1">&#39;Goal&#39;</span><span class="p">,</span><span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="s1">&#39;State&#39;</span><span class="p">,</span><span class="s1">&#39;dodge&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;orient&#39;</span><span class="p">:</span> <span class="s1">&#39;h&#39;</span><span class="p">}</span>
+
+<span class="k">with</span> <span class="n">sns</span><span class="o">.</span><span class="n">plotting_context</span><span class="p">(</span><span class="s2">&quot;notebook&quot;</span><span class="p">,</span> <span class="n">font_scale</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
+    <span class="c1"># Create new plot</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">get_log_ax</span><span class="p">(</span><span class="s1">&#39;h&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Plot with seaborn</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">hue_plot_params</span><span class="p">)</span>
+
+    <span class="c1"># Add annotations</span>
+    <span class="n">annotator</span> <span class="o">=</span> <span class="n">Annotator</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">pairs</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="s1">&#39;barplot&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">hue_plot_params</span><span class="p">)</span>
+    <span class="n">annotator</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">test</span><span class="o">=</span><span class="s2">&quot;Mann-Whitney&quot;</span><span class="p">,</span> <span class="n">comparisons_correction</span><span class="o">=</span><span class="s2">&quot;BH&quot;</span><span class="p">,</span>
+                        <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;outside&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">apply_and_annotate</span><span class="p">()</span>
+
+    <span class="c1"># Label and show</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Goal ($)&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Project State&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Goal amounts per project State&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">1.05</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/06_Statannotations-Tutorial-1_86_0.png" src="../_images/06_Statannotations-Tutorial-1_86_0.png" />
+</div>
+</div>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
+<p>Congratulations on reaching the end of this tutorial. In this post, we covered several use cases for an Annotator, from using custom labels to having the package apply statistical tests, all with several formatting options.
+This should cover many use cases already, but you may want to wait for the next part to discover more features.</p>
+<section id="what-s-next">
+<h3>What’s next?<a class="headerlink" href="#what-s-next" title="Permalink to this headline">#</a></h3>
+<p>In the following tutorial, we will see how we can:</p>
+<ul class="simple">
+<li><p>Annotate different kinds of plots</p></li>
+<li><p>Use other functions for statistical tests and multiple comparisons correction which are not already available in the library, with minimal extra code</p></li>
+<li><p>Further customize the p-values format within the annotations text_format options</p></li>
+<li><p>Adjust the spacing between annotations and/or position them outside the plotting area</p></li>
+<li><p>Use the other outputs</p></li>
+</ul>
+</section>
+<section id="acknowledgements">
+<h3>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">#</a></h3>
+<p>Statannotations is a collaborative work since its early days. A great deal was done in the
+<a class="reference external" href="https://github.com/webermarcolivier/statannot">statannot</a> package before I contributed to it for the first time two
+years ago, and it was very gratifying to be a part of it.</p>
+<p>The <a class="reference external" href="https://github.com/dexplo/jupyter_to_medium">Jupyter to Medium</a> and
+<a class="reference external" href="https://github.com/damienmarlier51/JupyterNotebookImageExporter">Junix</a> packages were very helpful
+resources to reduce the load of turning the notebook into an article. You should check them out if you need to export
+your notebooks.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">watermark</span> <span class="kn">import</span> <span class="n">watermark</span>
+<span class="n">watermark</span><span class="p">(</span><span class="n">iversions</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">globals_</span><span class="o">=</span><span class="nb">globals</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">watermark</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">watermark</span><span class="p">(</span><span class="n">packages</span><span class="o">=</span><span class="s2">&quot;watermark,numpy,scipy,pandas,matplotlib,seaborn,statannotations&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Last updated: 2023-01-05T13:30:59.175423+01:00
+
+Python implementation: CPython
+Python version       : 3.9.15
+IPython version      : 8.8.0
+
+Compiler    : MSC v.1929 64 bit (AMD64)
+OS          : Windows
+Release     : 10
+Machine     : AMD64
+Processor   : Intel64 Family 6 Model 85 Stepping 7, GenuineIntel
+CPU cores   : 40
+Architecture: 64bit
+
+watermark      : 2.3.1
+numpy          : 1.24.1
+scipy          : 1.10.0
+pandas         : 1.5.2
+matplotlib     : 3.6.2
+seaborn        : 0.11.2
+statannotations: 0.5.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Statistics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="06_statistics.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Statistic overview</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="07_big_data_statistics.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Exercise</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Martin Schatz<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
